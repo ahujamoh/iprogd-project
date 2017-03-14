@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		54330B30CDC205AA97AF81D4 /* Pods_Moodstory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D63419375C6490080DC587 /* Pods_Moodstory.framework */; };
 		C40DD7691E78211A0035B234 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40DD7681E78211A0035B234 /* AppDelegate.swift */; };
-		C40DD76B1E78211A0035B234 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40DD76A1E78211A0035B234 /* ViewController.swift */; };
+		C40DD76B1E78211A0035B234 /* MSLoginSignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40DD76A1E78211A0035B234 /* MSLoginSignUpController.swift */; };
 		C40DD76E1E78211A0035B234 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C40DD76C1E78211A0035B234 /* Main.storyboard */; };
 		C40DD7701E78211A0035B234 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C40DD76F1E78211A0035B234 /* Assets.xcassets */; };
 		C40DD7731E78211A0035B234 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C40DD7711E78211A0035B234 /* LaunchScreen.storyboard */; };
 		C40DD77B1E7824910035B234 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C40DD77A1E7824910035B234 /* GoogleService-Info.plist */; };
+		C40DD7841E7830250035B234 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C40DD7831E7830250035B234 /* Photos.framework */; };
+		C40DD7861E7830580035B234 /* MSCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40DD7851E7830580035B234 /* MSCameraViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,12 +23,14 @@
 		790E906735170C74DF00CAF1 /* Pods-Moodstory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moodstory.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Moodstory/Pods-Moodstory.debug.xcconfig"; sourceTree = "<group>"; };
 		C40DD7651E78211A0035B234 /* Moodstory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moodstory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C40DD7681E78211A0035B234 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C40DD76A1E78211A0035B234 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C40DD76A1E78211A0035B234 /* MSLoginSignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSLoginSignUpController.swift; sourceTree = "<group>"; };
 		C40DD76D1E78211A0035B234 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C40DD76F1E78211A0035B234 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C40DD7721E78211A0035B234 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C40DD7741E78211A0035B234 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C40DD77A1E7824910035B234 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C40DD7831E7830250035B234 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		C40DD7851E7830580035B234 /* MSCameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSCameraViewController.swift; sourceTree = "<group>"; };
 		D8D63419375C6490080DC587 /* Pods_Moodstory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moodstory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -35,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C40DD7841E7830250035B234 /* Photos.framework in Frameworks */,
 				54330B30CDC205AA97AF81D4 /* Pods_Moodstory.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -45,6 +50,7 @@
 		4E9E3ADACAF1F725955805E9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C40DD7831E7830250035B234 /* Photos.framework */,
 				D8D63419375C6490080DC587 /* Pods_Moodstory.framework */,
 			);
 			name = Frameworks;
@@ -80,8 +86,10 @@
 		C40DD7671E78211A0035B234 /* Moodstory */ = {
 			isa = PBXGroup;
 			children = (
+				C40DD7801E782E030035B234 /* Controller */,
+				C40DD77F1E782DF20035B234 /* View */,
+				C40DD77E1E782DE70035B234 /* Model */,
 				C40DD7681E78211A0035B234 /* AppDelegate.swift */,
-				C40DD76A1E78211A0035B234 /* ViewController.swift */,
 				C40DD76C1E78211A0035B234 /* Main.storyboard */,
 				C40DD76F1E78211A0035B234 /* Assets.xcassets */,
 				C40DD7711E78211A0035B234 /* LaunchScreen.storyboard */,
@@ -89,6 +97,45 @@
 				C40DD77A1E7824910035B234 /* GoogleService-Info.plist */,
 			);
 			path = Moodstory;
+			sourceTree = "<group>";
+		};
+		C40DD77E1E782DE70035B234 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		C40DD77F1E782DF20035B234 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		C40DD7801E782E030035B234 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C40DD7821E7830080035B234 /* Camera */,
+				C40DD7811E782FF50035B234 /* LoginSignUp */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		C40DD7811E782FF50035B234 /* LoginSignUp */ = {
+			isa = PBXGroup;
+			children = (
+				C40DD76A1E78211A0035B234 /* MSLoginSignUpController.swift */,
+				C40DD7851E7830580035B234 /* MSCameraViewController.swift */,
+			);
+			name = LoginSignUp;
+			sourceTree = "<group>";
+		};
+		C40DD7821E7830080035B234 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Camera;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,6 +167,7 @@
 		C40DD75D1E78211A0035B234 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = MS;
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = MoodStory;
@@ -216,8 +264,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C40DD76B1E78211A0035B234 /* ViewController.swift in Sources */,
+				C40DD76B1E78211A0035B234 /* MSLoginSignUpController.swift in Sources */,
 				C40DD7691E78211A0035B234 /* AppDelegate.swift in Sources */,
+				C40DD7861E7830580035B234 /* MSCameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
