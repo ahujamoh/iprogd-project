@@ -16,6 +16,10 @@
 		C40DD77B1E7824910035B234 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C40DD77A1E7824910035B234 /* GoogleService-Info.plist */; };
 		C40DD7841E7830250035B234 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C40DD7831E7830250035B234 /* Photos.framework */; };
 		C40DD7861E7830580035B234 /* MSCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40DD7851E7830580035B234 /* MSCameraViewController.swift */; };
+		C40DD78B1E7854380035B234 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C40DD7871E7854380035B234 /* Bolts.framework */; };
+		C40DD78C1E7854380035B234 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C40DD7881E7854380035B234 /* FBSDKCoreKit.framework */; };
+		C40DD78D1E7854380035B234 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C40DD7891E7854380035B234 /* FBSDKLoginKit.framework */; };
+		C40DD78E1E7854380035B234 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C40DD78A1E7854380035B234 /* FBSDKShareKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +35,10 @@
 		C40DD77A1E7824910035B234 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C40DD7831E7830250035B234 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		C40DD7851E7830580035B234 /* MSCameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSCameraViewController.swift; sourceTree = "<group>"; };
+		C40DD7871E7854380035B234 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		C40DD7881E7854380035B234 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		C40DD7891E7854380035B234 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		C40DD78A1E7854380035B234 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		D8D63419375C6490080DC587 /* Pods_Moodstory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moodstory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -39,6 +47,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C40DD78B1E7854380035B234 /* Bolts.framework in Frameworks */,
+				C40DD78C1E7854380035B234 /* FBSDKCoreKit.framework in Frameworks */,
+				C40DD78E1E7854380035B234 /* FBSDKShareKit.framework in Frameworks */,
+				C40DD78D1E7854380035B234 /* FBSDKLoginKit.framework in Frameworks */,
 				C40DD7841E7830250035B234 /* Photos.framework in Frameworks */,
 				54330B30CDC205AA97AF81D4 /* Pods_Moodstory.framework in Frameworks */,
 			);
@@ -50,6 +62,10 @@
 		4E9E3ADACAF1F725955805E9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C40DD7871E7854380035B234 /* Bolts.framework */,
+				C40DD7881E7854380035B234 /* FBSDKCoreKit.framework */,
+				C40DD7891E7854380035B234 /* FBSDKLoginKit.framework */,
+				C40DD78A1E7854380035B234 /* FBSDKShareKit.framework */,
 				C40DD7831E7830250035B234 /* Photos.framework */,
 				D8D63419375C6490080DC587 /* Pods_Moodstory.framework */,
 			);
@@ -126,7 +142,6 @@
 			isa = PBXGroup;
 			children = (
 				C40DD76A1E78211A0035B234 /* MSLoginSignUpController.swift */,
-				C40DD7851E7830580035B234 /* MSCameraViewController.swift */,
 			);
 			name = LoginSignUp;
 			sourceTree = "<group>";
@@ -134,6 +149,7 @@
 		C40DD7821E7830080035B234 /* Camera */ = {
 			isa = PBXGroup;
 			children = (
+				C40DD7851E7830580035B234 /* MSCameraViewController.swift */,
 			);
 			name = Camera;
 			sourceTree = "<group>";
@@ -391,8 +407,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 69K5FUX4KS;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Moodstory/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hcid.Moodstory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -406,8 +426,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 69K5FUX4KS;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Moodstory/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hcid.Moodstory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
