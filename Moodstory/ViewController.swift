@@ -3,10 +3,11 @@
 //  Moodstory
 //
 //  Created by Muhammad Mustafa Saeed on 3/14/17.
-//  Copyright © 2017 Stagecast. All rights reserved.
+//  Copyright © 2017 MoodStory. All rights reserved.
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController {
 

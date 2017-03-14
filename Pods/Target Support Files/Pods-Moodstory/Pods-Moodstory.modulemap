@@ -1,0 +1,6 @@
+framework module Pods_Moodstory {
+  umbrella header "Pods-Moodstory-umbrella.h"
+
+  export *
+  module * { export * }
+}

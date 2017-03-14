@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		54330B30CDC205AA97AF81D4 /* Pods_Moodstory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D63419375C6490080DC587 /* Pods_Moodstory.framework */; };
 		C40DD7691E78211A0035B234 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40DD7681E78211A0035B234 /* AppDelegate.swift */; };
 		C40DD76B1E78211A0035B234 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40DD76A1E78211A0035B234 /* ViewController.swift */; };
 		C40DD76E1E78211A0035B234 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C40DD76C1E78211A0035B234 /* Main.storyboard */; };
 		C40DD7701E78211A0035B234 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C40DD76F1E78211A0035B234 /* Assets.xcassets */; };
 		C40DD7731E78211A0035B234 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C40DD7711E78211A0035B234 /* LaunchScreen.storyboard */; };
+		C40DD77B1E7824910035B234 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C40DD77A1E7824910035B234 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		70BD6B0570BF7F5E506AC44E /* Pods-Moodstory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moodstory.release.xcconfig"; path = "Pods/Target Support Files/Pods-Moodstory/Pods-Moodstory.release.xcconfig"; sourceTree = "<group>"; };
+		790E906735170C74DF00CAF1 /* Pods-Moodstory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moodstory.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Moodstory/Pods-Moodstory.debug.xcconfig"; sourceTree = "<group>"; };
 		C40DD7651E78211A0035B234 /* Moodstory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moodstory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C40DD7681E78211A0035B234 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C40DD76A1E78211A0035B234 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +26,8 @@
 		C40DD76F1E78211A0035B234 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C40DD7721E78211A0035B234 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C40DD7741E78211A0035B234 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C40DD77A1E7824910035B234 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D8D63419375C6490080DC587 /* Pods_Moodstory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moodstory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54330B30CDC205AA97AF81D4 /* Pods_Moodstory.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E9E3ADACAF1F725955805E9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D8D63419375C6490080DC587 /* Pods_Moodstory.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B65077B7ACFBE9CAC160D5BF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				790E906735170C74DF00CAF1 /* Pods-Moodstory.debug.xcconfig */,
+				70BD6B0570BF7F5E506AC44E /* Pods-Moodstory.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C40DD75C1E78211A0035B234 = {
 			isa = PBXGroup;
 			children = (
 				C40DD7671E78211A0035B234 /* Moodstory */,
 				C40DD7661E78211A0035B234 /* Products */,
+				B65077B7ACFBE9CAC160D5BF /* Pods */,
+				4E9E3ADACAF1F725955805E9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +86,7 @@
 				C40DD76F1E78211A0035B234 /* Assets.xcassets */,
 				C40DD7711E78211A0035B234 /* LaunchScreen.storyboard */,
 				C40DD7741E78211A0035B234 /* Info.plist */,
+				C40DD77A1E7824910035B234 /* GoogleService-Info.plist */,
 			);
 			path = Moodstory;
 			sourceTree = "<group>";
@@ -71,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C40DD7771E78211A0035B234 /* Build configuration list for PBXNativeTarget "Moodstory" */;
 			buildPhases = (
+				C077D859249A998B02CDA6D2 /* [CP] Check Pods Manifest.lock */,
 				C40DD7611E78211A0035B234 /* Sources */,
 				C40DD7621E78211A0035B234 /* Frameworks */,
 				C40DD7631E78211A0035B234 /* Resources */,
+				B8679D533F8ED4BC2E9331AD /* [CP] Embed Pods Frameworks */,
+				B01E8A84D2854B43A2D41773 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -92,7 +122,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
-				ORGANIZATIONNAME = Stagecast;
+				ORGANIZATIONNAME = MoodStory;
 				TargetAttributes = {
 					C40DD7641E78211A0035B234 = {
 						CreatedOnToolsVersion = 8.3;
@@ -125,12 +155,61 @@
 			buildActionMask = 2147483647;
 			files = (
 				C40DD7731E78211A0035B234 /* LaunchScreen.storyboard in Resources */,
+				C40DD77B1E7824910035B234 /* GoogleService-Info.plist in Resources */,
 				C40DD7701E78211A0035B234 /* Assets.xcassets in Resources */,
 				C40DD76E1E78211A0035B234 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B01E8A84D2854B43A2D41773 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Moodstory/Pods-Moodstory-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8679D533F8ED4BC2E9331AD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Moodstory/Pods-Moodstory-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C077D859249A998B02CDA6D2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C40DD7611E78211A0035B234 /* Sources */ = {
@@ -259,10 +338,12 @@
 		};
 		C40DD7781E78211A0035B234 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 790E906735170C74DF00CAF1 /* Pods-Moodstory.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 69K5FUX4KS;
 				INFOPLIST_FILE = Moodstory/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hcid.Moodstory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -272,10 +353,12 @@
 		};
 		C40DD7791E78211A0035B234 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70BD6B0570BF7F5E506AC44E /* Pods-Moodstory.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 69K5FUX4KS;
 				INFOPLIST_FILE = Moodstory/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hcid.Moodstory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -302,6 +385,7 @@
 				C40DD7791E78211A0035B234 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
