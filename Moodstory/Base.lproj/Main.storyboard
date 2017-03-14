@@ -1,26 +1,92 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12100" systemVersion="16E175b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12072"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login Sign Up Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MSLoginSignUpController" customModule="Moodstory" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginBackground" translatesAutoresizingMaskIntoConstraints="NO" id="pQ8-bL-JWN">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="msLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Nta-5a-BuK">
+                                <rect key="frame" x="92" y="222" width="231" height="50"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="email" textAlignment="center" minimumFontSize="14" background="textFieldBackground" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="b9o-9D-cM8">
+                                <rect key="frame" x="99" y="290" width="217" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="217" id="JBS-Kv-ja6"/>
+                                    <constraint firstAttribute="height" constant="40" id="QKQ-vS-GGX"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="password" textAlignment="center" minimumFontSize="14" background="textFieldBackground" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="tdQ-sS-Nkr">
+                                <rect key="frame" x="99" y="338" width="217" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="217" id="2zK-8C-pex"/>
+                                    <constraint firstAttribute="height" constant="40" id="R29-J1-pCU"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TeH-tk-Ugs">
+                                <rect key="frame" x="99" y="386" width="217" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="DVk-UT-scb"/>
+                                    <constraint firstAttribute="width" constant="217" id="F1m-me-v8C"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="14"/>
+                                <state key="normal" title="Log In" backgroundImage="loginButtonBackground">
+                                    <color key="titleColor" red="0.0" green="0.64129388332366943" blue="0.17232179641723633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="b9o-9D-cM8" firstAttribute="top" secondItem="Nta-5a-BuK" secondAttribute="bottom" constant="18" id="1Ni-Bm-d4r"/>
+                            <constraint firstItem="Nta-5a-BuK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3Lt-sV-HMR"/>
+                            <constraint firstItem="Nta-5a-BuK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="202" id="7bc-nA-RE5"/>
+                            <constraint firstItem="tdQ-sS-Nkr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="93u-Hy-wtU"/>
+                            <constraint firstItem="pQ8-bL-JWN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Aub-yQ-AKZ"/>
+                            <constraint firstItem="pQ8-bL-JWN" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="GDb-Z7-mtj"/>
+                            <constraint firstItem="TeH-tk-Ugs" firstAttribute="top" secondItem="tdQ-sS-Nkr" secondAttribute="bottom" constant="8" id="IH5-37-hLb"/>
+                            <constraint firstItem="b9o-9D-cM8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WN6-we-nej"/>
+                            <constraint firstItem="TeH-tk-Ugs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aQ2-CX-bE3"/>
+                            <constraint firstItem="tdQ-sS-Nkr" firstAttribute="top" secondItem="b9o-9D-cM8" secondAttribute="bottom" constant="8" id="iTy-eY-Cce"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="pQ8-bL-JWN" secondAttribute="bottom" id="r3e-uX-pxV"/>
+                            <constraint firstAttribute="trailing" secondItem="pQ8-bL-JWN" secondAttribute="trailing" id="u37-Pg-56Y"/>
+                            <constraint firstItem="b9o-9D-cM8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vzB-x1-Suh"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="31.884057971014496" y="36.684782608695656"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="loginBackground" width="375" height="667"/>
+        <image name="loginButtonBackground" width="238" height="40"/>
+        <image name="msLogo" width="231" height="50"/>
+        <image name="textFieldBackground" width="238" height="40"/>
+    </resources>
 </document>
