@@ -13,6 +13,12 @@ import Firebase
 
 
 class MSLoginSignUpController: UIViewController {
+    
+    
+    
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,5 +71,33 @@ class MSLoginSignUpController: UIViewController {
         })
     }
 
+    @IBAction func loginTapped(_ sender: Any) {
+        if let email = emailField.text, let pwd = passwordField.text{
+            
+            FIRAuth.auth()?.signIn(withEmail: email, password: pwd, completion: { (user, error) in
+                
+                if error == nil{
+                    
+                    print("Email User Authenticated with Firebase")
+                }
+                else{
+                    
+                    print("User doesnot exist")
+                    FIRAuth.auth()?.createUser(withEmail: email, password: pwd, completion: { (user, error) in
+                        if error != nil
+                        {
+                            print("Unable to create user")
+                        }
+                        else
+                        {
+                            print("Successfully authenticate user")
+                        }
+                    })
+                }
+            })
+        
+        }
+        
+    }
 }
 

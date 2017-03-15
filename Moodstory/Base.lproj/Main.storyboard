@@ -47,7 +47,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TeH-tk-Ugs">
                                 <rect key="frame" x="99" y="386" width="217" height="40"/>
@@ -59,6 +59,9 @@
                                 <state key="normal" title="Log In" backgroundImage="loginButtonBackground">
                                     <color key="titleColor" red="0.0" green="0.64129388332366943" blue="0.17232179641723633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KLJ-36-bcT"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zx1-26-4lc">
                                 <rect key="frame" x="199" y="445" width="17" height="21"/>
@@ -108,6 +111,10 @@
                             <constraint firstItem="b9o-9D-cM8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vzB-x1-Suh"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="b9o-9D-cM8" id="uPf-l8-0xC"/>
+                        <outlet property="passwordField" destination="tdQ-sS-Nkr" id="nFr-gc-fnN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
