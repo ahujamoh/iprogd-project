@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12072"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -132,12 +133,33 @@
                     <view key="view" contentMode="scaleToFill" id="bpo-VW-8zJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1zu-Tg-ioe">
+                                <rect key="frame" x="147" y="105" width="101" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="IYY-JG-vTV"/>
+                                    <constraint firstAttribute="width" constant="101" id="aM5-XF-8Dd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="14"/>
+                                <state key="normal" title="Sign Out"/>
+                                <connections>
+                                    <action selector="logoutBtnTapped:" destination="ZOz-cu-1RP" eventType="touchUpInside" id="1pF-a9-3BN"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="0.0" green="0.64129388330000003" blue="0.1723217964" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="1zu-Tg-ioe" firstAttribute="leading" secondItem="bpo-VW-8zJ" secondAttribute="leadingMargin" constant="127" id="1Ly-D0-Avw"/>
+                            <constraint firstItem="1zu-Tg-ioe" firstAttribute="top" secondItem="0wb-id-BSV" secondAttribute="bottom" constant="85" id="gch-vf-3M4"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="goToLoginScreen" id="kZC-QI-59C"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hVy-uY-hV0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="317" y="11"/>
+            <point key="canvasLocation" x="315.94202898550725" y="10.597826086956523"/>
         </scene>
     </scenes>
     <resources>

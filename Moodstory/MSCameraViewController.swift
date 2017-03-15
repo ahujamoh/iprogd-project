@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import AVFoundation
+import SwiftKeychainWrapper
 
 class MSCameraViewController: UIViewController {
 
@@ -24,6 +25,16 @@ class MSCameraViewController: UIViewController {
     }
     
 
+    @IBAction func logoutBtnTapped(_ sender: Any) {
+        
+       // TODO: Signout from Firebase and remove string from keychain
+        
+        
+        let keychainResult = KeychainWrapper.standard.removeObject(forKey: KEY_UID)
+        print("ID removed from keyhain : \(keychainResult)")
+        try! FIRAuth.auth()?.signOut()
+        performSegue(withIdentifier: "goToLoginScreen", sender: nil)
+    }
     
 
 }
