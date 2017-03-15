@@ -20,6 +20,7 @@
 		C40DD78C1E7854380035B234 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C40DD7881E7854380035B234 /* FBSDKCoreKit.framework */; };
 		C40DD78D1E7854380035B234 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C40DD7891E7854380035B234 /* FBSDKLoginKit.framework */; };
 		C40DD78E1E7854380035B234 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C40DD78A1E7854380035B234 /* FBSDKShareKit.framework */; };
+		C4E9A08A1E7949C40040C5D9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E9A0891E7949C40040C5D9 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		C40DD7881E7854380035B234 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		C40DD7891E7854380035B234 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		C40DD78A1E7854380035B234 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		C4E9A0891E7949C40040C5D9 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D8D63419375C6490080DC587 /* Pods_Moodstory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moodstory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -102,6 +104,7 @@
 		C40DD7671E78211A0035B234 /* Moodstory */ = {
 			isa = PBXGroup;
 			children = (
+				C4E9A0881E7949850040C5D9 /* Util */,
 				C40DD7801E782E030035B234 /* Controller */,
 				C40DD77F1E782DF20035B234 /* View */,
 				C40DD77E1E782DE70035B234 /* Model */,
@@ -154,6 +157,14 @@
 			name = Camera;
 			sourceTree = "<group>";
 		};
+		C4E9A0881E7949850040C5D9 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				C4E9A0891E7949C40040C5D9 /* Constants.swift */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -191,6 +202,7 @@
 					C40DD7641E78211A0035B234 = {
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = 69K5FUX4KS;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -283,6 +295,7 @@
 				C40DD76B1E78211A0035B234 /* MSLoginSignUpController.swift in Sources */,
 				C40DD7691E78211A0035B234 /* AppDelegate.swift in Sources */,
 				C40DD7861E7830580035B234 /* MSCameraViewController.swift in Sources */,
+				C4E9A08A1E7949C40040C5D9 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,6 +10,7 @@ import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 import Firebase
+import SwiftKeychainWrapper
 
 
 class MSLoginSignUpController: UIViewController {
@@ -23,6 +24,17 @@ class MSLoginSignUpController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        if let _ = KeychainWrapper.standard.string(forKey: KEY_UID) {
+            
+            performSegue(withIdentifier: "goToCamera", sender: nil)
+        }
+
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,6 +79,12 @@ class MSLoginSignUpController: UIViewController {
             else
             {
                 print("Successfully Authenticated with Firebase")
+                if let user = user {
+                    
+                   self.completeLogin(id: user.uid)
+                    
+                }
+                
             }
         })
     }
@@ -79,6 +97,9 @@ class MSLoginSignUpController: UIViewController {
                 if error == nil{
                     
                     print("Email User Authenticated with Firebase")
+                    if let user = user {
+                    self.completeLogin(id: user.uid)
+                    }
                 }
                 else{
                     
@@ -91,12 +112,23 @@ class MSLoginSignUpController: UIViewController {
                         else
                         {
                             print("Successfully authenticate user")
+                            if let user = user {
+                                self.completeLogin(id: user.uid)
+                            }
                         }
                     })
                 }
             })
         
         }
+        
+    }
+    
+    func completeLogin(id: String) {
+        
+         let keychainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
+        print("Data saved to Keychain: \(keychainResult)")
+        performSegue(withIdentifier: "goToCamera", sender: nil)
         
     }
 }
