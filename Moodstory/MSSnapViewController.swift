@@ -1,5 +1,5 @@
 //
-//  MSMessageListViewController.swift
+//  MSSnapViewController.swift
 //  Moodstory
 //
 //  Created by Muhammad Mustafa Saeed on 3/18/17.
@@ -8,26 +8,12 @@
 
 import UIKit
 
-class MSMessageListViewController: UIViewController {
+class MSSnapViewController: UIViewController {
 
-    @IBOutlet weak var menuButton: UIBarButtonItem!
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        if revealViewController() != nil {
-            //            revealViewController().rearViewRevealWidth = 62
-            menuButton.target = revealViewController()
-            menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
-            
-            
-            view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-            
-            
-        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,6 +21,10 @@ class MSMessageListViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func goBackToMessageView(_ sender: Any) {
+        
+        self.dismiss(animated: true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation

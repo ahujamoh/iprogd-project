@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12072"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -157,7 +158,9 @@
                         <color key="backgroundColor" red="0.243162763" green="0.76458714409999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="OM1-DO-1Hd">
-                        <barButtonItem key="leftBarButtonItem" image="menuIcon" id="ski-aw-Im7"/>
+                        <barButtonItem key="leftBarButtonItem" image="menuIcon" id="ski-aw-Im7">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="menuBarButton" destination="ski-aw-Im7" id="RLa-Zm-vhj"/>
@@ -268,7 +271,15 @@
                         <color key="backgroundColor" red="0.58077944390000003" green="0.67206407970000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="zSY-Cl-Rmm">
-                        <barButtonItem key="leftBarButtonItem" image="menuIcon" id="Pkd-rm-RrY"/>
+                        <barButtonItem key="leftBarButtonItem" image="menuIcon" id="Pkd-rm-RrY">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="cameraButton" id="E7K-Jc-EeX">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="ear-HV-pyb" kind="presentation" id="Jig-3f-jEg"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="menuButton" destination="Pkd-rm-RrY" id="lz0-HE-HTe"/>
@@ -277,6 +288,84 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IWr-nK-DbG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2434.7826086956525" y="308.96739130434787"/>
+        </scene>
+        <!--Snap View Controller-->
+        <scene sceneID="NFK-Q8-jH9">
+            <objects>
+                <viewController id="ear-HV-pyb" customClass="MSSnapViewController" customModule="Moodstory" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tnV-sS-0pX"/>
+                        <viewControllerLayoutGuide type="bottom" id="w2H-u8-DhZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="J5r-bQ-RcA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gEx-qr-k0y">
+                                <rect key="frame" x="177" y="639" width="61" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="61" id="7ru-JW-2iE"/>
+                                    <constraint firstAttribute="height" constant="65" id="ZqU-wU-uJh"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="snapButton"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OGT-9t-JP1">
+                                <rect key="frame" x="194" y="43" width="26" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="XZq-yu-dKj"/>
+                                    <constraint firstAttribute="width" constant="26" id="yEq-2F-wLU"/>
+                                </constraints>
+                                <state key="normal" image="moodstoryCoreIcon"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yjP-ok-pCV">
+                                <rect key="frame" x="352" y="44" width="31" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="YhI-EC-biN"/>
+                                    <constraint firstAttribute="width" constant="31" id="as0-Tu-i0Z"/>
+                                </constraints>
+                                <state key="normal" image="cameraIconSnap"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hhn-Wz-d2U">
+                                <rect key="frame" x="31" y="659.66666666666663" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="P6S-no-2Ap"/>
+                                    <constraint firstAttribute="height" constant="24" id="v2k-Cp-q9x"/>
+                                </constraints>
+                                <state key="normal" image="chatButton"/>
+                                <connections>
+                                    <action selector="goBackToMessageView:" destination="ear-HV-pyb" eventType="touchUpInside" id="wwA-rB-hUP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFk-Ka-Dxl">
+                                <rect key="frame" x="34" y="45" width="18" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="HjO-7o-aN7"/>
+                                    <constraint firstAttribute="width" constant="18" id="w9R-tE-C9A"/>
+                                </constraints>
+                                <state key="normal" image="flashButton"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hhn-Wz-d2U" firstAttribute="leading" secondItem="J5r-bQ-RcA" secondAttribute="leadingMargin" constant="11" id="54d-yu-Q91"/>
+                            <constraint firstItem="bFk-Ka-Dxl" firstAttribute="leading" secondItem="J5r-bQ-RcA" secondAttribute="leadingMargin" constant="14" id="9AW-eo-bTF"/>
+                            <constraint firstItem="OGT-9t-JP1" firstAttribute="centerY" secondItem="bFk-Ka-Dxl" secondAttribute="centerY" id="CIE-bt-cKh"/>
+                            <constraint firstItem="hhn-Wz-d2U" firstAttribute="centerY" secondItem="gEx-qr-k0y" secondAttribute="centerY" id="DAj-Y3-6QU"/>
+                            <constraint firstItem="hhn-Wz-d2U" firstAttribute="centerX" secondItem="bFk-Ka-Dxl" secondAttribute="centerX" id="NyZ-cF-gKF"/>
+                            <constraint firstItem="OGT-9t-JP1" firstAttribute="top" secondItem="tnV-sS-0pX" secondAttribute="bottom" constant="23" id="QHF-Qg-exT"/>
+                            <constraint firstItem="gEx-qr-k0y" firstAttribute="centerX" secondItem="J5r-bQ-RcA" secondAttribute="centerX" id="QPW-Nt-Tnp"/>
+                            <constraint firstItem="yjP-ok-pCV" firstAttribute="top" secondItem="tnV-sS-0pX" secondAttribute="bottom" constant="24" id="T4s-RW-Mvo"/>
+                            <constraint firstItem="w2H-u8-DhZ" firstAttribute="top" secondItem="gEx-qr-k0y" secondAttribute="bottom" constant="32" id="Vzm-yZ-ONa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yjP-ok-pCV" secondAttribute="trailing" constant="11" id="XOc-Hf-BcG"/>
+                            <constraint firstItem="bFk-Ka-Dxl" firstAttribute="top" secondItem="tnV-sS-0pX" secondAttribute="bottom" constant="25" id="oVv-I7-Y6M"/>
+                            <constraint firstItem="OGT-9t-JP1" firstAttribute="centerX" secondItem="J5r-bQ-RcA" secondAttribute="centerX" id="pBH-Nw-SuJ"/>
+                            <constraint firstItem="yjP-ok-pCV" firstAttribute="centerY" secondItem="bFk-Ka-Dxl" secondAttribute="centerY" id="sNf-1B-igy"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BXi-OB-ibP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3231.884057971015" y="307.33695652173918"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="d92-0z-kKJ">
@@ -298,12 +387,18 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cameraButton" width="23" height="18"/>
+        <image name="cameraIconSnap" width="29" height="24"/>
+        <image name="chatButton" width="24" height="24"/>
         <image name="fbSignUp" width="238" height="39"/>
+        <image name="flashButton" width="16" height="22"/>
         <image name="loginBackground" width="375" height="667"/>
         <image name="loginButtonBackground" width="238" height="40"/>
         <image name="menuIcon" width="22" height="22"/>
+        <image name="moodstoryCoreIcon" width="26" height="26"/>
         <image name="msLogo" width="231" height="50"/>
         <image name="profilePicture" width="640" height="400"/>
+        <image name="snapButton" width="54" height="62"/>
         <image name="textFieldBackground" width="238" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
