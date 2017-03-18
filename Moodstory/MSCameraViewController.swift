@@ -11,12 +11,28 @@ import Firebase
 import AVFoundation
 import SwiftKeychainWrapper
 
+
 class MSCameraViewController: UIViewController {
+   
+    @IBOutlet weak var menuBarButton: UIBarButtonItem!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        if revealViewController() != nil {
+            //            revealViewController().rearViewRevealWidth = 62
+            menuBarButton.target = revealViewController()
+            menuBarButton.action = #selector(SWRevealViewController.revealToggle(_:))
+            
+            
+            view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            
+            
+        }
+
     }
 
     override func didReceiveMemoryWarning() {
