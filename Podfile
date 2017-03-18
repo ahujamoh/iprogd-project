@@ -12,5 +12,6 @@ target 'Moodstory' do
   pod 'Firebase/Storage'
   pod 'SwiftKeychainWrapper'
   pod 'GoogleMaps'
+  pod 'GooglePlaces'
 
 end
