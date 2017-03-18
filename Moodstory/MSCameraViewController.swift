@@ -10,13 +10,21 @@ import UIKit
 import Firebase
 import AVFoundation
 import SwiftKeychainWrapper
+import GoogleMaps
 
 
 class MSCameraViewController: UIViewController {
    
     @IBOutlet weak var menuBarButton: UIBarButtonItem!
     
-
+    override func loadView() {
+        //currently setting just the location to singaport
+        let camera = GMSCameraPosition.camera(withLatitude: 1.285, longitude: 103.848, zoom: 12)
+        //putting the view on the place on the map
+        let mapView = GMSMapView.map(withFrame: .zero, camera: camera)
+        self.view = mapView
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
