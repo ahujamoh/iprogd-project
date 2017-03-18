@@ -28,6 +28,8 @@ class MSMessageListViewController: UIViewController {
             
             
         }
+        
+       self.navigationItem.title = "mood story"
     }
 
     override func didReceiveMemoryWarning() {

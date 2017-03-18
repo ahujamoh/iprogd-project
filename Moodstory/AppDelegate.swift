@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         UINavigationBar.appearance().barTintColor = UIColor(red: 0, green: 162/255, blue: 52/255, alpha: 1)
-        UINavigationBar.appearance().tintColor = UIColor(red: 0, green: 162/255, blue: 52/255, alpha: 1)
+        UINavigationBar.appearance().tintColor = UIColor.white
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
         
         // Firebase Configurations

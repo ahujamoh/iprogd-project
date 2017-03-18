@@ -268,7 +268,7 @@
                     <view key="view" contentMode="scaleToFill" id="Q5i-un-JEv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.58077944390000003" green="0.67206407970000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="zSY-Cl-Rmm">
                         <barButtonItem key="leftBarButtonItem" image="menuIcon" id="Pkd-rm-RrY">
