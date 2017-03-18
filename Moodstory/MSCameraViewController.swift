@@ -48,7 +48,7 @@ class MSCameraViewController: UIViewController {
             
         }
         
-        self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Avenir Next", size: 30)!]
+        self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Avenir Next", size: 30)!,NSForegroundColorAttributeName: UIColor.white]
         self.navigationItem.title = "mood story"
         
 
