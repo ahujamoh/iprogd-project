@@ -120,12 +120,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-436" y="11"/>
+            <point key="canvasLocation" x="-567" y="66"/>
         </scene>
-        <!--Camera View Controller-->
+        <!--Reveal View Controller-->
         <scene sceneID="Jrn-wJ-dr1">
             <objects>
-                <viewController id="ZOz-cu-1RP" customClass="MSCameraViewController" customModule="Moodstory" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ZOz-cu-1RP" customClass="SWRevealViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0wb-id-BSV"/>
                         <viewControllerLayoutGuide type="bottom" id="MJb-Sb-zEH"/>
@@ -155,17 +155,110 @@
                     </view>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="goToLoginScreen" id="kZC-QI-59C"/>
+                        <segue destination="RvA-4h-2l1" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="igr-hV-2Mi"/>
+                        <segue destination="eai-Pa-re2" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="qyb-3D-pRD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hVy-uY-hV0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="315.94202898550725" y="10.597826086956523"/>
+            <point key="canvasLocation" x="268" y="60"/>
+        </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="Ve4-mW-x6T">
+            <objects>
+                <tableViewController id="eai-Pa-re2" customClass="MSMenuViewController" customModule="Moodstory" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="1" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ODW-lT-7db">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="RnC-X3-Wuv">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="GRL-ZO-k5Z">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GRL-ZO-k5Z">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="t76-0I-met">
+                                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="t76-0I-met">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="2iJ-dv-gcw">
+                                        <rect key="frame" x="0.0" y="88" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2iJ-dv-gcw">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="eai-Pa-re2" id="pDt-Mu-kRY"/>
+                            <outlet property="delegate" destination="eai-Pa-re2" id="8k7-dC-fUM"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Pl-Oj-UcS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1483" y="350"/>
+        </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="RGn-O9-IfV">
+            <objects>
+                <viewController id="Hcf-b0-iwU" customClass="MSCameraViewController" customModule="Moodstory" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EMS-ub-uid"/>
+                        <viewControllerLayoutGuide type="bottom" id="2AO-ba-z4C"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5Tk-Qs-k3S">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.243162763" green="0.76458714409999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="OM1-DO-1Hd">
+                        <barButtonItem key="leftBarButtonItem" image="menuIcon" id="ski-aw-Im7"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="menuBarButton" destination="ski-aw-Im7" id="RLa-Zm-vhj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5D7-WD-tmv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2165" y="-338"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="eZW-6T-1f6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RvA-4h-2l1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Poi-Kw-RXg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Hcf-b0-iwU" kind="relationship" relationship="rootViewController" id="RtD-ye-mNH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WeW-ud-NdP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1483" y="-337"/>
         </scene>
     </scenes>
     <resources>
         <image name="fbSignUp" width="238" height="39"/>
         <image name="loginBackground" width="375" height="667"/>
         <image name="loginButtonBackground" width="238" height="40"/>
+        <image name="menuIcon" width="22" height="22"/>
         <image name="msLogo" width="231" height="50"/>
         <image name="textFieldBackground" width="238" height="40"/>
     </resources>
