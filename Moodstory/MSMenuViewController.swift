@@ -61,6 +61,11 @@ class MSMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return 80.0
+    }
+    
 
    /*
     // MARK: - Navigation
