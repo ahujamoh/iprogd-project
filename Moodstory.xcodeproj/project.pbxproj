@@ -20,6 +20,7 @@
 		C40DD78C1E7854380035B234 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C40DD7881E7854380035B234 /* FBSDKCoreKit.framework */; };
 		C40DD78D1E7854380035B234 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C40DD7891E7854380035B234 /* FBSDKLoginKit.framework */; };
 		C40DD78E1E7854380035B234 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C40DD78A1E7854380035B234 /* FBSDKShareKit.framework */; };
+		C4D69C811E7CDC8B00CB5783 /* MSMessageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D69C801E7CDC8B00CB5783 /* MSMessageListViewController.swift */; };
 		C4E9A08A1E7949C40040C5D9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E9A0891E7949C40040C5D9 /* Constants.swift */; };
 		C4E9A08F1E7CAEC20040C5D9 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4E9A08E1E7CAEC20040C5D9 /* SWRevealViewController.m */; };
 		C4E9A0921E7CB04C0040C5D9 /* MSMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E9A0911E7CB04C0040C5D9 /* MSMenuViewController.swift */; };
@@ -42,6 +43,7 @@
 		C40DD7881E7854380035B234 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		C40DD7891E7854380035B234 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		C40DD78A1E7854380035B234 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		C4D69C801E7CDC8B00CB5783 /* MSMessageListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSMessageListViewController.swift; sourceTree = "<group>"; };
 		C4E9A0891E7949C40040C5D9 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C4E9A08C1E7CAEC10040C5D9 /* Moodstory-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Moodstory-Bridging-Header.h"; sourceTree = "<group>"; };
 		C4E9A08D1E7CAEC20040C5D9 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 		C4E9A0901E7CB0250040C5D9 /* MenuController */ = {
 			isa = PBXGroup;
 			children = (
+				C4D69C801E7CDC8B00CB5783 /* MSMessageListViewController.swift */,
 				C4E9A0911E7CB04C0040C5D9 /* MSMenuViewController.swift */,
 			);
 			name = MenuController;
@@ -308,7 +311,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -320,6 +323,7 @@
 			files = (
 				C40DD76B1E78211A0035B234 /* MSLoginSignUpController.swift in Sources */,
 				C4E9A0921E7CB04C0040C5D9 /* MSMenuViewController.swift in Sources */,
+				C4D69C811E7CDC8B00CB5783 /* MSMessageListViewController.swift in Sources */,
 				C40DD7691E78211A0035B234 /* AppDelegate.swift in Sources */,
 				C4E9A08F1E7CAEC20040C5D9 /* SWRevealViewController.m in Sources */,
 				C40DD7861E7830580035B234 /* MSCameraViewController.swift in Sources */,
