@@ -220,25 +220,25 @@
                                 <rect key="frame" x="0.0" y="137" width="414" height="599"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="MSQ-N7-DYK">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="65" id="MSQ-N7-DYK">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MSQ-N7-DYK" id="cuL-Va-oe8">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="64.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilePicture" translatesAutoresizingMaskIntoConstraints="NO" id="1gk-Qp-vXQ">
-                                <rect key="frame" x="10" y="10" width="100" height="100"/>
+                                <rect key="frame" x="10" y="10" width="80" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="t5Q-we-9zU"/>
-                                    <constraint firstAttribute="height" constant="100" id="u3t-fs-rEK"/>
+                                    <constraint firstAttribute="width" constant="80" id="t5Q-we-9zU"/>
+                                    <constraint firstAttribute="height" constant="80" id="u3t-fs-rEK"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Muhammad Mustafa Saeed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C54-Kc-WL1">
-                                <rect key="frame" x="10" y="112" width="178.33333333333334" height="19.333333333333343"/>
+                                <rect key="frame" x="10" y="105" width="178.33333333333334" height="19.333333333333329"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="178.33000000000001" id="5n3-z5-bAQ"/>
                                     <constraint firstAttribute="height" constant="19.329999999999998" id="ioc-jZ-znw"/>
@@ -256,7 +256,7 @@
                             <constraint firstItem="fpc-38-4cR" firstAttribute="top" secondItem="w6h-aE-Vk8" secondAttribute="bottom" constant="117" id="LsC-rB-ziW"/>
                             <constraint firstItem="fpc-38-4cR" firstAttribute="leading" secondItem="qL3-gL-uex" secondAttribute="leading" id="M8r-eM-jIn"/>
                             <constraint firstItem="1gk-Qp-vXQ" firstAttribute="leading" secondItem="qL3-gL-uex" secondAttribute="leading" constant="10" id="fEB-AN-7cM"/>
-                            <constraint firstItem="C54-Kc-WL1" firstAttribute="top" secondItem="1gk-Qp-vXQ" secondAttribute="bottom" constant="2" id="qLz-n7-hh8"/>
+                            <constraint firstItem="C54-Kc-WL1" firstAttribute="top" secondItem="1gk-Qp-vXQ" secondAttribute="bottom" constant="15" id="qLz-n7-hh8"/>
                             <constraint firstItem="mNo-c7-y97" firstAttribute="top" secondItem="fpc-38-4cR" secondAttribute="bottom" id="raa-Dg-26e"/>
                         </constraints>
                     </view>
