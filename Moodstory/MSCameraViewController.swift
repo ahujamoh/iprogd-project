@@ -22,7 +22,7 @@ class MSCameraViewController: UIViewController {
     var currentLocation: CLLocation?
     var mapView: GMSMapView!
     var placesClient: GMSPlacesClient!
-    var zoomLevel: Float = 15.0
+    var zoomLevel: Float = 6.0
     
     // An array to hold the list of likely places.
     var likelyPlaces: [GMSPlace] = []
@@ -67,12 +67,18 @@ class MSCameraViewController: UIViewController {
             
             
             view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-            
-            
         }
-
+        displayMarkers()
     }
 
+    func displayMarkers() {
+        //(59.369396, 18.004532): Solna
+        let position = CLLocationCoordinate2D(latitude: 59.369396, longitude: 18.004532)
+        let marker = GMSMarker(position: position)
+        marker.title = "Hello World"
+        marker.map = mapView
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -110,6 +116,7 @@ extension MSCameraViewController: CLLocationManagerDelegate{
         } else {
             mapView.animate(to: camera)
         }
+        displayMarkers()
         
     }
     
