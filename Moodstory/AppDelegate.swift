@@ -9,7 +9,8 @@
 import UIKit
 import Firebase
 import FBSDKLoginKit
-
+import GoogleMaps
+import GooglePlaces
 
 
 @UIApplicationMain
@@ -27,6 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Facebook Api Configuration for Single Sign-On
          FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
+        //Setting google map api here
+        GMSPlacesClient.provideAPIKey(GOOGLE_MAPS_KEY)
+        GMSServices.provideAPIKey(GOOGLE_MAPS_KEY)
         
         return true
     }

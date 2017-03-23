@@ -9,3 +9,4 @@
 import UIKit
 
 let KEY_UID = "uid"
+let GOOGLE_MAPS_KEY = "AIzaSyCuOsyy--bz0Jo6F8OPhG45SJgBF45cOcM"
