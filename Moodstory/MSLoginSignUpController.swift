@@ -11,6 +11,7 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 import Firebase
 import SwiftKeychainWrapper
+import FillableLoaders
 
 
 extension UIViewController
@@ -37,6 +38,8 @@ class MSLoginSignUpController: UIViewController {
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
+    var loader: FillableLoader = FillableLoader()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,12 +51,26 @@ class MSLoginSignUpController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         
+        super.viewDidAppear(animated)
+        //loader = PlainLoader.showLoader(with: path())
+        
+        
         if let _ = KeychainWrapper.standard.string(forKey: KEY_UID) {
             
             performSegue(withIdentifier: "goToCamera", sender: nil)
         }
 
         
+    }
+    
+    func path() -> CGPath{
+        return Paths.logoPath()
+    }
+    
+    func presentFillableLoader()
+    {
+        loader.removeLoader(false)
+        loader = PlainLoader.showLoader(with: path())
     }
 
     override func didReceiveMemoryWarning() {
@@ -109,6 +126,9 @@ class MSLoginSignUpController: UIViewController {
     }
 
     @IBAction func loginTapped(_ sender: Any) {
+        
+        self.presentFillableLoader()
+        
         if let email = emailField.text, let pwd = passwordField.text{
             
             FIRAuth.auth()?.signIn(withEmail: email, password: pwd, completion: { (user, error) in
@@ -145,7 +165,8 @@ class MSLoginSignUpController: UIViewController {
     
     func completeLogin(id: String) {
         
-         let keychainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
+        loader.removeLoader(true)
+        let keychainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
         print("Data saved to Keychain: \(keychainResult)")
         performSegue(withIdentifier: "goToCamera", sender: nil)
         
