@@ -102,6 +102,8 @@ class MSCameraViewController: UIViewController {
 
 }
 
+ // PRAGMA - google classes
+
 extension MSCameraViewController: CLLocationManagerDelegate{
     
     // Handle incoming location events.

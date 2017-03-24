@@ -20,6 +20,7 @@
 		C40DD78C1E7854380035B234 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C40DD7881E7854380035B234 /* FBSDKCoreKit.framework */; };
 		C40DD78D1E7854380035B234 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C40DD7891E7854380035B234 /* FBSDKLoginKit.framework */; };
 		C40DD78E1E7854380035B234 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C40DD78A1E7854380035B234 /* FBSDKShareKit.framework */; };
+		C4755E221E85329200113582 /* logoBezierPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4755E211E85329200113582 /* logoBezierPath.swift */; };
 		C4D69C811E7CDC8B00CB5783 /* MSMessageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D69C801E7CDC8B00CB5783 /* MSMessageListViewController.swift */; };
 		C4D69C831E7CE78C00CB5783 /* MSSnapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D69C821E7CE78C00CB5783 /* MSSnapViewController.swift */; };
 		C4E9A08A1E7949C40040C5D9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E9A0891E7949C40040C5D9 /* Constants.swift */; };
@@ -44,6 +45,7 @@
 		C40DD7881E7854380035B234 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		C40DD7891E7854380035B234 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		C40DD78A1E7854380035B234 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		C4755E211E85329200113582 /* logoBezierPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = logoBezierPath.swift; sourceTree = "<group>"; };
 		C4D69C801E7CDC8B00CB5783 /* MSMessageListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSMessageListViewController.swift; sourceTree = "<group>"; };
 		C4D69C821E7CE78C00CB5783 /* MSSnapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSSnapViewController.swift; sourceTree = "<group>"; };
 		C4E9A0891E7949C40040C5D9 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 		C40DD77F1E782DF20035B234 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C4755E211E85329200113582 /* logoBezierPath.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				C4D69C811E7CDC8B00CB5783 /* MSMessageListViewController.swift in Sources */,
 				C40DD7691E78211A0035B234 /* AppDelegate.swift in Sources */,
 				C4E9A08F1E7CAEC20040C5D9 /* SWRevealViewController.m in Sources */,
+				C4755E221E85329200113582 /* logoBezierPath.swift in Sources */,
 				C40DD7861E7830580035B234 /* MSCameraViewController.swift in Sources */,
 				C4D69C831E7CE78C00CB5783 /* MSSnapViewController.swift in Sources */,
 				C4E9A08A1E7949C40040C5D9 /* Constants.swift in Sources */,
@@ -462,7 +466,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Moodstory/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hcid.Moodstory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -484,7 +488,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Moodstory/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hcid.Moodstory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
