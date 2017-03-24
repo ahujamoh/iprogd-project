@@ -13,6 +13,23 @@ import Firebase
 import SwiftKeychainWrapper
 
 
+extension UIViewController
+{
+    func hideKeyboard()
+    {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(UIViewController.dismissKeyboard))
+        
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard()
+    {
+        view.endEditing(true)
+    }
+}
+
 class MSLoginSignUpController: UIViewController {
     
     
@@ -24,6 +41,8 @@ class MSLoginSignUpController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        self.hideKeyboard()
         
     }
     
@@ -131,5 +150,9 @@ class MSLoginSignUpController: UIViewController {
         performSegue(withIdentifier: "goToCamera", sender: nil)
         
     }
+    
+    
+   
+    
 }
 
