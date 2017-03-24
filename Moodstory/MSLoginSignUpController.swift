@@ -11,7 +11,25 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 import Firebase
 import SwiftKeychainWrapper
+import FillableLoaders
 
+
+extension UIViewController
+{
+    func hideKeyboard()
+    {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(UIViewController.dismissKeyboard))
+        
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard()
+    {
+        view.endEditing(true)
+    }
+}
 
 class MSLoginSignUpController: UIViewController {
     
@@ -20,20 +38,41 @@ class MSLoginSignUpController: UIViewController {
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
+    var loader: FillableLoader = FillableLoader()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        self.hideKeyboard()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        
+        super.viewDidAppear(animated)
+        //loader = PlainLoader.showLoader(with: path())
+        
         
         if let _ = KeychainWrapper.standard.string(forKey: KEY_UID) {
             
             performSegue(withIdentifier: "goToCamera", sender: nil)
         }
 
+        
+    }
+    
+    func path() -> CGPath{
+        return Paths.logoPath()
+    }
+    
+    func presentFillableLoader()
+    {
+        loader.removeLoader(false)
+        loader = PlainLoader.showLoader(with: path())
+        loader.loaderColor = UIColor.init(colorLiteralRed: 0.0/255.0, green: 152.0/255.0, blue: 52.0/255.0, alpha: 1.0)
+        loader.duration = 20
         
     }
 
@@ -90,6 +129,9 @@ class MSLoginSignUpController: UIViewController {
     }
 
     @IBAction func loginTapped(_ sender: Any) {
+        
+        self.presentFillableLoader()
+        
         if let email = emailField.text, let pwd = passwordField.text{
             
             FIRAuth.auth()?.signIn(withEmail: email, password: pwd, completion: { (user, error) in
@@ -126,10 +168,15 @@ class MSLoginSignUpController: UIViewController {
     
     func completeLogin(id: String) {
         
-         let keychainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
+        loader.removeLoader(true)
+        let keychainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
         print("Data saved to Keychain: \(keychainResult)")
         performSegue(withIdentifier: "goToCamera", sender: nil)
         
     }
+    
+    
+   
+    
 }
 

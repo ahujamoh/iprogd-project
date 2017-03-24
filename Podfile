@@ -13,5 +13,6 @@ target 'Moodstory' do
   pod 'SwiftKeychainWrapper'
   pod 'GoogleMaps'
   pod 'GooglePlaces'
+  pod 'FillableLoaders', '~>1.3.0'
 
 end
