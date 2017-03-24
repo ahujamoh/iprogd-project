@@ -13,6 +13,23 @@ import Firebase
 //import SwiftKeychainWrapper
 
 
+extension UIViewController
+{
+    func hideKeyboard()
+    {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(UIViewController.dismissKeyboard))
+        
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard()
+    {
+        view.endEditing(true)
+    }
+}
+
 class MSLoginSignUpController: UIViewController {
     
     
@@ -40,6 +57,8 @@ class MSLoginSignUpController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWasShown), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         
+        self.hideKeyboard()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -49,6 +68,19 @@ class MSLoginSignUpController: UIViewController {
 //            performSegue(withIdentifier: "goToCamera", sender: nil)
 //        }
 
+        
+    }
+    
+    func path() -> CGPath{
+        return Paths.logoPath()
+    }
+    
+    func presentFillableLoader()
+    {
+        loader.removeLoader(false)
+        loader = PlainLoader.showLoader(with: path())
+        loader.loaderColor = UIColor.init(colorLiteralRed: 0.0/255.0, green: 152.0/255.0, blue: 52.0/255.0, alpha: 1.0)
+        loader.duration = 20
         
     }
 
@@ -105,6 +137,9 @@ class MSLoginSignUpController: UIViewController {
     }
 
     @IBAction func loginTapped(_ sender: Any) {
+        
+        self.presentFillableLoader()
+        
         if let email = emailField.text, let pwd = passwordField.text{
             
             FIRAuth.auth()?.signIn(withEmail: email, password: pwd, completion: { (user, error) in
@@ -146,5 +181,9 @@ class MSLoginSignUpController: UIViewController {
 //        performSegue(withIdentifier: "goToCamera", sender: nil)
         
     }
+    
+    
+   
+    
 }
 

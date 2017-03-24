@@ -69,6 +69,9 @@ class MSCameraViewController: UIViewController {
             view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         displayMarkers()
+        
+        self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Avenir Next", size: 30)!,NSForegroundColorAttributeName: UIColor.white]
+        self.navigationItem.title = "mood story"
     }
 
     func displayMarkers() {
@@ -98,6 +101,8 @@ class MSCameraViewController: UIViewController {
     
 
 }
+
+ // PRAGMA - google classes
 
 extension MSCameraViewController: CLLocationManagerDelegate{
     
