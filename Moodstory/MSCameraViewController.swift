@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 import AVFoundation
-import SwiftKeychainWrapper
+//import SwiftKeychainWrapper
 import GoogleMaps
 import GooglePlaces
 
@@ -90,8 +90,8 @@ class MSCameraViewController: UIViewController {
        // TODO: Signout from Firebase and remove string from keychain
         
         
-        let keychainResult = KeychainWrapper.standard.removeObject(forKey: KEY_UID)
-        print("ID removed from keyhain : \(keychainResult)")
+  //      let keychainResult = KeychainWrapper.standard.removeObject(forKey: KEY_UID)
+       // print("ID removed from keyhain : \(keychainResult)")
         try! FIRAuth.auth()?.signOut()
         performSegue(withIdentifier: "goToLoginScreen", sender: nil)
     }

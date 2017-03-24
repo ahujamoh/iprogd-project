@@ -10,7 +10,7 @@ import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 import Firebase
-import SwiftKeychainWrapper
+//import SwiftKeychainWrapper
 
 
 class MSLoginSignUpController: UIViewController {
@@ -20,19 +20,34 @@ class MSLoginSignUpController: UIViewController {
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
+    @IBOutlet weak var maiContainer: UIView!
+    
+    
+    func keyboardWasShown(notification: NSNotification) {
+        let info = notification.userInfo!
+        let _: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+ //           if self.mainContainer.frame.origin.y == 125{
+                self.maiContainer.frame.origin.y -= 100
+  //          }
+        }
+        
+        }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWasShown), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
         
-        if let _ = KeychainWrapper.standard.string(forKey: KEY_UID) {
-            
-            performSegue(withIdentifier: "goToCamera", sender: nil)
-        }
+//        if let _ = KeychainWrapper.standard.string(forKey: KEY_UID) {
+//            
+//            performSegue(withIdentifier: "goToCamera", sender: nil)
+//        }
 
         
     }
@@ -126,9 +141,9 @@ class MSLoginSignUpController: UIViewController {
     
     func completeLogin(id: String) {
         
-         let keychainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
-        print("Data saved to Keychain: \(keychainResult)")
-        performSegue(withIdentifier: "goToCamera", sender: nil)
+//         let keychainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
+//        print("Data saved to Keychain: \(keychainResult)")
+//        performSegue(withIdentifier: "goToCamera", sender: nil)
         
     }
 }
