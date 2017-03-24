@@ -71,6 +71,9 @@ class MSLoginSignUpController: UIViewController {
     {
         loader.removeLoader(false)
         loader = PlainLoader.showLoader(with: path())
+        loader.loaderColor = UIColor.init(colorLiteralRed: 0.0/255.0, green: 152.0/255.0, blue: 52.0/255.0, alpha: 1.0)
+        loader.duration = 20
+        
     }
 
     override func didReceiveMemoryWarning() {
