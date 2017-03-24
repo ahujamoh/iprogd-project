@@ -11,6 +11,7 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 import Firebase
 //import SwiftKeychainWrapper
+import FillableLoaders
 
 
 extension UIViewController
@@ -39,6 +40,7 @@ class MSLoginSignUpController: UIViewController {
     
     @IBOutlet weak var maiContainer: UIView!
     
+    var loader: FillableLoader = FillableLoader()
     
     func keyboardWasShown(notification: NSNotification) {
         let info = notification.userInfo!
