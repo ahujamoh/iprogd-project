@@ -8,12 +8,24 @@
 
 import UIKit
 
-class MSFriendsListViewController: UIViewController {
+class MSFriendsListViewController: UITableViewController {
 
+    
+    
+    @IBOutlet weak var menuBarButton: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if revealViewController() != nil {
+            menuBarButton.target = revealViewController()
+            menuBarButton.action = #selector(SWRevealViewController.revealToggle(_:))
+            
+            
+            view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {

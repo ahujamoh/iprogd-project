@@ -277,7 +277,7 @@
         <!--Testing the friends list-->
         <scene sceneID="dK9-t0-eMi">
             <objects>
-                <tableViewController id="Caq-Ut-77K" customClass="MS" sceneMemberID="viewController">
+                <tableViewController id="Caq-Ut-77K" customClass="MSFriendsListViewController" customModule="Moodstory" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="TDq-hr-f5T">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -300,6 +300,9 @@
                     <navigationItem key="navigationItem" title="Testing the friends list" id="P0M-8r-3Xx">
                         <barButtonItem key="leftBarButtonItem" image="menuIcon" id="MWQ-Eg-L69"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="menuBarButton" destination="MWQ-Eg-L69" id="F8M-lh-n5B"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ar6-Xn-jE9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
