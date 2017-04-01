@@ -8,11 +8,15 @@
 
 import UIKit
 
-class MSFriendsListViewController: UITableViewController {
+class MSFriendsListViewController: UIViewController {
 
     
     
+//    @IBOutlet weak var menuBarButton: UIBarButtonItem!
+    
+    
     @IBOutlet weak var menuBarButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
