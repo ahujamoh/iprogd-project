@@ -26,6 +26,7 @@
 		C4E9A08A1E7949C40040C5D9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E9A0891E7949C40040C5D9 /* Constants.swift */; };
 		C4E9A08F1E7CAEC20040C5D9 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4E9A08E1E7CAEC20040C5D9 /* SWRevealViewController.m */; };
 		C4E9A0921E7CB04C0040C5D9 /* MSMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E9A0911E7CB04C0040C5D9 /* MSMenuViewController.swift */; };
+		E467AF361E8FDDF800F69828 /* MSFriendsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E467AF351E8FDDF800F69828 /* MSFriendsListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		C4E9A08E1E7CAEC20040C5D9 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		C4E9A0911E7CB04C0040C5D9 /* MSMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSMenuViewController.swift; sourceTree = "<group>"; };
 		D8D63419375C6490080DC587 /* Pods_Moodstory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moodstory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E467AF351E8FDDF800F69828 /* MSFriendsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSFriendsListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +198,7 @@
 			children = (
 				C4D69C801E7CDC8B00CB5783 /* MSMessageListViewController.swift */,
 				C4E9A0911E7CB04C0040C5D9 /* MSMenuViewController.swift */,
+				E467AF351E8FDDF800F69828 /* MSFriendsListViewController.swift */,
 			);
 			name = MenuController;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				C40DD7691E78211A0035B234 /* AppDelegate.swift in Sources */,
 				C4E9A08F1E7CAEC20040C5D9 /* SWRevealViewController.m in Sources */,
 				C4755E221E85329200113582 /* logoBezierPath.swift in Sources */,
+				E467AF361E8FDDF800F69828 /* MSFriendsListViewController.swift in Sources */,
 				C40DD7861E7830580035B234 /* MSCameraViewController.swift in Sources */,
 				C4D69C831E7CE78C00CB5783 /* MSSnapViewController.swift in Sources */,
 				C4E9A08A1E7949C40040C5D9 /* Constants.swift in Sources */,
