@@ -10,9 +10,20 @@ import UIKit
 
 class MSConversationViewController: UIViewController {
 
+    @IBOutlet weak var menuBarButton: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Do any additional setup after loading the view.
+        
+        if revealViewController() != nil {
+            menuBarButton.target = revealViewController()
+            menuBarButton.action = #selector(SWRevealViewController.revealToggle(_:))
+            view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            
+            
+        }
+        
         // Do any additional setup after loading the view.
     }
 

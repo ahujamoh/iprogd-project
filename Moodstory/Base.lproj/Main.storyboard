@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -378,6 +377,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="menuBarButton" destination="Rch-9p-ixZ" id="uSB-jN-Jdc"/>
                         <segue destination="2Gr-BJ-czh" kind="show" id="iry-fd-a0Z"/>
                     </connections>
                 </viewController>
@@ -450,7 +450,7 @@
                                         <rect key="frame" x="0.0" y="72" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yzi-Jw-p4V" id="bhv-of-oZH">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5vT-jc-A4c" userLabel="Message Background">
@@ -500,19 +500,50 @@
                     <rect key="frame" x="0.0" y="0.0" width="417" height="152"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <visualEffectView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eWd-4F-0RK">
-                            <rect key="frame" x="77" y="0.0" width="378" height="152"/>
+                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eWd-4F-0RK">
+                            <rect key="frame" x="0.0" y="0.0" width="417" height="152"/>
                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="g4m-ix-38N">
-                                <rect key="frame" x="0.0" y="0.0" width="378" height="152"/>
+                                <rect key="frame" x="0.0" y="0.0" width="417" height="152"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </view>
                             <blurEffect style="light"/>
                         </visualEffectView>
                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="13z-5U-uxE">
-                            <rect key="frame" x="42.333333333333343" y="51.666666666666671" width="333.66666666666663" height="50.000000000000014"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="50" id="Sqq-bI-h3m"/>
-                            </constraints>
+                            <rect key="frame" x="145.33333333333331" y="64.333333333333329" width="127.99999999999994" height="25"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ot0-CI-ItC">
+                                    <rect key="frame" x="0.0" y="0.0" width="32" height="25"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="25" id="8WX-u8-wXG"/>
+                                        <constraint firstAttribute="width" constant="32" id="PX2-mD-U6O"/>
+                                    </constraints>
+                                    <state key="normal" backgroundImage="selectMessage"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZnO-7f-CM1">
+                                    <rect key="frame" x="32" y="0.0" width="32" height="25"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="25" id="BCn-k6-cfa"/>
+                                        <constraint firstAttribute="width" constant="32" id="S6y-qq-77Z"/>
+                                    </constraints>
+                                    <state key="normal" backgroundImage="selectPhoto"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ox-Xq-L12">
+                                    <rect key="frame" x="64" y="0.0" width="32" height="25"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="32" id="7y9-Xg-2i4"/>
+                                        <constraint firstAttribute="height" constant="25" id="qlK-2l-Uog"/>
+                                    </constraints>
+                                    <state key="normal" backgroundImage="selectCamera"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Gq-yL-a3n">
+                                    <rect key="frame" x="96" y="0.0" width="31.999999999999972" height="25"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="32" id="kp6-G7-2CR"/>
+                                        <constraint firstAttribute="height" constant="25" id="ofm-TP-Dfk"/>
+                                    </constraints>
+                                    <state key="normal" backgroundImage="selectLocation"/>
+                                </button>
+                            </subviews>
                         </stackView>
                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="des-ZB-u75" userLabel="Container View">
                             <rect key="frame" x="0.0" y="103" width="378" height="49"/>
@@ -546,42 +577,9 @@
                                 <constraint firstAttribute="height" constant="1" id="tDd-fu-Q2N"/>
                             </constraints>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ot0-CI-ItC">
-                            <rect key="frame" x="72" y="61" width="32" height="25"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="25" id="8WX-u8-wXG"/>
-                                <constraint firstAttribute="width" constant="32" id="PX2-mD-U6O"/>
-                            </constraints>
-                            <state key="normal" backgroundImage="selectMessage"/>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZnO-7f-CM1">
-                            <rect key="frame" x="145" y="61" width="32" height="25"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="25" id="BCn-k6-cfa"/>
-                                <constraint firstAttribute="width" constant="32" id="S6y-qq-77Z"/>
-                            </constraints>
-                            <state key="normal" backgroundImage="selectPhoto"/>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Gq-yL-a3n">
-                            <rect key="frame" x="321" y="61" width="32" height="25"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="32" id="kp6-G7-2CR"/>
-                                <constraint firstAttribute="height" constant="25" id="ofm-TP-Dfk"/>
-                            </constraints>
-                            <state key="normal" backgroundImage="selectLocation"/>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ox-Xq-L12">
-                            <rect key="frame" x="240" y="61" width="32" height="25"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="32" id="7y9-Xg-2i4"/>
-                                <constraint firstAttribute="height" constant="25" id="qlK-2l-Uog"/>
-                            </constraints>
-                            <state key="normal" backgroundImage="selectCamera"/>
-                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="13z-5U-uxE" firstAttribute="width" secondItem="KUa-7F-GHQ" secondAttribute="width" multiplier="0.8" id="2Kv-qq-ljt"/>
                         <constraint firstItem="eWd-4F-0RK" firstAttribute="width" secondItem="KUa-7F-GHQ" secondAttribute="width" id="3oG-Jj-BOe"/>
                         <constraint firstItem="13z-5U-uxE" firstAttribute="centerY" secondItem="KUa-7F-GHQ" secondAttribute="centerY" id="bhT-ja-B9b"/>
                         <constraint firstAttribute="trailing" secondItem="zzk-cn-4bp" secondAttribute="trailing" id="hQ9-q8-XwM"/>
