@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MSConversationViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MSConversationViewController: UIViewController {
 
     @IBOutlet weak var menuBarButton: UIBarButtonItem!
     
