@@ -10,7 +10,7 @@ import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 import Firebase
-import SwiftKeychainWrapper
+//import SwiftKeychainWrapper
 import FillableLoaders
 
 
@@ -38,12 +38,26 @@ class MSLoginSignUpController: UIViewController {
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
+    @IBOutlet weak var maiContainer: UIView!
+    
     var loader: FillableLoader = FillableLoader()
     
+    func keyboardWasShown(notification: NSNotification) {
+        let info = notification.userInfo!
+        let _: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+ //           if self.mainContainer.frame.origin.y == 125{
+                self.maiContainer.frame.origin.y -= 100
+  //          }
+        }
+        
+        }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWasShown), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         
         self.hideKeyboard()
         
@@ -51,14 +65,10 @@ class MSLoginSignUpController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         
-        super.viewDidAppear(animated)
-        //loader = PlainLoader.showLoader(with: path())
-        
-        
-        if let _ = KeychainWrapper.standard.string(forKey: KEY_UID) {
-            
-            performSegue(withIdentifier: "goToCamera", sender: nil)
-        }
+//        if let _ = KeychainWrapper.standard.string(forKey: KEY_UID) {
+//            
+//            performSegue(withIdentifier: "goToCamera", sender: nil)
+//        }
 
         
     }
@@ -169,8 +179,8 @@ class MSLoginSignUpController: UIViewController {
     func completeLogin(id: String) {
         
         loader.removeLoader(true)
-        let keychainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
-        print("Data saved to Keychain: \(keychainResult)")
+//         let keychainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
+//        print("Data saved to Keychain: \(keychainResult)")
         performSegue(withIdentifier: "goToCamera", sender: nil)
         
     }
