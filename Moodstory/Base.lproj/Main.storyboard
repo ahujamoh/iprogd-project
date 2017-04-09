@@ -500,6 +500,14 @@
                     <rect key="frame" x="0.0" y="0.0" width="417" height="152"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
+                        <visualEffectView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eWd-4F-0RK">
+                            <rect key="frame" x="77" y="0.0" width="378" height="152"/>
+                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="g4m-ix-38N">
+                                <rect key="frame" x="0.0" y="0.0" width="378" height="152"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </view>
+                            <blurEffect style="light"/>
+                        </visualEffectView>
                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="13z-5U-uxE">
                             <rect key="frame" x="42.333333333333343" y="51.666666666666671" width="333.66666666666663" height="50.000000000000014"/>
                             <constraints>
@@ -538,14 +546,38 @@
                                 <constraint firstAttribute="height" constant="1" id="tDd-fu-Q2N"/>
                             </constraints>
                         </view>
-                        <visualEffectView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eWd-4F-0RK">
-                            <rect key="frame" x="77" y="0.0" width="378" height="152"/>
-                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="g4m-ix-38N">
-                                <rect key="frame" x="0.0" y="0.0" width="378" height="152"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </view>
-                            <blurEffect style="light"/>
-                        </visualEffectView>
+                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ot0-CI-ItC">
+                            <rect key="frame" x="72" y="61" width="32" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="25" id="8WX-u8-wXG"/>
+                                <constraint firstAttribute="width" constant="32" id="PX2-mD-U6O"/>
+                            </constraints>
+                            <state key="normal" backgroundImage="selectMessage"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZnO-7f-CM1">
+                            <rect key="frame" x="145" y="61" width="32" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="25" id="BCn-k6-cfa"/>
+                                <constraint firstAttribute="width" constant="32" id="S6y-qq-77Z"/>
+                            </constraints>
+                            <state key="normal" backgroundImage="selectPhoto"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Gq-yL-a3n">
+                            <rect key="frame" x="321" y="61" width="32" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="32" id="kp6-G7-2CR"/>
+                                <constraint firstAttribute="height" constant="25" id="ofm-TP-Dfk"/>
+                            </constraints>
+                            <state key="normal" backgroundImage="selectLocation"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ox-Xq-L12">
+                            <rect key="frame" x="240" y="61" width="32" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="32" id="7y9-Xg-2i4"/>
+                                <constraint firstAttribute="height" constant="25" id="qlK-2l-Uog"/>
+                            </constraints>
+                            <state key="normal" backgroundImage="selectCamera"/>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -920,6 +952,10 @@
         <image name="msLogo" width="231" height="50"/>
         <image name="profile pic" width="100" height="100"/>
         <image name="profilePicture" width="640" height="400"/>
+        <image name="selectCamera" width="32" height="25"/>
+        <image name="selectLocation" width="32" height="25"/>
+        <image name="selectMessage" width="32" height="25"/>
+        <image name="selectPhoto" width="32" height="25"/>
         <image name="send" width="32" height="25"/>
         <image name="snapButton" width="54" height="62"/>
         <image name="textFieldBackground" width="238" height="40"/>
