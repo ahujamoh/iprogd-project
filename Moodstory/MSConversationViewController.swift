@@ -17,6 +17,17 @@ class MSConversationViewController: UIViewController, UITableViewDelegate, UITab
     var items = [Conversation]()
     var selectedUser: User?
     
+    func showContacts(){
+        
+    }
+    
+    func setCreateConversation(){
+    //right bar button
+        let icon = UIImage.init(named: "send")?.withRenderingMode(.alwaysOriginal)
+        let rightButton = UIBarButtonItem.init(image: icon!, style: .plain, target: self, action: #selector(MSConversationViewController.showContacts))
+        self.navigationItem.rightBarButtonItem = rightButton
+    }
+    
     func fetchData(){
         Conversation.showConversations { (conversations) in
             self.items = conversations
@@ -102,7 +113,7 @@ class MSConversationViewController: UIViewController, UITableViewDelegate, UITab
             
             
         }
-        
+        self.setCreateConversation()
         self.fetchData()
         // Do any additional setup after loading the view.
     }
