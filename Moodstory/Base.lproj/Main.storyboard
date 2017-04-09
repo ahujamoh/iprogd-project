@@ -383,10 +383,10 @@
             </objects>
             <point key="canvasLocation" x="2572" y="1134.7826086956522"/>
         </scene>
-        <!--View Controller-->
+        <!--Chat-->
         <scene sceneID="28L-Gd-g0Y">
             <objects>
-                <viewController id="2Gr-BJ-czh" sceneMemberID="viewController">
+                <viewController title="Chat" id="2Gr-BJ-czh" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Dtt-96-ZA0"/>
                         <viewControllerLayoutGuide type="bottom" id="YNM-hH-iBv"/>
@@ -406,20 +406,25 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="adf" translatesAutoresizingMaskIntoConstraints="NO" id="IQh-ia-14G" userLabel="Message Background">
-                                                    <rect key="frame" x="67" y="1" width="74" height="39"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" restorationIdentifier="adf" translatesAutoresizingMaskIntoConstraints="NO" id="IQh-ia-14G" userLabel="Message Background">
+                                                    <rect key="frame" x="67" y="6" width="74" height="31.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="300" id="ej2-XP-gdJ"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="e6f-5o-mcx" userLabel="Message">
-                                                    <rect key="frame" x="68" y="4" width="56" height="36"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="e6f-5o-mcx" userLabel="Message">
+                                                    <rect key="frame" x="68" y="6" width="56" height="31.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="300" id="7qL-Hi-yFD"/>
+                                                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="250" id="Bmf-LC-bUc"/>
+                                                    </constraints>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ArS-W4-7eg" userLabel="Profile Pic">
-                                                    <rect key="frame" x="10" y="4" width="36" height="36"/>
+                                                    <rect key="frame" x="10" y="1.5" width="36" height="36"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="36" id="5Fc-Qg-umi"/>
                                                         <constraint firstAttribute="width" constant="36" id="5op-95-2W3"/>
@@ -427,8 +432,15 @@
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="ArS-W4-7eg" firstAttribute="centerY" secondItem="o1g-2Q-aHX" secondAttribute="centerY" id="ICT-kR-pQf"/>
+                                                <constraint firstItem="e6f-5o-mcx" firstAttribute="centerY" secondItem="IQh-ia-14G" secondAttribute="centerY" id="1Xi-1x-Fs2"/>
+                                                <constraint firstItem="IQh-ia-14G" firstAttribute="width" secondItem="e6f-5o-mcx" secondAttribute="width" constant="10" id="GCC-DI-uVm"/>
                                                 <constraint firstItem="ArS-W4-7eg" firstAttribute="leading" secondItem="o1g-2Q-aHX" secondAttribute="leading" constant="10" id="Tt5-rn-jFa"/>
+                                                <constraint firstItem="e6f-5o-mcx" firstAttribute="centerX" secondItem="IQh-ia-14G" secondAttribute="centerX" id="bja-FG-z4S"/>
+                                                <constraint firstItem="e6f-5o-mcx" firstAttribute="height" secondItem="IQh-ia-14G" secondAttribute="height" id="cEf-bp-oW6"/>
+                                                <constraint firstItem="IQh-ia-14G" firstAttribute="leading" secondItem="ArS-W4-7eg" secondAttribute="trailing" constant="10" id="ghO-g3-JJW"/>
+                                                <constraint firstAttribute="bottom" secondItem="ArS-W4-7eg" secondAttribute="bottom" constant="6" id="iFL-uw-axT"/>
+                                                <constraint firstItem="e6f-5o-mcx" firstAttribute="top" secondItem="o1g-2Q-aHX" secondAttribute="top" constant="6" id="vqP-Lf-hSJ"/>
+                                                <constraint firstItem="IQh-ia-14G" firstAttribute="bottom" secondItem="ArS-W4-7eg" secondAttribute="bottom" id="wy6-LE-Lei"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -438,6 +450,34 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yzi-Jw-p4V" id="bhv-of-oZH">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5vT-jc-A4c" userLabel="Message Background">
+                                                    <rect key="frame" x="199" y="6" width="108" height="31.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="300" id="0kc-kf-phV"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="AdK-GV-qqa" userLabel="Message">
+                                                    <rect key="frame" x="219" y="6" width="88" height="31.5"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="250" id="jnZ-TI-5Xw"/>
+                                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="300" id="vPz-HE-dFG"/>
+                                                    </constraints>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="AdK-GV-qqa" firstAttribute="centerY" secondItem="5vT-jc-A4c" secondAttribute="centerY" id="13T-tL-vdq"/>
+                                                <constraint firstAttribute="trailing" secondItem="5vT-jc-A4c" secondAttribute="trailing" constant="15" id="4rA-n4-oU6"/>
+                                                <constraint firstItem="AdK-GV-qqa" firstAttribute="centerX" secondItem="5vT-jc-A4c" secondAttribute="centerX" id="IXP-db-CtX"/>
+                                                <constraint firstItem="AdK-GV-qqa" firstAttribute="top" secondItem="bhv-of-oZH" secondAttribute="top" constant="6" id="N5G-eO-WVn"/>
+                                                <constraint firstAttribute="bottom" secondItem="5vT-jc-A4c" secondAttribute="bottom" constant="6" id="Srh-CT-Sj5"/>
+                                                <constraint firstItem="AdK-GV-qqa" firstAttribute="height" secondItem="5vT-jc-A4c" secondAttribute="height" id="cQB-2g-gRR"/>
+                                                <constraint firstItem="5vT-jc-A4c" firstAttribute="width" secondItem="AdK-GV-qqa" secondAttribute="width" constant="10" id="yDy-pf-sCf"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
