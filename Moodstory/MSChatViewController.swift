@@ -10,6 +10,11 @@ import UIKit
 
 class MSChatViewController: UIViewController {
 
+    @IBOutlet var inputBar: UIView!
+    @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var inputTextField: UITextField!
+    
     var items = [Message]()
     var currentUser: User?
     override func viewDidLoad() {

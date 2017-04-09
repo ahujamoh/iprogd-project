@@ -495,6 +495,11 @@
                             <constraint firstItem="pew-W6-AvI" firstAttribute="leading" secondItem="27z-ZG-e7b" secondAttribute="leading" id="vhq-Vt-TP2"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="inputBar" destination="KUa-7F-GHQ" id="IBn-2u-2xI"/>
+                        <outlet property="inputTextField" destination="zkU-rn-KZl" id="LuF-2C-8px"/>
+                        <outlet property="tableView" destination="pew-W6-AvI" id="qLO-88-CDE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ITa-TX-4di" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <view contentMode="scaleToFill" id="KUa-7F-GHQ" userLabel="Input Bar">
@@ -550,6 +555,14 @@
                             <rect key="frame" x="0.0" y="103" width="378" height="49"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type Message ..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zkU-rn-KZl" userLabel="Input Text Field">
+                                    <rect key="frame" x="60" y="8" width="258" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <accessibility key="accessibilityConfiguration" identifier="Nsafds"/>
+                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                </textField>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p28-Zo-Gos">
                                     <rect key="frame" x="20" y="8" width="36" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -560,14 +573,6 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" backgroundImage="send"/>
                                 </button>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type Message ..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zkU-rn-KZl" userLabel="Input Text Field">
-                                    <rect key="frame" x="60" y="8" width="258" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <accessibility key="accessibilityConfiguration" identifier="Nsafds"/>
-                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
-                                </textField>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
@@ -593,7 +598,7 @@
                     </constraints>
                 </view>
             </objects>
-            <point key="canvasLocation" x="3512.8000000000002" y="1133.8830584707648"/>
+            <point key="canvasLocation" x="4142" y="1392"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Hob-e3-CLY">
