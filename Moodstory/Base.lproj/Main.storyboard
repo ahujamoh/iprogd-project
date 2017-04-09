@@ -378,6 +378,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="menuBarButton" destination="Rch-9p-ixZ" id="uSB-jN-Jdc"/>
+                        <outlet property="tableView" destination="AsF-I3-i4c" id="d9H-9Z-vu1"/>
                         <segue destination="2Gr-BJ-czh" kind="show" id="iry-fd-a0Z"/>
                     </connections>
                 </viewController>
