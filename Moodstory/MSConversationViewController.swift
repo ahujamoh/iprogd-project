@@ -33,6 +33,25 @@ class MSConversationViewController: UIViewController, UITableViewDataSource, UIT
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueToChat" {
+            let vc = segue.destination as! MSChatViewController
+            vc.currentUser = self.selectedUser
+        }
+    }
+    
+    //MARK: Delegate Methods
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.items.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
+        return 80
+    }
     //MARK: View Controller Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
