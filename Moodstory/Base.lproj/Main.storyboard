@@ -379,7 +379,7 @@
                     <connections>
                         <outlet property="menuBarButton" destination="Rch-9p-ixZ" id="uSB-jN-Jdc"/>
                         <outlet property="tableView" destination="AsF-I3-i4c" id="d9H-9Z-vu1"/>
-                        <segue destination="2Gr-BJ-czh" kind="show" id="iry-fd-a0Z"/>
+                        <segue destination="2Gr-BJ-czh" kind="show" identifier="segueToChat" id="iry-fd-a0Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aaG-LU-62m" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -389,7 +389,7 @@
         <!--Chat-->
         <scene sceneID="28L-Gd-g0Y">
             <objects>
-                <viewController title="Chat" id="2Gr-BJ-czh" sceneMemberID="viewController">
+                <viewController title="Chat" id="2Gr-BJ-czh" customClass="MSChatViewController" customModule="Moodstory" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Dtt-96-ZA0"/>
                         <viewControllerLayoutGuide type="bottom" id="YNM-hH-iBv"/>
