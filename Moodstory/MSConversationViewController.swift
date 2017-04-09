@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MSConversationViewController: UIViewController {
+class MSConversationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var menuBarButton: UIBarButtonItem!
     
@@ -59,6 +59,36 @@ class MSConversationViewController: UIViewController {
             self.performSegue(withIdentifier: "segueToChat", sender: self)
         }
     }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ConversationsTBCell
+            cell.clearCellData()
+            cell.profilePic.image = self.items[indexPath.row].user.profilePic
+            cell.nameLabel.text = self.items[indexPath.row].user.name
+            switch self.items[indexPath.row].lastMessage.type {
+            case .text:
+                let message = self.items[indexPath.row].lastMessage.content as! String
+                cell.messageLabel.text = message
+            case .location:
+                cell.messageLabel.text = "Location"
+            default:
+                cell.messageLabel.text = "Media"
+            }
+            let messageDate = Date.init(timeIntervalSince1970: TimeInterval(self.items[indexPath.row].lastMessage.timestamp))
+            let dataformatter = DateFormatter.init()
+            dataformatter.timeStyle = .short
+            let date = dataformatter.string(from: messageDate)
+            cell.timeLabel.text = date
+            if self.items[indexPath.row].lastMessage.owner == .sender && self.items[indexPath.row].lastMessage.isRead == false {
+                cell.nameLabel.font = UIFont(name:"AvenirNext-DemiBold", size: 17.0)
+                cell.messageLabel.font = UIFont(name:"AvenirNext-DemiBold", size: 14.0)
+                cell.timeLabel.font = UIFont(name:"AvenirNext-DemiBold", size: 13.0)
+                cell.profilePic.layer.borderColor = GlobalVariables.blue.cgColor
+                cell.messageLabel.textColor = GlobalVariables.purple
+            }
+            return cell
+    }
+    
     //MARK: View Controller Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()

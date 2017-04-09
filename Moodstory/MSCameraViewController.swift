@@ -93,7 +93,7 @@ class MSCameraViewController: UIViewController {
        // TODO: Signout from Firebase and remove string from keychain
         
         
-        let keychainResult = KeychainWrapper.standard.removeObject(forKey: KEY_UID)
+        let keychainResult = KeychainWrapper.standard.removeObject(forKey: GlobalVariables.KEY_UID)
         print("ID removed from keyhain : \(keychainResult)")
         try! FIRAuth.auth()?.signOut()
         performSegue(withIdentifier: "goToLoginScreen", sender: nil)

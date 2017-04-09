@@ -80,7 +80,7 @@ class MSMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         else if indexPath.row == 2{
         
-        let keychainResult = KeychainWrapper.standard.removeObject(forKey: KEY_UID)
+        let keychainResult = KeychainWrapper.standard.removeObject(forKey: GlobalVariables.KEY_UID)
         print("ID removed from keyhain : \(keychainResult)")
         try! FIRAuth.auth()?.signOut()
         performSegue(withIdentifier: "goToLoginScreen", sender: nil)

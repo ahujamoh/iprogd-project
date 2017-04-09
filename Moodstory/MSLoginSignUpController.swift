@@ -55,7 +55,7 @@ class MSLoginSignUpController: UIViewController {
         //loader = PlainLoader.showLoader(with: path())
         
         
-        if let _ = KeychainWrapper.standard.string(forKey: KEY_UID) {
+        if let _ = KeychainWrapper.standard.string(forKey: GlobalVariables.KEY_UID) {
             
             performSegue(withIdentifier: "goToCamera", sender: nil)
         }
@@ -169,7 +169,7 @@ class MSLoginSignUpController: UIViewController {
     func completeLogin(id: String) {
         
         loader.removeLoader(true)
-        let keychainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
+        let keychainResult = KeychainWrapper.standard.set(id, forKey: GlobalVariables.KEY_UID)
         print("Data saved to Keychain: \(keychainResult)")
         performSegue(withIdentifier: "goToCamera", sender: nil)
         
