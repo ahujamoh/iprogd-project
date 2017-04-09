@@ -52,6 +52,13 @@ class MSConversationViewController: UIViewController, UITableViewDataSource, UIT
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
         return 80
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if self.items.count > 0 {
+            self.selectedUser = self.items[indexPath.row].user
+            self.performSegue(withIdentifier: "segueToChat", sender: self)
+        }
+    }
     //MARK: View Controller Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
