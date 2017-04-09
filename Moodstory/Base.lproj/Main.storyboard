@@ -293,21 +293,22 @@
         <scene sceneID="gET-jL-yNM">
             <objects>
                 <viewController id="lSC-r3-xA4" customClass="MSConversationViewController" customModule="Moodstory" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="7d3-oY-IeK">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xWM-FL-TqY"/>
+                        <viewControllerLayoutGuide type="bottom" id="QjA-Yo-nTA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PZJ-yR-UqA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AsF-I3-i4c">
+                                <rect key="frame" x="0.0" y="72" width="375" height="595"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MSFriendListCell" id="uvB-xt-BXp">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uvB-xt-BXp" id="ZjL-JO-NrJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                    </tableView>
+                    </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Conversations" id="Qbx-C1-3Gh">
                         <barButtonItem key="leftBarButtonItem" image="menuIcon" id="Rch-9p-ixZ"/>
@@ -316,7 +317,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aaG-LU-62m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2574" y="1135"/>
+            <point key="canvasLocation" x="2572" y="1134.7826086956522"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Hob-e3-CLY">
