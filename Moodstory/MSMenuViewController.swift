@@ -59,7 +59,7 @@ class MSMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
             cell?.textLabel?.text = "Sign Out"
         }
         else if indexPath.row == 3{
-            cell?.textLabel?.text = "Friends"
+            cell?.textLabel?.text = "Conversations"
         }
         
         

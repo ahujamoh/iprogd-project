@@ -18,7 +18,6 @@ class MSConversationViewController: UIViewController, UITableViewDelegate, UITab
     var selectedUser: User?
     
     func showContacts(){
-        
     }
     
     func setCreateConversation(){
