@@ -1,35 +1,19 @@
 //
-//  MSFriendsListViewController.swift
+//  MSConversationViewController.swift
 //  Moodstory
 //
-//  Created by Mohit on 01/04/17.
+//  Created by Mohit on 09/04/17.
 //  Copyright © 2017 MoodStory. All rights reserved.
 //
 
 import UIKit
 
-class MSFriendsListViewController: UIViewController {
+class MSConversationViewController: UIViewController {
 
-    
-    
-//    @IBOutlet weak var menuBarButton: UIBarButtonItem!
-    
-    
-    @IBOutlet weak var menuBarButton: UIBarButtonItem!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        if revealViewController() != nil {
-            menuBarButton.target = revealViewController()
-            menuBarButton.action = #selector(SWRevealViewController.revealToggle(_:))
-            
-            
-            view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-            
-            
-        }
     }
 
     override func didReceiveMemoryWarning() {
