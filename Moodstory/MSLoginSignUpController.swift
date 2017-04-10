@@ -38,12 +38,26 @@ class MSLoginSignUpController: UIViewController {
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
+    @IBOutlet weak var maiContainer: UIView!
+    
     var loader: FillableLoader = FillableLoader()
     
+    func keyboardWasShown(notification: NSNotification) {
+        let info = notification.userInfo!
+        let _: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+ //           if self.mainContainer.frame.origin.y == 125{
+                self.maiContainer.frame.origin.y -= 100
+  //          }
+        }
+        
+        }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWasShown), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         
         self.hideKeyboard()
         

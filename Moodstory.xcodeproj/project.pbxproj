@@ -276,6 +276,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = MS;
+				LastSwiftMigration = 0730;
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = MoodStory;

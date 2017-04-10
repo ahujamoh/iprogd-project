@@ -10,7 +10,7 @@ target 'Moodstory' do
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
-  pod 'SwiftKeychainWrapper'
+
   pod 'GoogleMaps'
   pod 'GooglePlaces'
   pod 'FillableLoaders', '~>1.3.0'
