@@ -135,7 +135,6 @@ class MSConversationsNavigationViewController: UINavigationController, UICollect
         return CGSize.init(width: width, height: height)
     }
     
-    
     @IBAction func closeButtonClicked(_ sender: Any) {
         self.dismissExtraViews()
     }
