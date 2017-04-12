@@ -1,36 +1,22 @@
 //
-//  ViewController.swift
+//  MSCreateAccountController.swift
 //  Moodstory
 //
-//  Created by Muhammad Mustafa Saeed on 3/14/17.
-//  Copyright © 2017 MoodStory. All rights reserved.
+//  Created by Dora Palfi on 2017. 03. 24..
+//  Copyright © 2017. MoodStory. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 import Firebase
-import SwiftKeychainWrapper
+//import SwiftKeychainWrapper
 import FillableLoaders
 
-extension UIViewController
-{
-    func hideKeyboard()
-    {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
-            target: self,
-            action: #selector(UIViewController.dismissKeyboard))
-        
-        view.addGestureRecognizer(tap)
-    }
-    
-    func dismissKeyboard()
-    {
-        view.endEditing(true)
-    }
-}
 
-class MSLoginSignUpController: UIViewController {
+
+class MSCreateAccountController: UIViewController {
     
     
     
@@ -46,13 +32,13 @@ class MSLoginSignUpController: UIViewController {
         let _: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
         
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
- //           if self.mainContainer.frame.origin.y == 125{
-                self.maiContainer.frame.origin.y -= 100
-  //          }
+            //           if self.mainContainer.frame.origin.y == 125{
+            self.maiContainer.frame.origin.y -= 100
+            //          }
         }
         
-        }
-
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -64,15 +50,11 @@ class MSLoginSignUpController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         
-        super.viewDidAppear(animated)
-        //loader = PlainLoader.showLoader(with: path())
+        //        if let _ = KeychainWrapper.standard.string(forKey: KEY_UID) {
+        //
+        //            performSegue(withIdentifier: "goToCamera", sender: nil)
+        //        }
         
-        
-        if let _ = KeychainWrapper.standard.string(forKey: GlobalVariables.KEY_UID) {
-            
-            performSegue(withIdentifier: "goToCamera", sender: nil)
-        }
-
         
     }
     
@@ -88,12 +70,12 @@ class MSLoginSignUpController: UIViewController {
         loader.duration = 20
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     @IBAction func facebookBtnTapped(_ sender: Any) {
         
         // Authenticate with Facebook
@@ -133,63 +115,48 @@ class MSLoginSignUpController: UIViewController {
                 print("Successfully Authenticated with Firebase")
                 if let user = user {
                     
-                   self.completeLogin(id: user.uid)
+                    self.completeLogin(id: user.uid)
                     
                 }
                 
             }
         })
     }
+    
 
-    @IBAction func loginTapped(_ sender: Any) {
-        
-        self.presentFillableLoader()
-        
-        if let email = emailField.text, let pwd = passwordField.text{
-            
-            FIRAuth.auth()?.signIn(withEmail: email, password: pwd, completion: { (user, error) in
-                
-                if error == nil{
-                    
-                    print("Email User Authenticated with Firebase")
-                    if let user = user {
-                    self.completeLogin(id: user.uid)
-                    }
-                }
-                else{
-                    
-                    print("User doesnot exist")
-                    FIRAuth.auth()?.createUser(withEmail: email, password: pwd, completion: { (user, error) in
-                        if error != nil
-                        {
-                            print("Unable to create user")
-                        }
-                        else
-                        {
-                            print("Successfully authenticate user")
-                            if let user = user {
-                                self.completeLogin(id: user.uid)
-                            }
-                        }
-                    })
-                }
-            })
-        
-        }
-        
-    }
     
     func completeLogin(id: String) {
         
         loader.removeLoader(true)
-        let keychainResult = KeychainWrapper.standard.set(id, forKey: GlobalVariables.KEY_UID)
-        print("Data saved to Keychain: \(keychainResult)")
+        //         let keychainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
+        //        print("Data saved to Keychain: \(keychainResult)")
         performSegue(withIdentifier: "goToCamera", sender: nil)
         
     }
     
-    
-   
-    
-}
+    @IBAction func signUpTapped(_ sender: Any) {
+        self.presentFillableLoader()
+        
+        if let email = emailField.text, let pwd = passwordField.text{
+            
+            FIRAuth.auth()?.createUser(withEmail: email, password: pwd, completion: { (user, error) in
+                if error != nil
+                {
+                    print("Unable to create user")
+                }
+                else
+                {
+                    print("Successfully authenticate user")
+                    if let user = user {
+                        self.completeLogin(id: user.uid)
+                    }
+                }
+            })
+            
+            
+        }
+        
+        }
+    }
 
+    
