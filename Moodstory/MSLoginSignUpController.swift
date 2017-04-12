@@ -12,6 +12,7 @@ import FBSDKLoginKit
 import Firebase
 import SwiftKeychainWrapper
 import FillableLoaders
+import Malert
 
 extension UIViewController
 {
