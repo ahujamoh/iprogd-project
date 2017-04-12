@@ -15,7 +15,7 @@ import GooglePlaces
 
 
 class MSCameraViewController: UIViewController {
-   
+    
     @IBOutlet weak var menuBarButton: UIBarButtonItem!
     
     var locationManager = CLLocationManager()
@@ -35,7 +35,7 @@ class MSCameraViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         // Initialize the location manager.
         locationManager = CLLocationManager()
@@ -73,7 +73,7 @@ class MSCameraViewController: UIViewController {
         self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Avenir Next", size: 30)!,NSForegroundColorAttributeName: UIColor.white]
         self.navigationItem.title = "mood story"
     }
-
+    
     func displayMarkers() {
         //(59.369396, 18.004532): Solna
         let position = CLLocationCoordinate2D(latitude: 59.369396, longitude: 18.004532)
@@ -81,16 +81,34 @@ class MSCameraViewController: UIViewController {
         marker.title = "Hello World"
         marker.map = mapView
         
+        let position1 = CLLocationCoordinate2D(latitude: 59.369396, longitude: 19.004532)
+        let marker1 = GMSMarker(position: position1)
+        marker1.title = "Hello World1"
+        marker1.map = mapView
+        marker1.icon = GMSMarker.markerImage(with: .black)
+        
+        let position2 = CLLocationCoordinate2D(latitude: 60.369396, longitude: 19.004532)
+        let marker2 = GMSMarker(position: position2)
+        marker2.title = "Hello World2"
+        marker2.map = mapView
+        marker2.icon = GMSMarker.markerImage(with: .green)
+        
+        let position3 = CLLocationCoordinate2D(latitude: 60.369396, longitude: 18.004532)
+        let marker3 = GMSMarker(position: position3)
+        marker3.title = "Hello World2"
+        marker3.map = mapView
+        marker3.icon = GMSMarker.markerImage(with: .clear)
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     @IBAction func logoutBtnTapped(_ sender: Any) {
         
-       // TODO: Signout from Firebase and remove string from keychain
+        // TODO: Signout from Firebase and remove string from keychain
         
         
         let keychainResult = KeychainWrapper.standard.removeObject(forKey: GlobalVariables.KEY_UID)
@@ -99,10 +117,10 @@ class MSCameraViewController: UIViewController {
         performSegue(withIdentifier: "goToLoginScreen", sender: nil)
     }
     
-
+    
 }
 
- // PRAGMA - google classes
+// PRAGMA - google classes
 
 extension MSCameraViewController: CLLocationManagerDelegate{
     
