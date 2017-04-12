@@ -45,7 +45,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ANy-Tc-YeU">
                                 <rect key="frame" x="98.666666666666686" y="386" width="217" height="40"/>
@@ -1141,6 +1141,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="kLc-Ts-eKp"/>
         <segue reference="gPf-jj-stm"/>
-        <segue reference="igr-hV-2Mi"/>
+        <segue reference="ft8-lO-b5G"/>
     </inferredMetricsTieBreakers>
 </document>
