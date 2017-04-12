@@ -130,21 +130,10 @@ class MSConversationsNavigationViewController: UINavigationController, UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if self.items.count == 0 {
-            return self.collectionsView.bounds.size
-        } else {
-            if UIScreen.main.bounds.width > UIScreen.main.bounds.height {
-                let width = (0.3 * UIScreen.main.bounds.height)
-                let height = width + 30
-                return CGSize.init(width: width, height: height)
-            } else {
-                let width = (0.3 * UIScreen.main.bounds.width)
-                let height = width + 30
-                return CGSize.init(width: width, height: height)
-            }
-        }
+        let width = (0.3 * UIScreen.main.bounds.width)
+        let height = width + 30
+        return CGSize.init(width: width, height: height)
     }
-    
     
     @IBAction func closeButtonClicked(_ sender: Any) {
         self.dismissExtraViews()
