@@ -44,7 +44,7 @@ class User: NSObject {
         })
     }
     
-   class func loginUser(withEmail: String, password: String, completion: @escaping (Bool) -> Swift.Void) {
+    class func loginUser(withEmail: String, password: String, completion: @escaping (Bool) -> Swift.Void) {
         FIRAuth.auth()?.signIn(withEmail: withEmail, password: password, completion: { (user, error) in
             if error == nil {
                 let userInfo = ["email": withEmail, "password": password]
@@ -66,7 +66,7 @@ class User: NSObject {
         }
     }
     
-   class func info(forUserID: String, completion: @escaping (User) -> Swift.Void) {
+    class func info(forUserID: String, completion: @escaping (User) -> Swift.Void) {
         FIRDatabase.database().reference().child("users").child(forUserID).child("credentials").observeSingleEvent(of: .value, with: { (snapshot) in
             if let data = snapshot.value as? [String: String] {
                 let name = data["name"]!
@@ -87,19 +87,22 @@ class User: NSObject {
         FIRDatabase.database().reference().child("users").observe(.childAdded, with: { (snapshot) in
             let id = snapshot.key
             let data = snapshot.value as! [String: Any]
-            if data["credentials"] != nil {
-                let credentials = data["credentials"] as! [String: String]
+            if data["email"] != nil {
+                //                let credentials = data["email"] as! [String: String]
                 if id != exceptID {
-                    let name = credentials["name"]!
-                    let email = credentials["email"]!
-                    let link = URL.init(string: credentials["profilePicLink"]!)
-                    URLSession.shared.dataTask(with: link!, completionHandler: { (data, response, error) in
-                        if error == nil {
-                            let profilePic = UIImage.init(data: data!)
-                            let user = User.init(name: name, email: email, id: id, profilePic: profilePic!)
-                            completion(user)
-                        }
-                }).resume()
+                    let name = data["name"]!
+                    let email = data["email"]!
+                    //                    let link = URL.init(string: data["profilePicLink"]?)
+                    let user = User.init(name: name as! String, email: email as! String, id: id, profilePic: UIImage(named: "profile pic")!)
+                    
+                    completion(user)
+                    //                    URLSession.shared.dataTask(with: link?, completionHandler: { (data, response, error) in
+                    //                        if error == nil {
+                    //                            let profilePic = UIImage.init(data: data!)
+                    //                            let user = User.init(name: name, email: email, id: id, profilePic: profilePic?)
+                    //                            completion(user)
+                    //                        }
+                    //                }).resume()
                 }
             }
             else{
@@ -114,7 +117,7 @@ class User: NSObject {
             completion(status)
         })
     }
-
+    
     
     //MARK: Inits
     init(name: String, email: String, id: String, profilePic: UIImage) {
