@@ -28,6 +28,13 @@
 		C4E9A08A1E7949C40040C5D9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E9A0891E7949C40040C5D9 /* Constants.swift */; };
 		C4E9A08F1E7CAEC20040C5D9 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4E9A08E1E7CAEC20040C5D9 /* SWRevealViewController.m */; };
 		C4E9A0921E7CB04C0040C5D9 /* MSMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E9A0911E7CB04C0040C5D9 /* MSMenuViewController.swift */; };
+		E431C02A1E9A27AA00CEE7D0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E431C0271E9A27AA00CEE7D0 /* User.swift */; };
+		E431C02B1E9A27AA00CEE7D0 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = E431C0281E9A27AA00CEE7D0 /* Message.swift */; };
+		E431C02C1E9A27AA00CEE7D0 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E431C0291E9A27AA00CEE7D0 /* Conversation.swift */; };
+		E431C02E1E9A28E300CEE7D0 /* MSConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E431C02D1E9A28E300CEE7D0 /* MSConversationViewController.swift */; };
+		E431C0331E9A299900CEE7D0 /* MSUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E431C0321E9A299900CEE7D0 /* MSUtility.swift */; };
+		E431C0351E9A335500CEE7D0 /* MSConversationCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = E431C0341E9A335500CEE7D0 /* MSConversationCells.swift */; };
+		E4A3CBA31E9AA7F2000B9428 /* MSChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A3CBA21E9AA7F2000B9428 /* MSChatViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +65,13 @@
 		C4E9A08E1E7CAEC20040C5D9 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		C4E9A0911E7CB04C0040C5D9 /* MSMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSMenuViewController.swift; sourceTree = "<group>"; };
 		D8D63419375C6490080DC587 /* Pods_Moodstory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moodstory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E431C0271E9A27AA00CEE7D0 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E431C0281E9A27AA00CEE7D0 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		E431C0291E9A27AA00CEE7D0 /* Conversation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
+		E431C02D1E9A28E300CEE7D0 /* MSConversationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSConversationViewController.swift; sourceTree = "<group>"; };
+		E431C0321E9A299900CEE7D0 /* MSUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSUtility.swift; sourceTree = "<group>"; };
+		E431C0341E9A335500CEE7D0 /* MSConversationCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSConversationCells.swift; sourceTree = "<group>"; };
+		E4A3CBA21E9AA7F2000B9428 /* MSChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSChatViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +151,9 @@
 		C40DD77E1E782DE70035B234 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E431C0271E9A27AA00CEE7D0 /* User.swift */,
+				E431C0281E9A27AA00CEE7D0 /* Message.swift */,
+				E431C0291E9A27AA00CEE7D0 /* Conversation.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -153,6 +170,7 @@
 		C40DD7801E782E030035B234 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E431C02F1E9A28F200CEE7D0 /* Conversation */,
 				C4E9A0901E7CB0250040C5D9 /* MenuController */,
 				C40DD7821E7830080035B234 /* Camera */,
 				C40DD7811E782FF50035B234 /* LoginSignUp */,
@@ -191,6 +209,7 @@
 			children = (
 				C4E9A08B1E7CAE830040C5D9 /* SWRevealViewController */,
 				C4E9A0891E7949C40040C5D9 /* Constants.swift */,
+				E431C0321E9A299900CEE7D0 /* MSUtility.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -212,6 +231,16 @@
 				C4E9A0911E7CB04C0040C5D9 /* MSMenuViewController.swift */,
 			);
 			name = MenuController;
+			sourceTree = "<group>";
+		};
+		E431C02F1E9A28F200CEE7D0 /* Conversation */ = {
+			isa = PBXGroup;
+			children = (
+				E431C02D1E9A28E300CEE7D0 /* MSConversationViewController.swift */,
+				E431C0341E9A335500CEE7D0 /* MSConversationCells.swift */,
+				E4A3CBA21E9AA7F2000B9428 /* MSChatViewController.swift */,
+			);
+			name = Conversation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,7 +279,7 @@
 				TargetAttributes = {
 					C40DD7641E78211A0035B234 = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = 5KJFUT4KM3;
+						DevelopmentTeam = 69K5FUX4KS;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
@@ -341,6 +370,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E431C02E1E9A28E300CEE7D0 /* MSConversationViewController.swift in Sources */,
+				E431C02C1E9A27AA00CEE7D0 /* Conversation.swift in Sources */,
 				C40DD76B1E78211A0035B234 /* MSLoginSignUpController.swift in Sources */,
 				C4E9A0921E7CB04C0040C5D9 /* MSMenuViewController.swift in Sources */,
 				C4D69C811E7CDC8B00CB5783 /* MSMessageListViewController.swift in Sources */,
@@ -349,8 +380,13 @@
 				C480AA431E9A3BD500EB7854 /* MSPreviewViewController.swift in Sources */,
 				C4755E221E85329200113582 /* logoBezierPath.swift in Sources */,
 				C480AA461E9A460300EB7854 /* MSStickerCell.swift in Sources */,
+				E431C0351E9A335500CEE7D0 /* MSConversationCells.swift in Sources */,
+				E431C02B1E9A27AA00CEE7D0 /* Message.swift in Sources */,
 				C40DD7861E7830580035B234 /* MSCameraViewController.swift in Sources */,
 				C4D69C831E7CE78C00CB5783 /* MSSnapViewController.swift in Sources */,
+				E4A3CBA31E9AA7F2000B9428 /* MSChatViewController.swift in Sources */,
+				E431C02A1E9A27AA00CEE7D0 /* User.swift in Sources */,
+				E431C0331E9A299900CEE7D0 /* MSUtility.swift in Sources */,
 				C4E9A08A1E7949C40040C5D9 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -476,7 +512,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 5KJFUT4KM3;
+				DEVELOPMENT_TEAM = 69K5FUX4KS;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -498,7 +534,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 5KJFUT4KM3;
+				DEVELOPMENT_TEAM = 69K5FUX4KS;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
