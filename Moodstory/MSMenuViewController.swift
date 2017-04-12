@@ -43,7 +43,7 @@ class MSMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
 //        return 3
             return 4
     }
-    
+//cells in the menu corresponding to different parts of our app
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
@@ -66,6 +66,7 @@ class MSMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell!
     }
     
+    //if the cell is selected what should happen? e.g. when clicked call a particular viewController
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         
