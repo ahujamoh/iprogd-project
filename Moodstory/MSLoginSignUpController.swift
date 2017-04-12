@@ -10,7 +10,7 @@ import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 import Firebase
-//import SwiftKeychainWrapper
+import SwiftKeychainWrapper
 import FillableLoaders
 
 extension UIViewController
@@ -64,10 +64,14 @@ class MSLoginSignUpController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         
-//        if let _ = KeychainWrapper.standard.string(forKey: KEY_UID) {
-//            
-//            performSegue(withIdentifier: "goToCamera", sender: nil)
-//        }
+        super.viewDidAppear(animated)
+        //loader = PlainLoader.showLoader(with: path())
+        
+        
+        if let _ = KeychainWrapper.standard.string(forKey: GlobalVariables.KEY_UID) {
+            
+            performSegue(withIdentifier: "goToCamera", sender: nil)
+        }
 
         
     }
@@ -178,8 +182,8 @@ class MSLoginSignUpController: UIViewController {
     func completeLogin(id: String) {
         
         loader.removeLoader(true)
-//         let keychainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
-//        print("Data saved to Keychain: \(keychainResult)")
+        let keychainResult = KeychainWrapper.standard.set(id, forKey: GlobalVariables.KEY_UID)
+        print("Data saved to Keychain: \(keychainResult)")
         performSegue(withIdentifier: "goToCamera", sender: nil)
         
     }

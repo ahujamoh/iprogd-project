@@ -22,11 +22,21 @@
 		C40DD78D1E7854380035B234 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C40DD7891E7854380035B234 /* FBSDKLoginKit.framework */; };
 		C40DD78E1E7854380035B234 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C40DD78A1E7854380035B234 /* FBSDKShareKit.framework */; };
 		C4755E221E85329200113582 /* logoBezierPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4755E211E85329200113582 /* logoBezierPath.swift */; };
+		C480AA431E9A3BD500EB7854 /* MSPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C480AA421E9A3BD500EB7854 /* MSPreviewViewController.swift */; };
+		C480AA461E9A460300EB7854 /* MSStickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C480AA451E9A460300EB7854 /* MSStickerCell.swift */; };
 		C4D69C811E7CDC8B00CB5783 /* MSMessageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D69C801E7CDC8B00CB5783 /* MSMessageListViewController.swift */; };
 		C4D69C831E7CE78C00CB5783 /* MSSnapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D69C821E7CE78C00CB5783 /* MSSnapViewController.swift */; };
 		C4E9A08A1E7949C40040C5D9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E9A0891E7949C40040C5D9 /* Constants.swift */; };
 		C4E9A08F1E7CAEC20040C5D9 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4E9A08E1E7CAEC20040C5D9 /* SWRevealViewController.m */; };
 		C4E9A0921E7CB04C0040C5D9 /* MSMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E9A0911E7CB04C0040C5D9 /* MSMenuViewController.swift */; };
+		E431C02A1E9A27AA00CEE7D0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E431C0271E9A27AA00CEE7D0 /* User.swift */; };
+		E431C02B1E9A27AA00CEE7D0 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = E431C0281E9A27AA00CEE7D0 /* Message.swift */; };
+		E431C02C1E9A27AA00CEE7D0 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E431C0291E9A27AA00CEE7D0 /* Conversation.swift */; };
+		E431C02E1E9A28E300CEE7D0 /* MSConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E431C02D1E9A28E300CEE7D0 /* MSConversationViewController.swift */; };
+		E431C0331E9A299900CEE7D0 /* MSUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E431C0321E9A299900CEE7D0 /* MSUtility.swift */; };
+		E431C0351E9A335500CEE7D0 /* MSConversationCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = E431C0341E9A335500CEE7D0 /* MSConversationCells.swift */; };
+		E4A3CBA31E9AA7F2000B9428 /* MSChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A3CBA21E9AA7F2000B9428 /* MSChatViewController.swift */; };
+		E4A3CBA51E9BCFD6000B9428 /* MSConversationsNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A3CBA41E9BCFD6000B9428 /* MSConversationsNavigationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +58,8 @@
 		C40DD7891E7854380035B234 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		C40DD78A1E7854380035B234 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		C4755E211E85329200113582 /* logoBezierPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = logoBezierPath.swift; sourceTree = "<group>"; };
+		C480AA421E9A3BD500EB7854 /* MSPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSPreviewViewController.swift; sourceTree = "<group>"; };
+		C480AA451E9A460300EB7854 /* MSStickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSStickerCell.swift; sourceTree = "<group>"; };
 		C4D69C801E7CDC8B00CB5783 /* MSMessageListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSMessageListViewController.swift; sourceTree = "<group>"; };
 		C4D69C821E7CE78C00CB5783 /* MSSnapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSSnapViewController.swift; sourceTree = "<group>"; };
 		C4E9A0891E7949C40040C5D9 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -56,6 +68,14 @@
 		C4E9A08E1E7CAEC20040C5D9 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		C4E9A0911E7CB04C0040C5D9 /* MSMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSMenuViewController.swift; sourceTree = "<group>"; };
 		D8D63419375C6490080DC587 /* Pods_Moodstory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moodstory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E431C0271E9A27AA00CEE7D0 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E431C0281E9A27AA00CEE7D0 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		E431C0291E9A27AA00CEE7D0 /* Conversation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
+		E431C02D1E9A28E300CEE7D0 /* MSConversationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSConversationViewController.swift; sourceTree = "<group>"; };
+		E431C0321E9A299900CEE7D0 /* MSUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSUtility.swift; sourceTree = "<group>"; };
+		E431C0341E9A335500CEE7D0 /* MSConversationCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSConversationCells.swift; sourceTree = "<group>"; };
+		E4A3CBA21E9AA7F2000B9428 /* MSChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSChatViewController.swift; sourceTree = "<group>"; };
+		E4A3CBA41E9BCFD6000B9428 /* MSConversationsNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSConversationsNavigationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +120,7 @@
 		C40DD75C1E78211A0035B234 = {
 			isa = PBXGroup;
 			children = (
+				E4A3CBA41E9BCFD6000B9428 /* MSConversationsNavigationViewController.swift */,
 				C40DD7671E78211A0035B234 /* Moodstory */,
 				C40DD7661E78211A0035B234 /* Products */,
 				B65077B7ACFBE9CAC160D5BF /* Pods */,
@@ -135,6 +156,9 @@
 		C40DD77E1E782DE70035B234 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E431C0271E9A27AA00CEE7D0 /* User.swift */,
+				E431C0281E9A27AA00CEE7D0 /* Message.swift */,
+				E431C0291E9A27AA00CEE7D0 /* Conversation.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -142,6 +166,7 @@
 		C40DD77F1E782DF20035B234 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C480AA441E9A45AD00EB7854 /* Camera Preview Cell */,
 				C4755E211E85329200113582 /* logoBezierPath.swift */,
 			);
 			name = View;
@@ -150,6 +175,7 @@
 		C40DD7801E782E030035B234 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E431C02F1E9A28F200CEE7D0 /* Conversation */,
 				C4E9A0901E7CB0250040C5D9 /* MenuController */,
 				C40DD7821E7830080035B234 /* Camera */,
 				C40DD7811E782FF50035B234 /* LoginSignUp */,
@@ -171,8 +197,17 @@
 			children = (
 				C40DD7851E7830580035B234 /* MSCameraViewController.swift */,
 				C4D69C821E7CE78C00CB5783 /* MSSnapViewController.swift */,
+				C480AA421E9A3BD500EB7854 /* MSPreviewViewController.swift */,
 			);
 			name = Camera;
+			sourceTree = "<group>";
+		};
+		C480AA441E9A45AD00EB7854 /* Camera Preview Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C480AA451E9A460300EB7854 /* MSStickerCell.swift */,
+			);
+			name = "Camera Preview Cell";
 			sourceTree = "<group>";
 		};
 		C4E9A0881E7949850040C5D9 /* Util */ = {
@@ -180,6 +215,7 @@
 			children = (
 				C4E9A08B1E7CAE830040C5D9 /* SWRevealViewController */,
 				C4E9A0891E7949C40040C5D9 /* Constants.swift */,
+				E431C0321E9A299900CEE7D0 /* MSUtility.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -201,6 +237,16 @@
 				C4E9A0911E7CB04C0040C5D9 /* MSMenuViewController.swift */,
 			);
 			name = MenuController;
+			sourceTree = "<group>";
+		};
+		E431C02F1E9A28F200CEE7D0 /* Conversation */ = {
+			isa = PBXGroup;
+			children = (
+				E431C02D1E9A28E300CEE7D0 /* MSConversationViewController.swift */,
+				E431C0341E9A335500CEE7D0 /* MSConversationCells.swift */,
+				E4A3CBA21E9AA7F2000B9428 /* MSChatViewController.swift */,
+			);
+			name = Conversation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,15 +377,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E431C02E1E9A28E300CEE7D0 /* MSConversationViewController.swift in Sources */,
+				E431C02C1E9A27AA00CEE7D0 /* Conversation.swift in Sources */,
 				C40DD76B1E78211A0035B234 /* MSLoginSignUpController.swift in Sources */,
 				C4E9A0921E7CB04C0040C5D9 /* MSMenuViewController.swift in Sources */,
 				C4D69C811E7CDC8B00CB5783 /* MSMessageListViewController.swift in Sources */,
 				C40DD7691E78211A0035B234 /* AppDelegate.swift in Sources */,
+				E4A3CBA51E9BCFD6000B9428 /* MSConversationsNavigationViewController.swift in Sources */,
 				C4E9A08F1E7CAEC20040C5D9 /* SWRevealViewController.m in Sources */,
+				C480AA431E9A3BD500EB7854 /* MSPreviewViewController.swift in Sources */,
 				C4755E221E85329200113582 /* logoBezierPath.swift in Sources */,
+				C480AA461E9A460300EB7854 /* MSStickerCell.swift in Sources */,
+				E431C0351E9A335500CEE7D0 /* MSConversationCells.swift in Sources */,
+				E431C02B1E9A27AA00CEE7D0 /* Message.swift in Sources */,
 				C40DD7861E7830580035B234 /* MSCameraViewController.swift in Sources */,
 				94E6D8761E856648002B13C5 /* MSCreateAccountController.swift in Sources */,
 				C4D69C831E7CE78C00CB5783 /* MSSnapViewController.swift in Sources */,
+				E4A3CBA31E9AA7F2000B9428 /* MSChatViewController.swift in Sources */,
+				E431C02A1E9A27AA00CEE7D0 /* User.swift in Sources */,
+				E431C0331E9A299900CEE7D0 /* MSUtility.swift in Sources */,
 				C4E9A08A1E7949C40040C5D9 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -471,7 +527,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Moodstory/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hcid.Moodstory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -493,7 +549,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Moodstory/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hcid.Moodstory;
 				PRODUCT_NAME = "$(TARGET_NAME)";

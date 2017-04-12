@@ -8,7 +8,7 @@
 
 import UIKit
 import Firebase
-//import SwiftKeychainWrapper
+import SwiftKeychainWrapper
 
 class MSMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
 
@@ -40,7 +40,8 @@ class MSMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
      // MARK: - Table view data source
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 3
+//        return 3
+            return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -57,7 +58,9 @@ class MSMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
         else if indexPath.row == 2{
             cell?.textLabel?.text = "Sign Out"
         }
-        
+        else if indexPath.row == 3{
+            cell?.textLabel?.text = "Conversations"
+        }
         
         
         return cell!
@@ -77,11 +80,15 @@ class MSMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         else if indexPath.row == 2{
         
-    //    let keychainResult = KeychainWrapper.standard.removeObject(forKey: KEY_UID)
-      //  print("ID removed from keyhain : \(keychainResult)")
+        let keychainResult = KeychainWrapper.standard.removeObject(forKey: GlobalVariables.KEY_UID)
+        print("ID removed from keyhain : \(keychainResult)")
         try! FIRAuth.auth()?.signOut()
         performSegue(withIdentifier: "goToLoginScreen", sender: nil)
             
+        }
+        else if indexPath.row == 3
+        {
+            performSegue(withIdentifier: "friends", sender: nil)
         }
         
     }
