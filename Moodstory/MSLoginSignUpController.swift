@@ -111,16 +111,14 @@ class MSLoginSignUpController: UIViewController {
         let showThirdExempleButton = MalertButtonStruct(title: "Third example", buttonConfiguration: btConfiguration) { [weak self] in
             guard let strongSelf = self else { return }
         Malert.shared.dismiss(with: { (finished) in
-    })
-    }
+        })
+        }
     
     var updatedDismissButton = dismissButton
     updatedDismissButton.setButtonConfiguration(btConfiguration)
     
-    Malert.shared.show(viewController: self, title: "Hello!", message: "This is second example. Explaning how to use and customize your malert", buttons: [showThirdExempleButton, updatedDismissButton], animationType: .modalRight, malertConfiguration: malertConfiguration)
+    Malert.shared.show(viewController: self, title: "Hello!", message: "New Password has been sent", buttons: [showThirdExempleButton, updatedDismissButton], animationType: .modalRight, malertConfiguration: malertConfiguration)
     }
-    
-    
     
     @IBAction func facebookBtnTapped(_ sender: Any) {
         
@@ -152,8 +150,11 @@ class MSLoginSignUpController: UIViewController {
         if let resetEmail = emailField.text {
             
             FIRAuth.auth()?.sendPasswordReset(withEmail: resetEmail) { (error) in
+                if error != nil {
                 print("email has been sent")
                 self.showSecondExample()
+            
+                }
             }
             
         } else {

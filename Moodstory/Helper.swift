@@ -14,7 +14,7 @@ class Helper {
         var malertViewConfig = MalertViewConfiguration()
         malertViewConfig.margin = 16
         malertViewConfig.buttonsAxis = .horizontal
-        malertViewConfig.backgroundColor = UIColor(red:0.7, green:0.7, blue:1.0, alpha:1.0)
+        malertViewConfig.backgroundColor = UIColor(red:0.1, green:1.0, blue:0.1, alpha:1.0)
         malertViewConfig.textColor = .white
         malertViewConfig.textAlign = .center
         return malertViewConfig
