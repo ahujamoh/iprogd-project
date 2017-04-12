@@ -33,8 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
         //Setting google map api here
-        GMSPlacesClient.provideAPIKey(GOOGLE_MAPS_KEY)
-        GMSServices.provideAPIKey(GOOGLE_MAPS_KEY)
+        GMSPlacesClient.provideAPIKey(GlobalVariables.GOOGLE_MAPS_KEY)
+        GMSServices.provideAPIKey(GlobalVariables.GOOGLE_MAPS_KEY)
         
         return true
     }
