@@ -119,6 +119,20 @@ class MSLoginSignUpController: UIViewController {
         
     }
     
+    @IBAction func forgotBtnPressed(_ sender: Any) {
+        
+        if let resetEmail = emailField.text {
+            
+            FIRAuth.auth()?.sendPasswordReset(withEmail: resetEmail) { (error) in
+                print("email has been sent")
+            }
+            
+        } else {
+            
+            
+        }
+
+    }
     
     func firebaseAuth(_ credential: FIRAuthCredential){
         
