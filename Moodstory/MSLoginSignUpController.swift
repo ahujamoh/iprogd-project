@@ -42,6 +42,11 @@ class MSLoginSignUpController: UIViewController {
     
     var loader: FillableLoader = FillableLoader()
     
+    
+    var dismissButton = MalertButtonStruct(title: "No, thanks") {
+        Malert.shared.dismiss()
+    }
+    
     func keyboardWasShown(notification: NSNotification) {
         let info = notification.userInfo!
         let _: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
@@ -95,6 +100,28 @@ class MSLoginSignUpController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
+    
+    func showSecondExample() {
+        let malertConfiguration = Helper.setUpSecondExampleCustomMalertViewConfig()
+        var btConfiguration = MalertButtonConfiguration()
+        btConfiguration.tintColor = malertConfiguration.textColor
+        btConfiguration.separetorColor = .white
+    
+        let showThirdExempleButton = MalertButtonStruct(title: "Third example", buttonConfiguration: btConfiguration) { [weak self] in
+            guard let strongSelf = self else { return }
+        Malert.shared.dismiss(with: { (finished) in
+    })
+    }
+    
+    var updatedDismissButton = dismissButton
+    updatedDismissButton.setButtonConfiguration(btConfiguration)
+    
+    Malert.shared.show(viewController: self, title: "Hello!", message: "This is second example. Explaning how to use and customize your malert", buttons: [showThirdExempleButton, updatedDismissButton], animationType: .modalRight, malertConfiguration: malertConfiguration)
+    }
+    
+    
+    
     @IBAction func facebookBtnTapped(_ sender: Any) {
         
         // Authenticate with Facebook
@@ -126,11 +153,12 @@ class MSLoginSignUpController: UIViewController {
             
             FIRAuth.auth()?.sendPasswordReset(withEmail: resetEmail) { (error) in
                 print("email has been sent")
+                self.showSecondExample()
             }
             
         } else {
             
-            
+            self.showSecondExample()
             
         }
 
