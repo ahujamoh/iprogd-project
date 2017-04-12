@@ -289,7 +289,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RvA-4h-2l1" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Poi-Kw-RXg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Poi-Kw-RXg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -718,7 +718,7 @@
         <scene sceneID="Hob-e3-CLY">
             <objects>
                 <navigationController id="MYR-OX-sxB" customClass="MSConversationsNavigationViewController" customModule="Moodstory" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="f5G-k2-yCW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="f5G-k2-yCW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1102,7 +1102,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nrp-AH-foO" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ieG-af-eYJ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ieG-af-eYJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

@@ -151,7 +151,6 @@ class MSLoginSignUpController: UIViewController {
             
             FIRAuth.auth()?.sendPasswordReset(withEmail: resetEmail) { (error) in
                 if error != nil {
-                print("email has been sent")
                 self.showSecondExample()
             
                 }
@@ -159,7 +158,8 @@ class MSLoginSignUpController: UIViewController {
             
         } else {
             
-            self.showSecondExample()
+            print("email has not been sent")
+
             
         }
 
