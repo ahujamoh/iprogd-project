@@ -44,6 +44,7 @@
 		5629A7831E9EA050004097C3 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		70BD6B0570BF7F5E506AC44E /* Pods-Moodstory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moodstory.release.xcconfig"; path = "Pods/Target Support Files/Pods-Moodstory/Pods-Moodstory.release.xcconfig"; sourceTree = "<group>"; };
 		790E906735170C74DF00CAF1 /* Pods-Moodstory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moodstory.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Moodstory/Pods-Moodstory.debug.xcconfig"; sourceTree = "<group>"; };
+		9477121B1E9E9F1C0082EB2B /* MSSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSSignUpViewController.swift; sourceTree = "<group>"; };
 		94E6D8751E856648002B13C5 /* MSCreateAccountController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSCreateAccountController.swift; sourceTree = "<group>"; };
 		C40DD7651E78211A0035B234 /* Moodstory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moodstory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C40DD7681E78211A0035B234 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -188,6 +189,7 @@
 		C40DD7811E782FF50035B234 /* LoginSignUp */ = {
 			isa = PBXGroup;
 			children = (
+				9477121B1E9E9F1C0082EB2B /* MSSignUpViewController.swift */,
 				C40DD76A1E78211A0035B234 /* MSLoginSignUpController.swift */,
 				94E6D8751E856648002B13C5 /* MSCreateAccountController.swift */,
 			);

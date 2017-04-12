@@ -12,10 +12,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Sign Up View Controller-->
         <scene sceneID="iV0-wV-5xc">
             <objects>
-                <viewController id="nLi-2M-yhl" sceneMemberID="viewController">
+                <viewController id="nLi-2M-yhl" customClass="MSSignUpViewController" customModule="Moodstory" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DIl-NY-UKl"/>
                         <viewControllerLayoutGuide type="bottom" id="sQS-c0-y19"/>
@@ -34,7 +34,7 @@
                                     <constraint firstAttribute="width" constant="217" id="BLd-xw-yB7"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="center" minimumFontSize="14" background="textFieldBackground" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="kkE-CM-Eg3">
@@ -44,8 +44,8 @@
                                     <constraint firstAttribute="width" constant="217" id="VyL-Ri-HQQ"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ANy-Tc-YeU">
                                 <rect key="frame" x="98.666666666666686" y="386" width="217" height="40"/>
@@ -57,6 +57,10 @@
                                 <state key="normal" title="Sign Up" backgroundImage="loginButtonBackground">
                                     <color key="titleColor" red="0.033423822373151779" green="0.57380145788192749" blue="0.19880971312522888" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="signUpButtonClicked:" destination="nLi-2M-yhl" eventType="touchUpInside" id="xIT-95-tsp"/>
+                                    <segue destination="ZOz-cu-1RP" kind="show" id="kLc-Ts-eKp"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGW-xe-1ek">
                                 <rect key="frame" x="10" y="17" width="28" height="28"/>
@@ -97,6 +101,10 @@
                             <constraint firstItem="IGW-xe-1ek" firstAttribute="leading" secondItem="XcS-38-s9z" secondAttribute="leading" constant="10" id="zyJ-yr-d48"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="xB3-tN-u35" id="FfC-6Z-qPD"/>
+                        <outlet property="passwordField" destination="kkE-CM-Eg3" id="uca-f7-zcW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pz4-zH-twq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1141,7 +1149,8 @@
         <image name="textFieldBackground" width="238" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="kLc-Ts-eKp"/>
         <segue reference="gPf-jj-stm"/>
-        <segue reference="igr-hV-2Mi"/>
+        <segue reference="ft8-lO-b5G"/>
     </inferredMetricsTieBreakers>
 </document>
