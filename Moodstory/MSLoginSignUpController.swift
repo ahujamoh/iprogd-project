@@ -43,7 +43,7 @@ class MSLoginSignUpController: UIViewController {
     var loader: FillableLoader = FillableLoader()
     
     
-    var dismissButton = MalertButtonStruct(title: "No, thanks") {
+    var dismissButton = MalertButtonStruct(title: "Cancel") {
         Malert.shared.dismiss()
     }
     
@@ -102,7 +102,7 @@ class MSLoginSignUpController: UIViewController {
 
     
     
-    func showSecondExample() {
+    func sentResetEmailAlert() {
         let malertConfiguration = Helper.setUpSecondExampleCustomMalertViewConfig()
         var btConfiguration = MalertButtonConfiguration()
         btConfiguration.tintColor = malertConfiguration.textColor
@@ -121,7 +121,7 @@ class MSLoginSignUpController: UIViewController {
     }
     
     
-    func showThirdExample() {
+    func showResetPwdAlert() {
         let malertConfig = Helper.setUpSecondExampleCustomMalertViewConfig()
         var btConfiguration = MalertButtonConfiguration()
         btConfiguration.tintColor = malertConfig.textColor
@@ -132,7 +132,7 @@ class MSLoginSignUpController: UIViewController {
         
         let textField = UITextField()
         textField.backgroundColor = .white
-        textField.placeholder = "Example textField"
+        textField.placeholder = "email"
         
         let thatIsAllFolksButton = MalertButtonStruct(title: "Send", buttonConfiguration: btConfiguration) {
             Malert.shared.dismiss(with: {[weak self] (_) in
@@ -140,7 +140,7 @@ class MSLoginSignUpController: UIViewController {
             })
         }
         
-        Malert.shared.show(viewController: self, title: "I Hope that it help you", customView: textField, buttons: [thatIsAllFolksButton, updatedDismissButton], animationType: .modalLeft, malertConfiguration: malertConfig, tapToDismiss: false)
+        Malert.shared.show(viewController: self, title: "Reset password", customView: textField, buttons: [thatIsAllFolksButton, updatedDismissButton], animationType: .modalLeft, malertConfiguration: malertConfig, tapToDismiss: false)
     }
     
     
@@ -175,14 +175,15 @@ class MSLoginSignUpController: UIViewController {
             
             FIRAuth.auth()?.sendPasswordReset(withEmail: resetEmail) { (error) in
                 if error != nil {
-                    self.showThirdExample()
+                    
+                    self.showResetPwdAlert()
                     
                 }
             }
             
         } else {
             
-            self.showSecondExample()
+            self.sentResetEmailAlert()
             
         }
 
