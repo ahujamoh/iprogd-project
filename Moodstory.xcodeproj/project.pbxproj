@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		54330B30CDC205AA97AF81D4 /* Pods_Moodstory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D63419375C6490080DC587 /* Pods_Moodstory.framework */; };
+		94E6D8761E856648002B13C5 /* MSCreateAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E6D8751E856648002B13C5 /* MSCreateAccountController.swift */; };
 		C40DD7691E78211A0035B234 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40DD7681E78211A0035B234 /* AppDelegate.swift */; };
 		C40DD76B1E78211A0035B234 /* MSLoginSignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40DD76A1E78211A0035B234 /* MSLoginSignUpController.swift */; };
 		C40DD76E1E78211A0035B234 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C40DD76C1E78211A0035B234 /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 /* Begin PBXFileReference section */
 		70BD6B0570BF7F5E506AC44E /* Pods-Moodstory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moodstory.release.xcconfig"; path = "Pods/Target Support Files/Pods-Moodstory/Pods-Moodstory.release.xcconfig"; sourceTree = "<group>"; };
 		790E906735170C74DF00CAF1 /* Pods-Moodstory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moodstory.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Moodstory/Pods-Moodstory.debug.xcconfig"; sourceTree = "<group>"; };
+		94E6D8751E856648002B13C5 /* MSCreateAccountController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSCreateAccountController.swift; sourceTree = "<group>"; };
 		C40DD7651E78211A0035B234 /* Moodstory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moodstory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C40DD7681E78211A0035B234 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C40DD76A1E78211A0035B234 /* MSLoginSignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSLoginSignUpController.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				C40DD76A1E78211A0035B234 /* MSLoginSignUpController.swift */,
+				94E6D8751E856648002B13C5 /* MSCreateAccountController.swift */,
 			);
 			name = LoginSignUp;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = MS;
+				LastSwiftMigration = 0730;
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = MoodStory;
@@ -387,6 +391,7 @@
 				E431C0351E9A335500CEE7D0 /* MSConversationCells.swift in Sources */,
 				E431C02B1E9A27AA00CEE7D0 /* Message.swift in Sources */,
 				C40DD7861E7830580035B234 /* MSCameraViewController.swift in Sources */,
+				94E6D8761E856648002B13C5 /* MSCreateAccountController.swift in Sources */,
 				C4D69C831E7CE78C00CB5783 /* MSSnapViewController.swift in Sources */,
 				E4A3CBA31E9AA7F2000B9428 /* MSChatViewController.swift in Sources */,
 				E431C02A1E9A27AA00CEE7D0 /* User.swift in Sources */,
