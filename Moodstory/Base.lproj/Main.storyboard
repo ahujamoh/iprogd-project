@@ -782,6 +782,10 @@
                                     </constraints>
                                 </collectionViewCell>
                             </cells>
+                            <connections>
+                                <outlet property="dataSource" destination="MYR-OX-sxB" id="Ha6-gb-CnG"/>
+                                <outlet property="delegate" destination="MYR-OX-sxB" id="EVr-Uu-El1"/>
+                            </connections>
                         </collectionView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tCI-ae-7Ij">
                             <rect key="frame" x="133" y="260" width="120" height="40"/>
