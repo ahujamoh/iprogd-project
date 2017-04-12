@@ -105,7 +105,7 @@ class MSConversationsNavigationViewController: UINavigationController, UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ContactsCVCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! MSContactsCVCell
         cell.profilePic.image = self.items[indexPath.row].profilePic
         cell.nameLabel.text = self.items[indexPath.row].name
         cell.profilePic.layer.borderWidth = 2
