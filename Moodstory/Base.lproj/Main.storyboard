@@ -59,6 +59,7 @@
                                 </state>
                                 <connections>
                                     <action selector="signUpButtonClicked:" destination="nLi-2M-yhl" eventType="touchUpInside" id="xIT-95-tsp"/>
+                                    <segue destination="ZOz-cu-1RP" kind="show" id="kLc-Ts-eKp"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGW-xe-1ek">
@@ -100,6 +101,10 @@
                             <constraint firstItem="IGW-xe-1ek" firstAttribute="leading" secondItem="XcS-38-s9z" secondAttribute="leading" constant="10" id="zyJ-yr-d48"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="xB3-tN-u35" id="FfC-6Z-qPD"/>
+                        <outlet property="passwordField" destination="kkE-CM-Eg3" id="uca-f7-zcW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pz4-zH-twq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -282,7 +287,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RvA-4h-2l1" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Poi-Kw-RXg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Poi-Kw-RXg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -711,7 +716,7 @@
         <scene sceneID="Hob-e3-CLY">
             <objects>
                 <navigationController id="MYR-OX-sxB" customClass="MSConversationsNavigationViewController" customModule="Moodstory" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="f5G-k2-yCW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="f5G-k2-yCW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1095,7 +1100,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nrp-AH-foO" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ieG-af-eYJ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ieG-af-eYJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1134,6 +1139,7 @@
         <image name="textFieldBackground" width="238" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="kLc-Ts-eKp"/>
         <segue reference="gPf-jj-stm"/>
         <segue reference="igr-hV-2Mi"/>
     </inferredMetricsTieBreakers>
