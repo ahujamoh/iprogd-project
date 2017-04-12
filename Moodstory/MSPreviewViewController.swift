@@ -180,7 +180,7 @@ class MSPreviewViewController: UIViewController, UIPickerViewDataSource, UIPicke
         storageRef.put(uploadData!, metadata: nil, completion: { (metaData, error) in
             
             if error != nil {
-                print(error)
+                print(error as Any)
                 return
             } else {
                 
@@ -189,7 +189,7 @@ class MSPreviewViewController: UIViewController, UIPickerViewDataSource, UIPicke
                 if let imageURL = metaData?.downloadURL()?.absoluteString {
                     snapRef.updateChildValues(["userID": uid!, "username": username, "imageURL": imageURL, "timer": self.pic_duaration], withCompletionBlock: {(error, ref) in
                         if error != nil {
-                            print(error)
+                            print(error as Any)
                             return
                         }
                         

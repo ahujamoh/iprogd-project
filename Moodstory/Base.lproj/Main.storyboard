@@ -28,10 +28,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="msLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Nta-5a-BuK">
-                                <rect key="frame" x="91.666666666666686" y="222" width="231" height="50"/>
+                                <rect key="frame" x="92" y="222" width="231" height="50"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="email" textAlignment="center" minimumFontSize="14" background="textFieldBackground" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="b9o-9D-cM8">
-                                <rect key="frame" x="98.666666666666686" y="290" width="217" height="40"/>
+                                <rect key="frame" x="99" y="290" width="217" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="217" id="JBS-Kv-ja6"/>
@@ -232,7 +232,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RvA-4h-2l1" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Poi-Kw-RXg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Poi-Kw-RXg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -265,7 +265,10 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MSQ-N7-DYK" id="cuL-Va-oe8">
+<<<<<<< HEAD
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="79.5"/>
+>>>>>>> 44d3dc6559dfce345f7de7a3ec9e7a5b29d63914
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1045,7 +1048,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nrp-AH-foO" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ieG-af-eYJ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ieG-af-eYJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
