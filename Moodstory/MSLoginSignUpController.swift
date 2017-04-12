@@ -47,7 +47,7 @@ class MSLoginSignUpController: UIViewController {
         
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
  //           if self.mainContainer.frame.origin.y == 125{
-                self.maiContainer.frame.origin.y -= 100
+                //self.maiContainer.frame.origin.y -= 100
   //          }
         }
         
