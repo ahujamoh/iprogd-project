@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		54330B30CDC205AA97AF81D4 /* Pods_Moodstory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D63419375C6490080DC587 /* Pods_Moodstory.framework */; };
 		5629A7841E9EA050004097C3 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5629A7831E9EA050004097C3 /* Helper.swift */; };
+		947A162F1E9FDCDE002FD0A4 /* MSSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9477121B1E9E9F1C0082EB2B /* MSSignUpViewController.swift */; };
 		94E6D8761E856648002B13C5 /* MSCreateAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E6D8751E856648002B13C5 /* MSCreateAccountController.swift */; };
 		C40DD7691E78211A0035B234 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40DD7681E78211A0035B234 /* AppDelegate.swift */; };
 		C40DD76B1E78211A0035B234 /* MSLoginSignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40DD76A1E78211A0035B234 /* MSLoginSignUpController.swift */; };
@@ -372,7 +373,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -382,6 +383,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				947A162F1E9FDCDE002FD0A4 /* MSSignUpViewController.swift in Sources */,
 				E431C02E1E9A28E300CEE7D0 /* MSConversationViewController.swift in Sources */,
 				E431C02C1E9A27AA00CEE7D0 /* Conversation.swift in Sources */,
 				C40DD76B1E78211A0035B234 /* MSLoginSignUpController.swift in Sources */,
