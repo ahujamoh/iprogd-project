@@ -39,7 +39,7 @@ class MSSignUpViewController: UIViewController {
         var updatedDismissButton = dismissButton
         updatedDismissButton.setButtonConfiguration(btConfiguration)
         
-        Malert.shared.show(viewController: self, title: "Hello!", message: "New Password has been sent", buttons: [showThirdExempleButton, updatedDismissButton], animationType: .modalRight, malertConfiguration: malertConfiguration)
+        Malert.shared.show(viewController: self, title: "Hello!", message: "A user with this email already exists", buttons: [showThirdExempleButton, updatedDismissButton], animationType: .modalRight, malertConfiguration: malertConfiguration)
     }
     
     
