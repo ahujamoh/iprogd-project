@@ -84,7 +84,7 @@ class MSConversationsNavigationViewController: UINavigationController, UICollect
             case .contacts:
                 self.contactsView.isHidden = false
                 if self.items.count == 0 {
-                    print("no item")
+                    print("no item, lol")
                 }
             default:
                 print("you messed up real bad, should not have come here")
@@ -105,11 +105,11 @@ class MSConversationsNavigationViewController: UINavigationController, UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ContactsCVCell
-        cell.profilePic.image = self.items[indexPath.row].profilePic
-        cell.nameLabel.text = self.items[indexPath.row].name
-        cell.profilePic.layer.borderWidth = 2
-        cell.profilePic.layer.borderColor = GlobalVariables.purple.cgColor
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellForCV", for: indexPath) as! MSContactsCVCell
+        cell.profilePic?.image = self.items[indexPath.row].profilePic
+        cell.nameLabel?.text = self.items[indexPath.row].name
+        cell.profilePic?.layer.borderWidth = 2
+        cell.profilePic?.layer.borderColor = GlobalVariables.purple.cgColor
         return cell
     }
     
@@ -147,6 +147,8 @@ class MSConversationsNavigationViewController: UINavigationController, UICollect
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        collectionsView.register(MSContactsCVCell.self, forCellWithReuseIdentifier: "CellForCV")
+        
         self.customization()
     }
     
