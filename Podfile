@@ -12,7 +12,6 @@ target 'Moodstory' do
   pod 'Firebase/Storage'
   pod 'SwiftKeychainWrapper'
   pod 'Malert'
-  pod 'JPSThumbnailAnnotation'
   pod 'GoogleMaps'
   pod 'GooglePlaces'
   pod 'FillableLoaders', '~>1.3.0'

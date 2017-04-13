@@ -12,7 +12,6 @@ import AVFoundation
 import SwiftKeychainWrapper
 import GoogleMaps
 import GooglePlaces
-import JPSThumbnailAnnotation
 
 
 class MSCameraViewController: UIViewController {
@@ -101,6 +100,11 @@ class MSCameraViewController: UIViewController {
         marker3.icon = GMSMarker.markerImage(with: .clear)
         
     }
+    
+    /*CUSTOM ANNOTATIONS*/
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
