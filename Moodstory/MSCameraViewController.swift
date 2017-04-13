@@ -12,6 +12,7 @@ import AVFoundation
 import SwiftKeychainWrapper
 import GoogleMaps
 import GooglePlaces
+import JPSThumbnailAnnotation
 
 
 class MSCameraViewController: UIViewController {
