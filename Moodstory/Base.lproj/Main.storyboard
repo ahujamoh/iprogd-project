@@ -5,7 +5,7 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12084"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -59,7 +59,6 @@
                                 </state>
                                 <connections>
                                     <action selector="signUpButtonClicked:" destination="nLi-2M-yhl" eventType="touchUpInside" id="xIT-95-tsp"/>
-                                    <segue destination="ZOz-cu-1RP" kind="show" id="kLc-Ts-eKp"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGW-xe-1ek">
@@ -247,7 +246,7 @@
         <!--Reveal View Controller-->
         <scene sceneID="Jrn-wJ-dr1">
             <objects>
-                <viewController id="ZOz-cu-1RP" customClass="SWRevealViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mapView" id="ZOz-cu-1RP" customClass="SWRevealViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0wb-id-BSV"/>
                         <viewControllerLayoutGuide type="bottom" id="MJb-Sb-zEH"/>
@@ -1170,8 +1169,7 @@
         <image name="textFieldBackground" width="238" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ft8-lO-b5G"/>
-        <segue reference="kLc-Ts-eKp"/>
+        <segue reference="igr-hV-2Mi"/>
         <segue reference="gPf-jj-stm"/>
     </inferredMetricsTieBreakers>
 </document>
