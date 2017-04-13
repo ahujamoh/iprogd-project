@@ -12,7 +12,7 @@ class Helper {
 
     class func setUpSecondExampleCustomMalertViewConfig() -> MalertViewConfiguration {
         var malertViewConfig = MalertViewConfiguration()
-        malertViewConfig.margin = 16
+        malertViewConfig.margin = 20
         malertViewConfig.buttonsAxis = .horizontal
         malertViewConfig.backgroundColor = .white
         malertViewConfig.textColor = UIColor(red:0.0, green:0.64, blue:0.17, alpha:1.0)

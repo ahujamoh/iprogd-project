@@ -117,7 +117,7 @@ class MSLoginSignUpController: UIViewController {
     var updatedDismissButton = dismissButton
     updatedDismissButton.setButtonConfiguration(btConfiguration)
     
-    Malert.shared.show(viewController: self, title: "Hello!", message: "New Password has been sent", buttons: [showThirdExempleButton, updatedDismissButton], animationType: .modalRight, malertConfiguration: malertConfiguration)
+    Malert.shared.show(viewController: self, title: "Reset password", message: "New Password has been sent", buttons: [showThirdExempleButton, updatedDismissButton], animationType: .modalRight, malertConfiguration: malertConfiguration)
     }
     
     
@@ -132,9 +132,27 @@ class MSLoginSignUpController: UIViewController {
         
         let textField = UITextField()
         textField.backgroundColor = .white
-        textField.placeholder = "email"
+        textField.placeholder = "Your email"
         
         let thatIsAllFolksButton = MalertButtonStruct(title: "Send", buttonConfiguration: btConfiguration) {
+            
+            if let resetEmail = textField.text?.lowercased() {
+                
+                
+                FIRAuth.auth()?.sendPasswordReset(withEmail: resetEmail) { (error) in
+                    if error != nil {
+                        
+                        print("Wrong email")
+                        
+                    } else {
+                        
+                        self.sentResetEmailAlert()
+                        
+                    }
+                    
+                }
+            }
+            
             Malert.shared.dismiss(with: {[weak self] (_) in
                 guard let strongSelf = self else { return }
             })
@@ -180,7 +198,6 @@ class MSLoginSignUpController: UIViewController {
                     
                 } else {
             
-                    print("sent")
                     self.sentResetEmailAlert()
             
                 }
