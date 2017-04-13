@@ -10,10 +10,12 @@ import Foundation
 import UIKit
 
 
-class SenderCell: UITableViewCell {
+class MSSenderCell: UITableViewCell {
     
     @IBOutlet weak var profilePic: RoundedImageView!
+    
     @IBOutlet weak var message: UITextView!
+    
     @IBOutlet weak var messageBackground: UIImageView!
     
     func clearCellData()  {
@@ -31,9 +33,10 @@ class SenderCell: UITableViewCell {
     }
 }
 
-class ReceiverCell: UITableViewCell {
+class MSReceiverCell: UITableViewCell {
     
     @IBOutlet weak var message: UITextView!
+    
     @IBOutlet weak var messageBackground: UIImageView!
     
     func clearCellData()  {
@@ -51,14 +54,15 @@ class ReceiverCell: UITableViewCell {
     }
 }
 
-class ConversationsTBCell: UITableViewCell {
+class MSConversationsTBCell: UITableViewCell {
     
     @IBOutlet weak var profilePic: RoundedImageView!
+    
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var messageLabel: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
-
     
+    @IBOutlet weak var messageLabel: UILabel!
+    
+    @IBOutlet weak var timeLabel: UILabel!
     func clearCellData()  {
         self.nameLabel.font = UIFont(name:"AvenirNext-Regular", size: 17.0)
         self.messageLabel.font = UIFont(name:"AvenirNext-Regular", size: 14.0)
@@ -75,10 +79,11 @@ class ConversationsTBCell: UITableViewCell {
     
 }
 
-class ContactsCVCell: UICollectionViewCell {
+class MSContactsCVCell: UICollectionViewCell {
     
-    @IBOutlet weak var profilePic: RoundedImageView!
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var profilePic: RoundedImageView?
+    
+    @IBOutlet weak var nameLabel: UILabel?
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -83,7 +83,7 @@ class MSConversationViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ConversationsTBCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! MSConversationsTBCell
         cell.clearCellData()
         cell.profilePic.image = self.items[indexPath.row].user.profilePic
         cell.nameLabel.text = self.items[indexPath.row].user.name
