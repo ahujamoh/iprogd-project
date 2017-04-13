@@ -200,10 +200,10 @@
                                     <segue destination="nLi-2M-yhl" kind="show" id="Jsj-kH-4vO"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Pc-h0-A6Y">
-                                <rect key="frame" x="138" y="547" width="138" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="forgot password">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Pc-h0-A6Y">
+                                <rect key="frame" x="136" y="544" width="142" height="36"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                <state key="normal" title="Forgot password?">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -217,17 +217,21 @@
                             <constraint firstItem="2dp-0N-uGQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2L4-rh-MFv"/>
                             <constraint firstItem="Nta-5a-BuK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3Lt-sV-HMR"/>
                             <constraint firstItem="2dp-0N-uGQ" firstAttribute="top" secondItem="Zx1-26-4lc" secondAttribute="bottom" constant="8" id="65P-UU-yHe"/>
+                            <constraint firstItem="5Pc-h0-A6Y" firstAttribute="top" secondItem="2dp-0N-uGQ" secondAttribute="bottom" constant="30" id="7Cy-ns-wfs"/>
                             <constraint firstItem="Nta-5a-BuK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="202" id="7bc-nA-RE5"/>
                             <constraint firstItem="tdQ-sS-Nkr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="93u-Hy-wtU"/>
                             <constraint firstItem="pQ8-bL-JWN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Aub-yQ-AKZ"/>
                             <constraint firstItem="pQ8-bL-JWN" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="GDb-Z7-mtj"/>
                             <constraint firstItem="TeH-tk-Ugs" firstAttribute="top" secondItem="tdQ-sS-Nkr" secondAttribute="bottom" constant="8" id="IH5-37-hLb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5Pc-h0-A6Y" secondAttribute="trailing" constant="116" id="INb-WJ-Yfy"/>
+                            <constraint firstItem="eKN-VV-cxz" firstAttribute="top" secondItem="5Pc-h0-A6Y" secondAttribute="bottom" constant="100" id="Sp1-MD-mw3"/>
                             <constraint firstItem="b9o-9D-cM8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WN6-we-nej"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="eKN-VV-cxz" secondAttribute="bottom" constant="20" id="WnW-Da-9dS"/>
                             <constraint firstItem="TeH-tk-Ugs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aQ2-CX-bE3"/>
                             <constraint firstItem="Zx1-26-4lc" firstAttribute="top" secondItem="TeH-tk-Ugs" secondAttribute="bottom" constant="19" id="cuU-7e-2wd"/>
                             <constraint firstItem="eKN-VV-cxz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dJE-TM-lCo"/>
                             <constraint firstItem="tdQ-sS-Nkr" firstAttribute="top" secondItem="b9o-9D-cM8" secondAttribute="bottom" constant="8" id="iTy-eY-Cce"/>
+                            <constraint firstItem="5Pc-h0-A6Y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="116" id="lDd-88-H0O"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="pQ8-bL-JWN" secondAttribute="bottom" id="r3e-uX-pxV"/>
                             <constraint firstItem="Zx1-26-4lc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rai-BB-OGR"/>
                             <constraint firstAttribute="trailing" secondItem="pQ8-bL-JWN" secondAttribute="trailing" id="u37-Pg-56Y"/>
@@ -297,7 +301,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RvA-4h-2l1" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Poi-Kw-RXg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Poi-Kw-RXg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -726,7 +730,7 @@
         <scene sceneID="Hob-e3-CLY">
             <objects>
                 <navigationController id="MYR-OX-sxB" customClass="MSConversationsNavigationViewController" customModule="Moodstory" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="f5G-k2-yCW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="f5G-k2-yCW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1114,7 +1118,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nrp-AH-foO" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ieG-af-eYJ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ieG-af-eYJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1153,8 +1157,8 @@
         <image name="textFieldBackground" width="238" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kLc-Ts-eKp"/>
         <segue reference="gPf-jj-stm"/>
+        <segue reference="hiu-9Y-X3V"/>
         <segue reference="ft8-lO-b5G"/>
     </inferredMetricsTieBreakers>
 </document>

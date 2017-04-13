@@ -178,16 +178,17 @@ class MSLoginSignUpController: UIViewController {
                     
                     self.showResetPwdAlert()
                     
+                } else {
+            
+                    print("sent")
+                    self.sentResetEmailAlert()
+            
                 }
+                
             }
-            
-        } else {
-            
-            self.sentResetEmailAlert()
-            
         }
-
     }
+        
     
     func firebaseAuth(_ credential: FIRAuthCredential){
         
