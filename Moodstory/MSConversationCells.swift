@@ -81,9 +81,9 @@ class MSConversationsTBCell: UITableViewCell {
 
 class MSContactsCVCell: UICollectionViewCell {
     
-    @IBOutlet weak var profilePic: RoundedImageView!
+    @IBOutlet weak var profilePic: RoundedImageView?
     
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel?
     
     override func awakeFromNib() {
         super.awakeFromNib()
