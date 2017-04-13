@@ -142,20 +142,22 @@ class MSLoginSignUpController: UIViewController {
                 FIRAuth.auth()?.sendPasswordReset(withEmail: resetEmail) { (error) in
                     if error != nil {
                         
-                        print("Wrong email")
+                        let myColor : UIColor = UIColor( red: 1.0, green: 0, blue:0, alpha: 1.0 )
+                        textField.layer.borderColor = myColor.cgColor
+                        textField.layer.borderWidth = 0.5
                         
                     } else {
                         
                         self.sentResetEmailAlert()
+                        Malert.shared.dismiss(with: {[weak self] (_) in
+                            guard let strongSelf = self else { return }
+                        })
                         
                     }
                     
                 }
             }
             
-            Malert.shared.dismiss(with: {[weak self] (_) in
-                guard let strongSelf = self else { return }
-            })
         }
         
         Malert.shared.show(viewController: self, title: "Reset password", customView: textField, buttons: [thatIsAllFolksButton, updatedDismissButton], animationType: .modalLeft, malertConfiguration: malertConfig, tapToDismiss: false)
