@@ -52,6 +52,8 @@ class MSSignUpViewController: UIViewController {
                 
                 self.userAlreadyExistsAlert()
                 print("User Already Exists")
+                
+
                 if let user = user {
                     print (user)
                   //  self.completeLogin(id: user.uid)
@@ -74,6 +76,11 @@ class MSSignUpViewController: UIViewController {
                         }
                     }
                 })
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let viewController = storyboard.instantiateViewController(withIdentifier :"mapView") as! UIViewController
+                self.present(viewController, animated: true)
+                
+                
             }
         })
         
