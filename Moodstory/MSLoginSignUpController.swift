@@ -188,6 +188,9 @@ class MSLoginSignUpController: UIViewController {
         }
 
     }
+    @IBAction func signUpButtonPressed(_ sender: UIButton) {
+        print ("hello")
+    }
     
     func firebaseAuth(_ credential: FIRAuthCredential){
         
