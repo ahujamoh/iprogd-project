@@ -17,14 +17,17 @@ class MSConversationViewController: UIViewController, UITableViewDelegate, UITab
     var items = [Conversation]()
     var selectedUser: User?
     
+    //Function to call when you want to access all the contacs
     func showContacts(){
         let info = ["viewType" : ShowExtraView.contacts]
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showExtraView"), object: nil, userInfo: info)
     }
     
-    func setCreateConversation(){
+    
+    func setUpConversationScreen(){
         //Notification setup
         NotificationCenter.default.addObserver(self, selector: #selector(self.pushToUserMesssages(notification:)), name: NSNotification.Name(rawValue: "showUserMessages"), object: nil)
+        
         //right bar button
         let icon = UIImage.init(named: "send")?.withRenderingMode(.alwaysOriginal)
         let rightButton = UIBarButtonItem.init(image: icon!, style: .plain, target: self, action: #selector(MSConversationViewController.showContacts))
@@ -124,7 +127,7 @@ class MSConversationViewController: UIViewController, UITableViewDelegate, UITab
             
             
         }
-        self.setCreateConversation()
+        self.setUpConversationScreen()
         self.fetchData()
         // Do any additional setup after loading the view.
     }
