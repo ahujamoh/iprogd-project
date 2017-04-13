@@ -22,7 +22,7 @@ class MSCameraViewController: UIViewController {
     var currentLocation: CLLocation?
     var mapView: GMSMapView!
     var placesClient: GMSPlacesClient!
-    var zoomLevel: Float = 6.0
+    var zoomLevel: Float = 15.5
     
     // An array to hold the list of likely places.
     var likelyPlaces: [GMSPlace] = []
