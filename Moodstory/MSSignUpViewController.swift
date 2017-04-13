@@ -23,6 +23,7 @@ class MSSignUpViewController: UIViewController {
         Malert.shared.dismiss()
     }
     
+    // make an alert if the email address already has an associated user
     func userAlreadyExistsAlert() {
         let malertConfiguration = Helper.setUpSecondExampleCustomMalertViewConfig()
         var btConfiguration = MalertButtonConfiguration()
