@@ -294,6 +294,34 @@
             </objects>
             <point key="canvasLocation" x="2161" y="-413"/>
         </scene>
+        <!--Pop Up View Controller Table View Controller-->
+        <scene sceneID="Rx4-t2-pgu">
+            <objects>
+                <tableViewController id="rwk-he-N8e" customClass="MSPopUpViewControllerTableViewController" customModule="Moodstory" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="zxo-fi-W8i">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="0b7-K7-SIS">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0b7-K7-SIS" id="CWG-4Y-Wri">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="rwk-he-N8e" id="PVM-cm-0EJ"/>
+                            <outlet property="delegate" destination="rwk-he-N8e" id="dKL-NC-Lmq"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SOr-c2-Gf5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3128" y="-419"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="eZW-6T-1f6">
             <objects>
