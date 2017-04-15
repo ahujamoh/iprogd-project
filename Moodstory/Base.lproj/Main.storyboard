@@ -330,7 +330,7 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MSQ-N7-DYK" id="cuL-Va-oe8">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="79.666666666666671"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -428,58 +428,58 @@
                                 <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="58" id="5k8-ac-Y6j" userLabel="Cell" customClass="MSConversationsTBCell">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="58"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5k8-ac-Y6j" id="Nvv-ck-hb3">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="57.666666666666664"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellForConversation" rowHeight="80" id="wsf-We-fwo" customClass="MSConversationTableCellTableViewCell" customModule="Moodstory" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wsf-We-fwo" id="Elh-US-NGG" customClass="MSConversationTableCellTableViewCell" customModule="Moodstory" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile pic" translatesAutoresizingMaskIntoConstraints="NO" id="bP6-bM-QQi" userLabel="Profile Pic" customClass="RoundedImageView" customModule="Moodstory" customModuleProvider="target">
-                                                    <rect key="frame" x="10" y="4" width="50" height="50"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile pic" translatesAutoresizingMaskIntoConstraints="NO" id="VaP-xU-8ck" customClass="RoundedImageView" customModule="Moodstory" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="12" width="55" height="55"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="50" id="VYN-lf-De6"/>
-                                                        <constraint firstAttribute="width" constant="50" id="aYL-e3-CXo"/>
+                                                        <constraint firstAttribute="width" constant="55" id="2AS-Jb-ARg"/>
+                                                        <constraint firstAttribute="width" secondItem="VaP-xU-8ck" secondAttribute="height" multiplier="1:1" id="Pse-nS-J0K"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6R7-JJ-Wyp" userLabel="timeLabel">
-                                                    <rect key="frame" x="334" y="0.0" width="36" height="17"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First Name, Last Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMx-66-n4b">
-                                                    <rect key="frame" x="74" y="0.0" width="174" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fSl-4N-6R8" userLabel="nameLabel">
+                                                    <rect key="frame" x="71" y="17" width="45" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Lt-HD-BEe" userLabel="MessageLabel">
-                                                    <rect key="frame" x="72" y="18" width="45" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <attributedString key="attributedText">
-                                                        <fragment content="Messages">
-                                                            <attributes>
-                                                                <font key="NSFont" size="10" name="Avenir-LightOblique"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zy-Wf-eXX" userLabel="messageLabel">
+                                                    <rect key="frame" x="71" y="39" width="177" height="15"/>
+                                                    <fontDescription key="fontDescription" type="italicSystem" pointSize="12"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfg-9D-ZI4" userLabel="timeLabel">
+                                                    <rect key="frame" x="264" y="16" width="46" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="bP6-bM-QQi" firstAttribute="centerY" secondItem="Nvv-ck-hb3" secondAttribute="centerY" id="PII-N5-k1w"/>
-                                                <constraint firstItem="bP6-bM-QQi" firstAttribute="leading" secondItem="Nvv-ck-hb3" secondAttribute="leading" constant="10" id="VPM-Ar-PRP"/>
+                                                <constraint firstItem="fSl-4N-6R8" firstAttribute="leading" secondItem="VaP-xU-8ck" secondAttribute="trailing" constant="8" id="2pD-Wg-b2g"/>
+                                                <constraint firstItem="VaP-xU-8ck" firstAttribute="leading" secondItem="Elh-US-NGG" secondAttribute="leadingMargin" id="4X2-0Y-2GT"/>
+                                                <constraint firstItem="hfg-9D-ZI4" firstAttribute="top" secondItem="Elh-US-NGG" secondAttribute="topMargin" constant="8" id="BQ7-0G-FhB"/>
+                                                <constraint firstItem="0zy-Wf-eXX" firstAttribute="leading" secondItem="VaP-xU-8ck" secondAttribute="trailing" constant="8" id="Xuj-XO-gyk"/>
+                                                <constraint firstItem="VaP-xU-8ck" firstAttribute="centerY" secondItem="Elh-US-NGG" secondAttribute="centerY" id="bdu-M4-c4t"/>
+                                                <constraint firstItem="0zy-Wf-eXX" firstAttribute="top" secondItem="fSl-4N-6R8" secondAttribute="bottom" constant="1" id="bvu-IM-Ic2"/>
+                                                <constraint firstItem="fSl-4N-6R8" firstAttribute="top" secondItem="Elh-US-NGG" secondAttribute="topMargin" constant="9" id="chW-g2-xIk"/>
+                                                <constraint firstItem="hfg-9D-ZI4" firstAttribute="leading" secondItem="fSl-4N-6R8" secondAttribute="trailing" constant="148" id="ep7-mT-4Sv"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="hfg-9D-ZI4" secondAttribute="trailing" constant="2" id="fUq-1F-4iO"/>
+                                                <constraint firstItem="0zy-Wf-eXX" firstAttribute="top" secondItem="fSl-4N-6R8" secondAttribute="bottom" constant="1" id="t1F-Pk-8W0"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="0zy-Wf-eXX" secondAttribute="trailing" constant="158" id="w4e-jh-9VJ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="messageLabel" destination="3Lt-HD-BEe" id="pD7-5W-okD"/>
-                                            <outlet property="nameLabel" destination="aMx-66-n4b" id="ugI-ss-ain"/>
-                                            <outlet property="profilePic" destination="bP6-bM-QQi" id="feC-ka-ANy"/>
-                                            <outlet property="timeLabel" destination="6R7-JJ-Wyp" id="52e-ml-R3U"/>
+                                            <outlet property="messageLabel" destination="0zy-Wf-eXX" id="rOY-L0-SrG"/>
+                                            <outlet property="nameLabel" destination="fSl-4N-6R8" id="R1g-24-ld2"/>
+                                            <outlet property="profilePic" destination="VaP-xU-8ck" id="Mpj-cK-ysP"/>
+                                            <outlet property="timeLabel" destination="hfg-9D-ZI4" id="dXS-ev-bXL"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -532,7 +532,7 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vQZ-71-vDm" id="o1g-2Q-aHX">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" restorationIdentifier="adf" translatesAutoresizingMaskIntoConstraints="NO" id="IQh-ia-14G" userLabel="Message Background">
@@ -582,7 +582,7 @@
                                         <rect key="frame" x="0.0" y="72" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yzi-Jw-p4V" id="bhv-of-oZH">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5vT-jc-A4c" userLabel="Message Background">

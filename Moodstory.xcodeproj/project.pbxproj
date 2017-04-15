@@ -37,6 +37,8 @@
 		E431C02E1E9A28E300CEE7D0 /* MSConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E431C02D1E9A28E300CEE7D0 /* MSConversationViewController.swift */; };
 		E431C0331E9A299900CEE7D0 /* MSUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E431C0321E9A299900CEE7D0 /* MSUtility.swift */; };
 		E431C0351E9A335500CEE7D0 /* MSConversationCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = E431C0341E9A335500CEE7D0 /* MSConversationCells.swift */; };
+		E43A88641E9FF82600DA500E /* MSConversationTableCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43A88621E9FF82600DA500E /* MSConversationTableCellTableViewCell.swift */; };
+		E43A88651E9FF82600DA500E /* MSConversationTableCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E43A88631E9FF82600DA500E /* MSConversationTableCellTableViewCell.xib */; };
 		E4A3CBA31E9AA7F2000B9428 /* MSChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A3CBA21E9AA7F2000B9428 /* MSChatViewController.swift */; };
 		E4A3CBA51E9BCFD6000B9428 /* MSConversationsNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A3CBA41E9BCFD6000B9428 /* MSConversationsNavigationViewController.swift */; };
 /* End PBXBuildFile section */
@@ -78,6 +80,8 @@
 		E431C02D1E9A28E300CEE7D0 /* MSConversationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSConversationViewController.swift; sourceTree = "<group>"; };
 		E431C0321E9A299900CEE7D0 /* MSUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSUtility.swift; sourceTree = "<group>"; };
 		E431C0341E9A335500CEE7D0 /* MSConversationCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSConversationCells.swift; sourceTree = "<group>"; };
+		E43A88621E9FF82600DA500E /* MSConversationTableCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSConversationTableCellTableViewCell.swift; sourceTree = "<group>"; };
+		E43A88631E9FF82600DA500E /* MSConversationTableCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSConversationTableCellTableViewCell.xib; sourceTree = "<group>"; };
 		E4A3CBA21E9AA7F2000B9428 /* MSChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSChatViewController.swift; sourceTree = "<group>"; };
 		E4A3CBA41E9BCFD6000B9428 /* MSConversationsNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSConversationsNavigationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -250,6 +254,8 @@
 			children = (
 				E431C02D1E9A28E300CEE7D0 /* MSConversationViewController.swift */,
 				E431C0341E9A335500CEE7D0 /* MSConversationCells.swift */,
+				E43A88621E9FF82600DA500E /* MSConversationTableCellTableViewCell.swift */,
+				E43A88631E9FF82600DA500E /* MSConversationTableCellTableViewCell.xib */,
 				E4A3CBA21E9AA7F2000B9428 /* MSChatViewController.swift */,
 			);
 			name = Conversation;
@@ -321,6 +327,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E43A88651E9FF82600DA500E /* MSConversationTableCellTableViewCell.xib in Resources */,
 				C40DD7731E78211A0035B234 /* LaunchScreen.storyboard in Resources */,
 				C40DD77B1E7824910035B234 /* GoogleService-Info.plist in Resources */,
 				C40DD7701E78211A0035B234 /* Assets.xcassets in Resources */,
@@ -400,6 +407,7 @@
 				E431C02B1E9A27AA00CEE7D0 /* Message.swift in Sources */,
 				C40DD7861E7830580035B234 /* MSCameraViewController.swift in Sources */,
 				94E6D8761E856648002B13C5 /* MSCreateAccountController.swift in Sources */,
+				E43A88641E9FF82600DA500E /* MSConversationTableCellTableViewCell.swift in Sources */,
 				C4D69C831E7CE78C00CB5783 /* MSSnapViewController.swift in Sources */,
 				E4A3CBA31E9AA7F2000B9428 /* MSChatViewController.swift in Sources */,
 				E431C02A1E9A27AA00CEE7D0 /* User.swift in Sources */,

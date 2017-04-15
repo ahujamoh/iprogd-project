@@ -21,6 +21,10 @@ class Conversation {
         if let currentUserID = FIRAuth.auth()?.currentUser?.uid {
             var conversations = [Conversation]()
             //put some stuff here.
+            let user_item = User.init(name: "Test", email: "test@test.com", id: "test", profilePic: UIImage(named: "profile pic")!)
+            let message_item = Message.init(type: MessageType.text, content: "test data", owner: MessageOwner.receiver, timestamp: 9999999999, isRead: false)
+            let convo_item = Conversation.init(user: user_item, lastMessage: message_item)
+            conversations.append(convo_item)
             completion(conversations)
 //            FIRDatabase.database().reference().child("users").child(currentUserID).child("conversations").observe(.childAdded, with: { (snapshot) in
 //                if snapshot.exists() {
