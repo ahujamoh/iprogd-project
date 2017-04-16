@@ -292,7 +292,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5D7-WD-tmv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2161" y="-413"/>
+            <point key="canvasLocation" x="2136" y="-977"/>
         </scene>
         <!--Pop Up View Controller Table View Controller-->
         <scene sceneID="Rx4-t2-pgu">
@@ -320,7 +320,40 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SOr-c2-Gf5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3128" y="-419"/>
+            <point key="canvasLocation" x="3584" y="-419"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="hwN-h2-MdX">
+            <objects>
+                <viewController id="06l-8K-c0I" customClass="MSMapViewController" customModule="Moodstory" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ewj-tO-Eya"/>
+                        <viewControllerLayoutGuide type="bottom" id="OID-cj-0Fj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hpD-eJ-CHA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="J7w-fO-4q9">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <connections>
+                                    <outlet property="delegate" destination="06l-8K-c0I" id="Aqv-G0-YL1"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="J7w-fO-4q9" firstAttribute="bottom" secondItem="OID-cj-0Fj" secondAttribute="top" id="JSE-dA-2TN"/>
+                            <constraint firstItem="J7w-fO-4q9" firstAttribute="leading" secondItem="hpD-eJ-CHA" secondAttribute="leading" id="NSS-gd-0et"/>
+                            <constraint firstItem="J7w-fO-4q9" firstAttribute="top" secondItem="hpD-eJ-CHA" secondAttribute="top" id="sKt-aN-ygr"/>
+                            <constraint firstAttribute="trailing" secondItem="J7w-fO-4q9" secondAttribute="trailing" id="vwj-2f-jcM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="xhl-eK-xR5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M6b-Cl-g6C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2859" y="-413"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eZW-6T-1f6">
@@ -333,7 +366,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Hcf-b0-iwU" kind="relationship" relationship="rootViewController" id="RtD-ye-mNH"/>
+                        <segue destination="06l-8K-c0I" kind="relationship" relationship="rootViewController" id="orr-iW-HIO"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WeW-ud-NdP" userLabel="First Responder" sceneMemberID="firstResponder"/>

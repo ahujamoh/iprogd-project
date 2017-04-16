@@ -10,6 +10,8 @@
 		54330B30CDC205AA97AF81D4 /* Pods_Moodstory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D63419375C6490080DC587 /* Pods_Moodstory.framework */; };
 		5629A7841E9EA050004097C3 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5629A7831E9EA050004097C3 /* Helper.swift */; };
 		5629A7861E9FF89B004097C3 /* MSPopUpViewControllerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5629A7851E9FF89B004097C3 /* MSPopUpViewControllerTableViewController.swift */; };
+		5629A7881EA37E8B004097C3 /* MSMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5629A7871EA37E8B004097C3 /* MSMapViewController.swift */; };
+		5629A78A1EA38AB4004097C3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5629A7891EA38AB4004097C3 /* MapKit.framework */; };
 		94E6D8761E856648002B13C5 /* MSCreateAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E6D8751E856648002B13C5 /* MSCreateAccountController.swift */; };
 		C40DD7691E78211A0035B234 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40DD7681E78211A0035B234 /* AppDelegate.swift */; };
 		C40DD76B1E78211A0035B234 /* MSLoginSignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40DD76A1E78211A0035B234 /* MSLoginSignUpController.swift */; };
@@ -44,6 +46,8 @@
 /* Begin PBXFileReference section */
 		5629A7831E9EA050004097C3 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		5629A7851E9FF89B004097C3 /* MSPopUpViewControllerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSPopUpViewControllerTableViewController.swift; sourceTree = "<group>"; };
+		5629A7871EA37E8B004097C3 /* MSMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSMapViewController.swift; sourceTree = "<group>"; };
+		5629A7891EA38AB4004097C3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		70BD6B0570BF7F5E506AC44E /* Pods-Moodstory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moodstory.release.xcconfig"; path = "Pods/Target Support Files/Pods-Moodstory/Pods-Moodstory.release.xcconfig"; sourceTree = "<group>"; };
 		790E906735170C74DF00CAF1 /* Pods-Moodstory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moodstory.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Moodstory/Pods-Moodstory.debug.xcconfig"; sourceTree = "<group>"; };
 		9477121B1E9E9F1C0082EB2B /* MSSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSSignUpViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5629A78A1EA38AB4004097C3 /* MapKit.framework in Frameworks */,
 				C40DD78B1E7854380035B234 /* Bolts.framework in Frameworks */,
 				C40DD78C1E7854380035B234 /* FBSDKCoreKit.framework in Frameworks */,
 				C40DD78E1E7854380035B234 /* FBSDKShareKit.framework in Frameworks */,
@@ -103,6 +108,7 @@
 		4E9E3ADACAF1F725955805E9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5629A7891EA38AB4004097C3 /* MapKit.framework */,
 				C40DD7871E7854380035B234 /* Bolts.framework */,
 				C40DD7881E7854380035B234 /* FBSDKCoreKit.framework */,
 				C40DD7891E7854380035B234 /* FBSDKLoginKit.framework */,
@@ -195,6 +201,7 @@
 				C40DD76A1E78211A0035B234 /* MSLoginSignUpController.swift */,
 				94E6D8751E856648002B13C5 /* MSCreateAccountController.swift */,
 				5629A7851E9FF89B004097C3 /* MSPopUpViewControllerTableViewController.swift */,
+				5629A7871EA37E8B004097C3 /* MSMapViewController.swift */,
 			);
 			name = LoginSignUp;
 			sourceTree = "<group>";
@@ -405,6 +412,7 @@
 				C4D69C831E7CE78C00CB5783 /* MSSnapViewController.swift in Sources */,
 				E4A3CBA31E9AA7F2000B9428 /* MSChatViewController.swift in Sources */,
 				E431C02A1E9A27AA00CEE7D0 /* User.swift in Sources */,
+				5629A7881EA37E8B004097C3 /* MSMapViewController.swift in Sources */,
 				E431C0331E9A299900CEE7D0 /* MSUtility.swift in Sources */,
 				C4E9A08A1E7949C40040C5D9 /* Constants.swift in Sources */,
 			);
