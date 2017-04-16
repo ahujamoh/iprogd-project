@@ -745,10 +745,10 @@
             </objects>
             <point key="canvasLocation" x="4142" y="1392"/>
         </scene>
-        <!--View Profile Picture-->
+        <!--Profile Picture View Controller-->
         <scene sceneID="UYk-3N-Z5N">
             <objects>
-                <viewController storyboardIdentifier="profilePicView" id="F7s-Ne-l8i" customClass="MSViewProfilePicture" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="profilePicView" id="F7s-Ne-l8i" customClass="MSProfilePictureViewController" customModule="Moodstory" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="e0S-CS-fPc"/>
                         <viewControllerLayoutGuide type="bottom" id="mlr-M8-UmT"/>
@@ -766,6 +766,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DYQ-y3-Q39">
                                 <rect key="frame" x="20" y="20" width="34" height="30"/>
                                 <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="backButton:" destination="F7s-Ne-l8i" eventType="touchUpInside" id="QGI-sE-SB4"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
