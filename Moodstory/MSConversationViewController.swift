@@ -135,6 +135,10 @@ class MSConversationViewController: UIViewController, UITableViewDelegate, UITab
 //        self.tableView.register(nibName, forCellReuseIdentifier: reuseIdentifier)
         self.setUpConversationScreen()
         self.fetchData()
+        self.tableView.estimatedRowHeight = 80
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.setNeedsLayout()
+        self.tableView.layoutIfNeeded()
         // Do any additional setup after loading the view.
     }
     
