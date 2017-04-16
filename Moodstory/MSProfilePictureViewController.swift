@@ -29,14 +29,14 @@ class MSProfilePictureViewController: UIViewController {
         
 
         // 1
-        let optionMenu = UIAlertController(title: nil, message: "Change pictur", preferredStyle: .actionSheet)
+        let optionMenu = UIAlertController(title: nil, message: "Change picture", preferredStyle: .actionSheet)
         
         // 2
-        let deleteAction = UIAlertAction(title: "Take photo", style: .default, handler: {
+        let takePhotoAction = UIAlertAction(title: "Take photo", style: .default, handler: {
             (alert: UIAlertAction!) -> Void in
             print("Open Camera")
         })
-        let saveAction = UIAlertAction(title: "Choose from Camera Roll", style: .default, handler: {
+        let cameraRollAction = UIAlertAction(title: "Choose Photo", style: .default, handler: {
             (alert: UIAlertAction!) -> Void in
             print("Open camera roll")
         })
@@ -49,8 +49,8 @@ class MSProfilePictureViewController: UIViewController {
         
         
         // 4
-        optionMenu.addAction(deleteAction)
-        optionMenu.addAction(saveAction)
+        optionMenu.addAction(takePhotoAction)
+        optionMenu.addAction(cameraRollAction)
         optionMenu.addAction(cancelAction)
         
         // 5
