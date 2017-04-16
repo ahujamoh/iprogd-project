@@ -5,7 +5,7 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12084"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -342,6 +342,16 @@
                                     <constraint firstAttribute="height" constant="80" id="u3t-fs-rEK"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJu-wZ-rb8">
+                                <rect key="frame" x="10" y="10" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="0Nc-w4-uYG"/>
+                                    <constraint firstAttribute="height" constant="80" id="X3f-As-0HA"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="showProfilePicButton:" destination="UGD-4i-0WO" eventType="touchUpInside" id="j2H-VM-zJF"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Muhammad Mustafa Saeed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C54-Kc-WL1">
                                 <rect key="frame" x="10" y="105" width="179" height="20"/>
                                 <constraints>
@@ -358,9 +368,11 @@
                             <constraint firstItem="C54-Kc-WL1" firstAttribute="leading" secondItem="qL3-gL-uex" secondAttribute="leading" constant="10" id="187-li-Pya"/>
                             <constraint firstItem="1gk-Qp-vXQ" firstAttribute="top" secondItem="qL3-gL-uex" secondAttribute="top" constant="10" id="3FQ-cV-SiM"/>
                             <constraint firstAttribute="trailing" secondItem="fpc-38-4cR" secondAttribute="trailing" id="3Hp-pr-vhR"/>
+                            <constraint firstItem="fJu-wZ-rb8" firstAttribute="top" secondItem="qL3-gL-uex" secondAttribute="top" constant="10" id="4TU-f7-UNV"/>
                             <constraint firstItem="fpc-38-4cR" firstAttribute="top" secondItem="w6h-aE-Vk8" secondAttribute="bottom" constant="117" id="LsC-rB-ziW"/>
                             <constraint firstItem="fpc-38-4cR" firstAttribute="leading" secondItem="qL3-gL-uex" secondAttribute="leading" id="M8r-eM-jIn"/>
                             <constraint firstItem="1gk-Qp-vXQ" firstAttribute="leading" secondItem="qL3-gL-uex" secondAttribute="leading" constant="10" id="fEB-AN-7cM"/>
+                            <constraint firstItem="fJu-wZ-rb8" firstAttribute="leading" secondItem="qL3-gL-uex" secondAttribute="leading" constant="10" id="mUL-Rj-6UG"/>
                             <constraint firstItem="C54-Kc-WL1" firstAttribute="top" secondItem="1gk-Qp-vXQ" secondAttribute="bottom" constant="15" id="qLz-n7-hh8"/>
                             <constraint firstItem="mNo-c7-y97" firstAttribute="top" secondItem="fpc-38-4cR" secondAttribute="bottom" id="raa-Dg-26e"/>
                         </constraints>
@@ -377,7 +389,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kt4-Hq-xA7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="680" y="309"/>
+            <point key="canvasLocation" x="679.71014492753625" y="308.96739130434787"/>
         </scene>
         <!--Message List View Controller-->
         <scene sceneID="tzM-ZE-pqF">
@@ -732,6 +744,44 @@
                 </view>
             </objects>
             <point key="canvasLocation" x="4142" y="1392"/>
+        </scene>
+        <!--View Profile Picture-->
+        <scene sceneID="UYk-3N-Z5N">
+            <objects>
+                <viewController storyboardIdentifier="profilePicView" id="F7s-Ne-l8i" customClass="MSViewProfilePicture" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="e0S-CS-fPc"/>
+                        <viewControllerLayoutGuide type="bottom" id="mlr-M8-UmT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jst-MX-Zc4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilePicture" translatesAutoresizingMaskIntoConstraints="NO" id="6jw-lo-R4D">
+                                <rect key="frame" x="20" y="141" width="374" height="374"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="6jw-lo-R4D" secondAttribute="height" multiplier="1:1" id="6rs-z1-Vlb"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DYQ-y3-Q39">
+                                <rect key="frame" x="20" y="20" width="34" height="30"/>
+                                <state key="normal" title="Back"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="6jw-lo-R4D" secondAttribute="trailing" id="0zx-VD-RR7"/>
+                            <constraint firstItem="6jw-lo-R4D" firstAttribute="leading" secondItem="jst-MX-Zc4" secondAttribute="leadingMargin" id="6NN-Ww-g4w"/>
+                            <constraint firstItem="DYQ-y3-Q39" firstAttribute="leading" secondItem="jst-MX-Zc4" secondAttribute="leadingMargin" id="bt5-Gf-KmF"/>
+                            <constraint firstItem="6jw-lo-R4D" firstAttribute="centerX" secondItem="jst-MX-Zc4" secondAttribute="centerX" id="gdE-LJ-bQx"/>
+                            <constraint firstItem="6jw-lo-R4D" firstAttribute="top" secondItem="DYQ-y3-Q39" secondAttribute="bottom" constant="91" id="jIU-T0-v13"/>
+                            <constraint firstItem="DYQ-y3-Q39" firstAttribute="top" secondItem="e0S-CS-fPc" secondAttribute="bottom" id="usl-hW-Ozd"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cFq-QY-K41" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="679.71014492753625" y="1118.4782608695652"/>
         </scene>
         <!--Conversations Navigation View Controller-->
         <scene sceneID="Hob-e3-CLY">
@@ -1168,7 +1218,7 @@
         <image name="textFieldBackground" width="238" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="igr-hV-2Mi"/>
-        <segue reference="gPf-jj-stm"/>
+        <segue reference="koQ-hW-pDC"/>
+        <segue reference="ft8-lO-b5G"/>
     </inferredMetricsTieBreakers>
 </document>

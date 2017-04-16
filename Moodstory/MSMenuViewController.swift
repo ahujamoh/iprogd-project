@@ -16,6 +16,14 @@ class MSMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var ProfilePicture: UIImageView!
     @IBOutlet weak var nameOfUser: UILabel!
     
+    @IBAction func showProfilePicButton(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier :"profilePicView") as! UIViewController
+        self.present(viewController, animated: true)
+        
+
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
