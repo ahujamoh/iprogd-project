@@ -8,9 +8,10 @@
 
 import UIKit
 import Firebase
+private let reuseIdentifier = "CellForCV"
 class MSConversationsNavigationViewController: UINavigationController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    @IBOutlet weak var collectionsView: UICollectionView!
+    @IBOutlet var collectionsView: UICollectionView!
     @IBOutlet var contactsView: UIView!
     let darkView = UIView.init()
     var items = [User]()
@@ -105,8 +106,9 @@ class MSConversationsNavigationViewController: UINavigationController, UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellForCV", for: indexPath) as! MSContactsCVCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! MSContactsCVCell
         //TODO: Mustafa: fix this to put the profile pic and name please
+        cell.backgroundColor = UIColor.blue
         cell.profilePic?.image = self.items[indexPath.row].profilePic
         cell.nameLabel?.text = self.items[indexPath.row].name
         cell.profilePic?.layer.borderWidth = 2
@@ -148,8 +150,9 @@ class MSConversationsNavigationViewController: UINavigationController, UICollect
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        collectionsView.register(MSContactsCVCell.self, forCellWithReuseIdentifier: "CellForCV")
-        
+//        collectionsView.register(MSContactsCVCell.self, forCellWithReuseIdentifier: "CellForCV")
+//        
+//        self.collectionsView!.register(MSContactsCVCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         self.customization()
     }
     

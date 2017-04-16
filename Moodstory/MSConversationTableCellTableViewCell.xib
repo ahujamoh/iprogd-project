@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="80" id="KGk-i7-Jjw" customClass="MSConversationTableCellTableViewCell" customModule="Moodstory" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM" customClass="MSConversationTableCellTableViewCell" customModule="Moodstory" customModuleProvider="target">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="79.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile pic" translatesAutoresizingMaskIntoConstraints="NO" id="LpV-b1-vMr" customClass="RoundedImageView" customModule="Moodstory" customModuleProvider="target">
+                        <rect key="frame" x="8" y="12.5" width="55" height="55"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="55" id="hMJ-6n-2JT"/>
+                            <constraint firstAttribute="width" secondItem="LpV-b1-vMr" secondAttribute="height" multiplier="1:1" id="m08-qC-BCv"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DP6-yx-o8a" userLabel="nameLabel">
+                        <rect key="frame" x="71" y="17" width="45" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uY3-x0-R2U" userLabel="messageLabel">
+                        <rect key="frame" x="71" y="39" width="83" height="14.5"/>
+                        <fontDescription key="fontDescription" type="italicSystem" pointSize="12"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPX-to-eYR" userLabel="timeLabel">
+                        <rect key="frame" x="264" y="16" width="46" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="uY3-x0-R2U" firstAttribute="top" secondItem="DP6-yx-o8a" secondAttribute="bottom" constant="1" id="P8N-g4-xgo"/>
+                    <constraint firstItem="LpV-b1-vMr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Q4p-yZ-woE"/>
+                    <constraint firstItem="UPX-to-eYR" firstAttribute="leading" secondItem="DP6-yx-o8a" secondAttribute="trailing" constant="148" id="Y9Q-t6-Wk8"/>
+                    <constraint firstItem="DP6-yx-o8a" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="9" id="bAV-bB-IN9"/>
+                    <constraint firstItem="LpV-b1-vMr" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="dwj-Zq-ZAk"/>
+                    <constraint firstItem="UPX-to-eYR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="e3g-2B-vaW"/>
+                    <constraint firstItem="DP6-yx-o8a" firstAttribute="leading" secondItem="LpV-b1-vMr" secondAttribute="trailing" constant="8" id="eG6-fS-M9E"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="uY3-x0-R2U" secondAttribute="trailing" constant="158" id="jxd-cL-1g9"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="UPX-to-eYR" secondAttribute="trailing" constant="2" id="nWz-7v-qM5"/>
+                    <constraint firstItem="uY3-x0-R2U" firstAttribute="leading" secondItem="LpV-b1-vMr" secondAttribute="trailing" constant="8" id="nmP-g0-THe"/>
+                    <constraint firstItem="uY3-x0-R2U" firstAttribute="top" secondItem="DP6-yx-o8a" secondAttribute="bottom" constant="1" id="yNN-Ez-LIA"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="303" y="55"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="profile pic" width="100" height="100"/>
+    </resources>
+</document>

@@ -8,6 +8,8 @@
 
 import UIKit
 
+private let reuseIdentifier = "CellForConversation"
+
 class MSConversationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var menuBarButton: UIBarButtonItem!
@@ -86,7 +88,8 @@ class MSConversationViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! MSConversationsTBCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! MSConversationTableCellTableViewCell
+//        cell.backgroundColor = UIColor.black
         cell.clearCellData()
         cell.profilePic.image = self.items[indexPath.row].user.profilePic
         cell.nameLabel.text = self.items[indexPath.row].user.name
@@ -127,6 +130,9 @@ class MSConversationViewController: UIViewController, UITableViewDelegate, UITab
             
             
         }
+//        let nibName = UINib(nibName: "MSConversationTableCellTableViewCell",
+//                            bundle: nil)
+//        self.tableView.register(nibName, forCellReuseIdentifier: reuseIdentifier)
         self.setUpConversationScreen()
         self.fetchData()
         // Do any additional setup after loading the view.

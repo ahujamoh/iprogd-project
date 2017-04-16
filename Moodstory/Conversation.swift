@@ -20,21 +20,27 @@ class Conversation {
     class func showConversations(completion: @escaping ([Conversation]) -> Swift.Void) {
         if let currentUserID = FIRAuth.auth()?.currentUser?.uid {
             var conversations = [Conversation]()
-            FIRDatabase.database().reference().child("users").child(currentUserID).child("conversations").observe(.childAdded, with: { (snapshot) in
-                if snapshot.exists() {
-                    let fromID = snapshot.key
-                    let values = snapshot.value as! [String: String]
-                    let location = values["location"]!
-                    User.info(forUserID: fromID, completion: { (user) in
-                        let emptyMessage = Message.init(type: .text, content: "loading", owner: .sender, timestamp: 0, isRead: true)
-                        let conversation = Conversation.init(user: user, lastMessage: emptyMessage)
-                        conversations.append(conversation)
-                        conversation.lastMessage.downloadLastMessage(forLocation: location, completion: { (_) in
-                            completion(conversations)
-                        })
-                    })
-                }
-            })
+            //put some stuff here.
+            let user_item = User.init(name: "Test", email: "test@test.com", id: "test", profilePic: UIImage(named: "profile pic")!)
+            let message_item = Message.init(type: MessageType.text, content: "test data", owner: MessageOwner.receiver, timestamp: 9999999999, isRead: false)
+            let convo_item = Conversation.init(user: user_item, lastMessage: message_item)
+            conversations.append(convo_item)
+            completion(conversations)
+//            FIRDatabase.database().reference().child("users").child(currentUserID).child("conversations").observe(.childAdded, with: { (snapshot) in
+//                if snapshot.exists() {
+//                    let fromID = snapshot.key
+//                    let values = snapshot.value as! [String: String]
+//                    let location = values["location"]!
+//                    User.info(forUserID: fromID, completion: { (user) in
+//                        let emptyMessage = Message.init(type: .text, content: "loading", owner: .sender, timestamp: 0, isRead: true)
+//                        let conversation = Conversation.init(user: user, lastMessage: emptyMessage)
+//                        conversations.append(conversation)
+//                        conversation.lastMessage.downloadLastMessage(forLocation: location, completion: { (_) in
+//                            completion(conversations)
+//                        })
+//                    })
+//                }
+//            })
         }
     }
     

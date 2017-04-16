@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		54330B30CDC205AA97AF81D4 /* Pods_Moodstory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D63419375C6490080DC587 /* Pods_Moodstory.framework */; };
 		5629A7841E9EA050004097C3 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5629A7831E9EA050004097C3 /* Helper.swift */; };
+		947235A21EA37A2400746E3C /* MSProfilePictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947235A11EA37A2400746E3C /* MSProfilePictureViewController.swift */; };
+		947235A51EA381E700746E3C /* MSConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947235A31EA381E700746E3C /* MSConversationsViewController.swift */; };
+		947235A61EA381E700746E3C /* MSMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947235A41EA381E700746E3C /* MSMenuViewController.swift */; };
 		947A162F1E9FDCDE002FD0A4 /* MSSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9477121B1E9E9F1C0082EB2B /* MSSignUpViewController.swift */; };
 		94E6D8761E856648002B13C5 /* MSCreateAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E6D8751E856648002B13C5 /* MSCreateAccountController.swift */; };
 		C40DD7691E78211A0035B234 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40DD7681E78211A0035B234 /* AppDelegate.swift */; };
@@ -30,13 +33,14 @@
 		C4D69C831E7CE78C00CB5783 /* MSSnapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D69C821E7CE78C00CB5783 /* MSSnapViewController.swift */; };
 		C4E9A08A1E7949C40040C5D9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E9A0891E7949C40040C5D9 /* Constants.swift */; };
 		C4E9A08F1E7CAEC20040C5D9 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4E9A08E1E7CAEC20040C5D9 /* SWRevealViewController.m */; };
-		C4E9A0921E7CB04C0040C5D9 /* MSMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E9A0911E7CB04C0040C5D9 /* MSMenuViewController.swift */; };
 		E431C02A1E9A27AA00CEE7D0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E431C0271E9A27AA00CEE7D0 /* User.swift */; };
 		E431C02B1E9A27AA00CEE7D0 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = E431C0281E9A27AA00CEE7D0 /* Message.swift */; };
 		E431C02C1E9A27AA00CEE7D0 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E431C0291E9A27AA00CEE7D0 /* Conversation.swift */; };
 		E431C02E1E9A28E300CEE7D0 /* MSConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E431C02D1E9A28E300CEE7D0 /* MSConversationViewController.swift */; };
 		E431C0331E9A299900CEE7D0 /* MSUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E431C0321E9A299900CEE7D0 /* MSUtility.swift */; };
 		E431C0351E9A335500CEE7D0 /* MSConversationCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = E431C0341E9A335500CEE7D0 /* MSConversationCells.swift */; };
+		E43A88641E9FF82600DA500E /* MSConversationTableCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43A88621E9FF82600DA500E /* MSConversationTableCellTableViewCell.swift */; };
+		E43A88651E9FF82600DA500E /* MSConversationTableCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E43A88631E9FF82600DA500E /* MSConversationTableCellTableViewCell.xib */; };
 		E4A3CBA31E9AA7F2000B9428 /* MSChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A3CBA21E9AA7F2000B9428 /* MSChatViewController.swift */; };
 		E4A3CBA51E9BCFD6000B9428 /* MSConversationsNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A3CBA41E9BCFD6000B9428 /* MSConversationsNavigationViewController.swift */; };
 /* End PBXBuildFile section */
@@ -45,6 +49,9 @@
 		5629A7831E9EA050004097C3 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		70BD6B0570BF7F5E506AC44E /* Pods-Moodstory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moodstory.release.xcconfig"; path = "Pods/Target Support Files/Pods-Moodstory/Pods-Moodstory.release.xcconfig"; sourceTree = "<group>"; };
 		790E906735170C74DF00CAF1 /* Pods-Moodstory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moodstory.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Moodstory/Pods-Moodstory.debug.xcconfig"; sourceTree = "<group>"; };
+		947235A11EA37A2400746E3C /* MSProfilePictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSProfilePictureViewController.swift; sourceTree = "<group>"; };
+		947235A31EA381E700746E3C /* MSConversationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSConversationsViewController.swift; sourceTree = "<group>"; };
+		947235A41EA381E700746E3C /* MSMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSMenuViewController.swift; sourceTree = "<group>"; };
 		9477121B1E9E9F1C0082EB2B /* MSSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSSignUpViewController.swift; sourceTree = "<group>"; };
 		94E6D8751E856648002B13C5 /* MSCreateAccountController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSCreateAccountController.swift; sourceTree = "<group>"; };
 		C40DD7651E78211A0035B234 /* Moodstory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moodstory.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,7 +77,6 @@
 		C4E9A08C1E7CAEC10040C5D9 /* Moodstory-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Moodstory-Bridging-Header.h"; sourceTree = "<group>"; };
 		C4E9A08D1E7CAEC20040C5D9 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		C4E9A08E1E7CAEC20040C5D9 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
-		C4E9A0911E7CB04C0040C5D9 /* MSMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSMenuViewController.swift; sourceTree = "<group>"; };
 		D8D63419375C6490080DC587 /* Pods_Moodstory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moodstory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E431C0271E9A27AA00CEE7D0 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E431C0281E9A27AA00CEE7D0 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
@@ -78,6 +84,8 @@
 		E431C02D1E9A28E300CEE7D0 /* MSConversationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSConversationViewController.swift; sourceTree = "<group>"; };
 		E431C0321E9A299900CEE7D0 /* MSUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSUtility.swift; sourceTree = "<group>"; };
 		E431C0341E9A335500CEE7D0 /* MSConversationCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSConversationCells.swift; sourceTree = "<group>"; };
+		E43A88621E9FF82600DA500E /* MSConversationTableCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSConversationTableCellTableViewCell.swift; sourceTree = "<group>"; };
+		E43A88631E9FF82600DA500E /* MSConversationTableCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSConversationTableCellTableViewCell.xib; sourceTree = "<group>"; };
 		E4A3CBA21E9AA7F2000B9428 /* MSChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSChatViewController.swift; sourceTree = "<group>"; };
 		E4A3CBA41E9BCFD6000B9428 /* MSConversationsNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSConversationsNavigationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,6 +118,14 @@
 				D8D63419375C6490080DC587 /* Pods_Moodstory.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		947235A01EA379D300746E3C /* Profile Picture */ = {
+			isa = PBXGroup;
+			children = (
+				947235A11EA37A2400746E3C /* MSProfilePictureViewController.swift */,
+			);
+			name = "Profile Picture";
 			sourceTree = "<group>";
 		};
 		B65077B7ACFBE9CAC160D5BF /* Pods */ = {
@@ -179,6 +195,7 @@
 		C40DD7801E782E030035B234 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				947235A01EA379D300746E3C /* Profile Picture */,
 				E431C02F1E9A28F200CEE7D0 /* Conversation */,
 				C4E9A0901E7CB0250040C5D9 /* MenuController */,
 				C40DD7821E7830080035B234 /* Camera */,
@@ -239,8 +256,9 @@
 		C4E9A0901E7CB0250040C5D9 /* MenuController */ = {
 			isa = PBXGroup;
 			children = (
+				947235A31EA381E700746E3C /* MSConversationsViewController.swift */,
+				947235A41EA381E700746E3C /* MSMenuViewController.swift */,
 				C4D69C801E7CDC8B00CB5783 /* MSMessageListViewController.swift */,
-				C4E9A0911E7CB04C0040C5D9 /* MSMenuViewController.swift */,
 			);
 			name = MenuController;
 			sourceTree = "<group>";
@@ -250,6 +268,8 @@
 			children = (
 				E431C02D1E9A28E300CEE7D0 /* MSConversationViewController.swift */,
 				E431C0341E9A335500CEE7D0 /* MSConversationCells.swift */,
+				E43A88621E9FF82600DA500E /* MSConversationTableCellTableViewCell.swift */,
+				E43A88631E9FF82600DA500E /* MSConversationTableCellTableViewCell.xib */,
 				E4A3CBA21E9AA7F2000B9428 /* MSChatViewController.swift */,
 			);
 			name = Conversation;
@@ -321,6 +341,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E43A88651E9FF82600DA500E /* MSConversationTableCellTableViewCell.xib in Resources */,
 				C40DD7731E78211A0035B234 /* LaunchScreen.storyboard in Resources */,
 				C40DD77B1E7824910035B234 /* GoogleService-Info.plist in Resources */,
 				C40DD7701E78211A0035B234 /* Assets.xcassets in Resources */,
@@ -386,12 +407,13 @@
 				947A162F1E9FDCDE002FD0A4 /* MSSignUpViewController.swift in Sources */,
 				E431C02E1E9A28E300CEE7D0 /* MSConversationViewController.swift in Sources */,
 				E431C02C1E9A27AA00CEE7D0 /* Conversation.swift in Sources */,
+				947235A21EA37A2400746E3C /* MSProfilePictureViewController.swift in Sources */,
 				C40DD76B1E78211A0035B234 /* MSLoginSignUpController.swift in Sources */,
-				C4E9A0921E7CB04C0040C5D9 /* MSMenuViewController.swift in Sources */,
 				C4D69C811E7CDC8B00CB5783 /* MSMessageListViewController.swift in Sources */,
 				C40DD7691E78211A0035B234 /* AppDelegate.swift in Sources */,
 				E4A3CBA51E9BCFD6000B9428 /* MSConversationsNavigationViewController.swift in Sources */,
 				C4E9A08F1E7CAEC20040C5D9 /* SWRevealViewController.m in Sources */,
+				947235A61EA381E700746E3C /* MSMenuViewController.swift in Sources */,
 				5629A7841E9EA050004097C3 /* Helper.swift in Sources */,
 				C480AA431E9A3BD500EB7854 /* MSPreviewViewController.swift in Sources */,
 				C4755E221E85329200113582 /* logoBezierPath.swift in Sources */,
@@ -400,7 +422,9 @@
 				E431C02B1E9A27AA00CEE7D0 /* Message.swift in Sources */,
 				C40DD7861E7830580035B234 /* MSCameraViewController.swift in Sources */,
 				94E6D8761E856648002B13C5 /* MSCreateAccountController.swift in Sources */,
+				E43A88641E9FF82600DA500E /* MSConversationTableCellTableViewCell.swift in Sources */,
 				C4D69C831E7CE78C00CB5783 /* MSSnapViewController.swift in Sources */,
+				947235A51EA381E700746E3C /* MSConversationsViewController.swift in Sources */,
 				E4A3CBA31E9AA7F2000B9428 /* MSChatViewController.swift in Sources */,
 				E431C02A1E9A27AA00CEE7D0 /* User.swift in Sources */,
 				E431C0331E9A299900CEE7D0 /* MSUtility.swift in Sources */,
