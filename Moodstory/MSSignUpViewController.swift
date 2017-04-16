@@ -19,7 +19,7 @@ class MSSignUpViewController: UIViewController {
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
-    var dismissButton = MalertButtonStruct(title: "Cancel") {
+    var dismissButton = MalertButtonStruct(title: "OK") {
         Malert.shared.dismiss()
     }
     
@@ -30,16 +30,10 @@ class MSSignUpViewController: UIViewController {
         btConfiguration.tintColor = malertConfiguration.textColor
         btConfiguration.separetorColor = .white
         
-        let showThirdExempleButton = MalertButtonStruct(title: "OK", buttonConfiguration: btConfiguration) { [weak self] in
-            guard let strongSelf = self else { return }
-            Malert.shared.dismiss(with: { (finished) in
-            })
-        }
-        
         var updatedDismissButton = dismissButton
         updatedDismissButton.setButtonConfiguration(btConfiguration)
         
-        Malert.shared.show(viewController: self, title: "Hello!", message: "A user with this email already exists", buttons: [showThirdExempleButton, updatedDismissButton], animationType: .modalRight, malertConfiguration: malertConfiguration)
+        Malert.shared.show(viewController: self, title: "Hello!", message: "A user with this email already exists", buttons: [updatedDismissButton], animationType: .modalRight, malertConfiguration: malertConfiguration)
     }
     
     
