@@ -150,9 +150,6 @@ class MSConversationsNavigationViewController: UINavigationController, UICollect
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-//        collectionsView.register(MSContactsCVCell.self, forCellWithReuseIdentifier: "CellForCV")
-//        
-//        self.collectionsView!.register(MSContactsCVCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         self.customization()
     }
     
