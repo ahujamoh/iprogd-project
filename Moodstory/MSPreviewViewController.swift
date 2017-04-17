@@ -49,6 +49,8 @@ class MSPreviewViewController: UIViewController, UIPickerViewDataSource, UIPicke
     @IBOutlet weak var textX: NSLayoutConstraint!
     @IBOutlet weak var textY: NSLayoutConstraint!
     
+    @IBOutlet weak var pinkFilter: UIView!
+    
     @IBAction func selectDuration(_ sender: Any) {
         self.durationPick.isHidden = false
     }
@@ -137,7 +139,31 @@ class MSPreviewViewController: UIViewController, UIPickerViewDataSource, UIPicke
         self.textOnImage.isHidden = true
         self.allEmoji.isHidden = true
         self.test.isHidden = true
+        self.pinkFilter.isHidden = true
         self.initEmoji()
+        
+        
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(MSPreviewViewController.swiped))
+        swipeRight.direction = .right
+        self.view.addGestureRecognizer(swipeRight)
+        
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(MSPreviewViewController.swiped))
+        swipeLeft.direction = .left
+        self.view.addGestureRecognizer(swipeLeft)
+        
+    }
+    
+    func swiped(gesture: UIGestureRecognizer){
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+            switch swipeGesture.direction{
+            case UISwipeGestureRecognizerDirection.right:
+                self.pinkFilter.isHidden = false
+            case UISwipeGestureRecognizerDirection.left:
+                print ("hello")
+            default:
+                break
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
