@@ -291,6 +291,43 @@
             </objects>
             <point key="canvasLocation" x="2161" y="-413"/>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="CQB-Re-7Jg">
+            <objects>
+                <viewController id="ddO-G9-SDP" customClass="MSMapViewController" customModule="Moodstory" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ndg-0y-kgN"/>
+                        <viewControllerLayoutGuide type="bottom" id="qe8-un-T2R"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vVp-Cq-mOd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dfv-uL-u5S">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dfv-uL-u5S" firstAttribute="top" secondItem="vVp-Cq-mOd" secondAttribute="top" id="EuJ-Q1-pvc"/>
+                            <constraint firstItem="dfv-uL-u5S" firstAttribute="bottom" secondItem="qe8-un-T2R" secondAttribute="top" id="FKO-GQ-TPn"/>
+                            <constraint firstItem="dfv-uL-u5S" firstAttribute="top" secondItem="vVp-Cq-mOd" secondAttribute="top" id="Fzj-23-xFo"/>
+                            <constraint firstAttribute="trailing" secondItem="dfv-uL-u5S" secondAttribute="trailing" id="IAH-LY-4xh"/>
+                            <constraint firstItem="dfv-uL-u5S" firstAttribute="leading" secondItem="vVp-Cq-mOd" secondAttribute="leading" id="MXB-iE-8sd"/>
+                            <constraint firstItem="qe8-un-T2R" firstAttribute="top" secondItem="dfv-uL-u5S" secondAttribute="bottom" id="cB8-C3-xnC"/>
+                            <constraint firstAttribute="trailing" secondItem="dfv-uL-u5S" secondAttribute="trailing" id="eLw-W4-dw4"/>
+                            <constraint firstItem="dfv-uL-u5S" firstAttribute="leading" secondItem="vVp-Cq-mOd" secondAttribute="leading" id="iy6-3H-9OB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="dwb-Qv-T82"/>
+                    <connections>
+                        <outlet property="mapView" destination="dfv-uL-u5S" id="GIw-eB-5Ir"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HVf-4K-YuK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2928.985507246377" y="-409.23913043478262"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="eZW-6T-1f6">
             <objects>
@@ -302,7 +339,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Hcf-b0-iwU" kind="relationship" relationship="rootViewController" id="RtD-ye-mNH"/>
+                        <segue destination="ddO-G9-SDP" kind="relationship" relationship="rootViewController" id="1iO-bb-LOQ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WeW-ud-NdP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1259,7 +1296,7 @@
         <image name="textFieldBackground" width="238" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="koQ-hW-pDC"/>
+        <segue reference="gPf-jj-stm"/>
         <segue reference="ft8-lO-b5G"/>
     </inferredMetricsTieBreakers>
 </document>

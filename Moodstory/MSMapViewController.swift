@@ -15,6 +15,7 @@ class MSMapViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var mapView: MKMapView!
 
     let manager = CLLocationManager()
+    
     func locationManager(_ _manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
     
         let location = locations[0]
@@ -29,13 +30,19 @@ class MSMapViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        manager.delegate = self
-        manager.desiredAccuracy = kCLLocationAccuracyBest
-        manager.requestWhenInUseAuthorization()
-        manager.startUpdatingLocation()
         
-        //self.initialLocation()
+        
+        //set location to Stockholm
+        self.initialLocation()
+        
+        //get user location
+        self.getUserLocation()
+        
+        let annotation = MKPointAnnotation()
+        let location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(59.334415, 18.110103)
+        annotation.coordinate = location
+        annotation.title = "Hej"
+        mapView.addAnnotation(annotation)
         
 
     }
@@ -49,6 +56,17 @@ class MSMapViewController: UIViewController, CLLocationManagerDelegate {
 
         mapView.setRegion(region, animated: true)
     
+    }
+    
+    //user location
+    
+    func getUserLocation() {
+        
+        manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.requestWhenInUseAuthorization()
+        manager.startUpdatingLocation()
+        
     }
     
     //markers
