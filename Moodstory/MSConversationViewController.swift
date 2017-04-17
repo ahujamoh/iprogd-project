@@ -16,6 +16,8 @@ class MSConversationViewController: UIViewController, UITableViewDelegate, UITab
     
     @IBOutlet weak var tableView: UITableView!
     
+    
+    
     var items = [Conversation]()
     var selectedUser: User?
     
@@ -26,14 +28,13 @@ class MSConversationViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     
+    @IBAction func showContactsAction(_ sender: Any) {
+        self.showContacts()
+    }
+    
     func setUpConversationScreen(){
         //Notification setup
         NotificationCenter.default.addObserver(self, selector: #selector(self.pushToUserMesssages(notification:)), name: NSNotification.Name(rawValue: "showUserMessages"), object: nil)
-        
-        //right bar button
-        let icon = UIImage.init(named: "send")?.withRenderingMode(.alwaysOriginal)
-        let rightButton = UIBarButtonItem.init(image: icon!, style: .plain, target: self, action: #selector(MSConversationViewController.showContacts))
-        self.navigationItem.rightBarButtonItem = rightButton
     }
     
     func fetchData(){
