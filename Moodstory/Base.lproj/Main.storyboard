@@ -296,7 +296,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RvA-4h-2l1" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Poi-Kw-RXg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Poi-Kw-RXg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -825,7 +825,7 @@
         <scene sceneID="Hob-e3-CLY">
             <objects>
                 <navigationController id="MYR-OX-sxB" customClass="MSConversationsNavigationViewController" customModule="Moodstory" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="f5G-k2-yCW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="f5G-k2-yCW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1043,15 +1043,13 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BO0-iR-7VP">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TMT-rQ-f9l">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.2365503387840302" green="0.39561354909233593" blue="1" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wia-2J-WXd">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TMT-rQ-f9l">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.2365503387840302" green="0.39561354909233593" blue="1" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </view>
-                                </subviews>
                                 <color key="backgroundColor" red="1" green="0.31042358376936385" blue="0.36001207807403779" alpha="0.39840999119718312" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N4z-MZ-PSd">
@@ -1211,6 +1209,7 @@
                         <outlet property="durationPick" destination="ZKP-kA-nYM" id="g20-zz-ag3"/>
                         <outlet property="imageText" destination="mmo-aV-gpm" id="LYE-9M-ZqJ"/>
                         <outlet property="pinkFilter" destination="Wia-2J-WXd" id="t9D-wR-JxF"/>
+                        <outlet property="purpleFilter" destination="TMT-rQ-f9l" id="PL6-RI-gGV"/>
                         <outlet property="test" destination="xRj-pH-mnv" id="btq-4x-OTU"/>
                         <outlet property="textOnImage" destination="e9F-gU-xBS" id="kyq-0p-mRK"/>
                         <outlet property="textX" destination="7t4-bF-vVT" id="bwP-PQ-c0V"/>
@@ -1236,7 +1235,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nrp-AH-foO" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ieG-af-eYJ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ieG-af-eYJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
