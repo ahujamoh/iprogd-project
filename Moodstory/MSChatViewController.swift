@@ -8,12 +8,22 @@
 
 import UIKit
 
-class MSChatViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
+class MSChatViewController: UIViewController, UITableViewDataSource, UITableViewDelegate,
+UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
     @IBOutlet var inputBar: UIView!
     @IBOutlet weak var tableView: UITableView!
-    
     @IBOutlet weak var inputTextField: UITextField!
+    
+    let imagePicker = UIImagePickerController()
+    let barHeight: CGFloat = 50
+    override var inputAccessoryView: UIView? {
+        get {
+            self.inputBar.frame.size.height = self.barHeight
+            self.inputBar.clipsToBounds = true
+            return self.inputBar
+        }
+    }
     
     var items = [Message]()
     var currentUser: User?
@@ -38,11 +48,32 @@ class MSChatViewController: UIViewController, UITableViewDataSource, UITableView
         items.append(receiversMessage)
     }
     
+    func dismissSelf() {
+        if let navController = self.navigationController {
+            navController.popViewController(animated: true)
+        }
+    }
+    
+    func customizeView(){
+        self.imagePicker.delegate = self
+        self.tableView.estimatedRowHeight = self.barHeight
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.contentInset.bottom = self.barHeight
+        self.tableView.scrollIndicatorInsets.bottom = self.barHeight
+        self.navigationItem.title = self.currentUser?.name
+        self.navigationItem.setHidesBackButton(true, animated: false)
+        let icon = UIImage.init(named: "back")?.withRenderingMode(.alwaysOriginal)
+        let backButton = UIBarButtonItem.init(image: icon!, style: .plain, target: self, action: #selector(self.dismissSelf))
+        self.navigationItem.leftBarButtonItem = backButton
+        //        self.locationManager.delegate = self
+    }
+    
     //MARK: Viewcontroller Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.customizeView()
+        self.setTemporaryData()
         //        fetchData()
-        setTemporaryData()
         // Do any additional setup after loading the view.
     }
     
@@ -133,22 +164,47 @@ class MSChatViewController: UIViewController, UITableViewDataSource, UITableView
         }
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        self.inputTextField.resignFirstResponder()
-//        switch self.items[indexPath.row].type {
-//        case .photo:
-//            if let photo = self.items[indexPath.row].image {
-//                let info = ["viewType" : ShowExtraView.preview, "pic": photo] as [String : Any]
-//                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showExtraView"), object: nil, userInfo: info)
-//                self.inputAccessoryView?.isHidden = true
-//            }
-//        case .location:
-//            let coordinates = (self.items[indexPath.row].content as! String).components(separatedBy: ":")
-////            let location = nil //CLLocationCoordinate2D.init(latitude: CLLocationDegrees(coordinates[0])!, longitude: CLLocationDegrees(coordinates[1])!)
-//            let info = ["viewType" : ShowExtraView.map, "location": nil] as [String : Any]
-//            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showExtraView"), object: nil, userInfo: info)
-//            self.inputAccessoryView?.isHidden = true
-//        default: break
-//        }
-//    }
+    func showKeyboard(notification: Notification) {
+        if let frame = notification.userInfo![UIKeyboardFrameEndUserInfoKey] as? NSValue {
+            let height = frame.cgRectValue.height
+            self.tableView.contentInset.bottom = height
+            self.tableView.scrollIndicatorInsets.bottom = height
+            if self.items.count > 0 {
+                self.tableView.scrollToRow(at: IndexPath.init(row: self.items.count - 1, section: 0), at: .bottom, animated: true)
+            }
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.inputBar.backgroundColor = UIColor.clear
+        self.view.layoutIfNeeded()
+        NotificationCenter.default.addObserver(self, selector: #selector(MSChatViewController.showKeyboard(notification:)),
+                                               name: Notification.Name.UIKeyboardWillShow, object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
+        //        Message.markMessagesRead(forUserID: self.currentUser!.id)
+    }
+    
+    //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    //        self.inputTextField.resignFirstResponder()
+    //        switch self.items[indexPath.row].type {
+    //        case .photo:
+    //            if let photo = self.items[indexPath.row].image {
+    //                let info = ["viewType" : ShowExtraView.preview, "pic": photo] as [String : Any]
+    //                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showExtraView"), object: nil, userInfo: info)
+    //                self.inputAccessoryView?.isHidden = true
+    //            }
+    //        case .location:
+    //            let coordinates = (self.items[indexPath.row].content as! String).components(separatedBy: ":")
+    ////            let location = nil //CLLocationCoordinate2D.init(latitude: CLLocationDegrees(coordinates[0])!, longitude: CLLocationDegrees(coordinates[1])!)
+    //            let info = ["viewType" : ShowExtraView.map, "location": nil] as [String : Any]
+    //            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showExtraView"), object: nil, userInfo: info)
+    //            self.inputAccessoryView?.isHidden = true
+    //        default: break
+    //        }
+    //    }
 }
