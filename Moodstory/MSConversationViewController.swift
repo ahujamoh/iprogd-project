@@ -90,7 +90,6 @@ class MSConversationViewController: UIViewController, UITableViewDelegate, UITab
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! MSConversationTableCellTableViewCell
-//        cell.backgroundColor = UIColor.black
         cell.clearCellData()
         cell.profilePic.image = self.items[indexPath.row].user.profilePic
         cell.nameLabel.text = self.items[indexPath.row].user.name
@@ -131,9 +130,6 @@ class MSConversationViewController: UIViewController, UITableViewDelegate, UITab
             
             
         }
-//        let nibName = UINib(nibName: "MSConversationTableCellTableViewCell",
-//                            bundle: nil)
-//        self.tableView.register(nibName, forCellReuseIdentifier: reuseIdentifier)
         self.setUpConversationScreen()
         self.fetchData()
         self.tableView.estimatedRowHeight = 80
@@ -145,18 +141,21 @@ class MSConversationViewController: UIViewController, UITableViewDelegate, UITab
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
+    {
+        return true
+    }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
+    {
+        if editingStyle == .delete
+        {
+            self.items.remove(at: indexPath.row)
+            self.tableView.reloadData()
+        }
+        print("removing item at \(indexPath.row)")
+    }
     
 }
