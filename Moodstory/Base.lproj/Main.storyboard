@@ -296,7 +296,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RvA-4h-2l1" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Poi-Kw-RXg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Poi-Kw-RXg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -576,7 +576,7 @@
         <scene sceneID="Hob-e3-CLY">
             <objects>
                 <navigationController id="MYR-OX-sxB" customClass="MSConversationsNavigationViewController" customModule="Moodstory" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="f5G-k2-yCW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="f5G-k2-yCW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -998,7 +998,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nrp-AH-foO" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ieG-af-eYJ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ieG-af-eYJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1159,6 +1159,9 @@
                                         <constraint firstAttribute="height" constant="25" id="jpj-vH-fje"/>
                                     </constraints>
                                     <state key="normal" backgroundImage="selectMessage"/>
+                                    <connections>
+                                        <action selector="showMessage:" destination="e1M-eb-ofB" eventType="touchUpInside" id="oeo-8Y-FCK"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mPN-f5-tel">
                                     <rect key="frame" x="89.666666666666657" y="12.666666666666671" width="31.999999999999986" height="25"/>
@@ -1167,6 +1170,9 @@
                                         <constraint firstAttribute="height" constant="25" id="YwD-cZ-Bue"/>
                                     </constraints>
                                     <state key="normal" backgroundImage="selectPhoto"/>
+                                    <connections>
+                                        <action selector="selectGallery:" destination="e1M-eb-ofB" eventType="touchUpInside" id="o5N-L9-eZT"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WYg-ph-NgE">
                                     <rect key="frame" x="179.33333333333334" y="12.666666666666671" width="32" height="25"/>
@@ -1175,6 +1181,9 @@
                                         <constraint firstAttribute="width" constant="32" id="eKZ-5P-nY6"/>
                                     </constraints>
                                     <state key="normal" backgroundImage="selectCamera"/>
+                                    <connections>
+                                        <action selector="selectCamera:" destination="e1M-eb-ofB" eventType="touchUpInside" id="7zA-1f-D7k"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nPa-Ol-c2F">
                                     <rect key="frame" x="269" y="12.666666666666671" width="32" height="25"/>
@@ -1183,6 +1192,9 @@
                                         <constraint firstAttribute="height" constant="25" id="nI7-k7-mxh"/>
                                     </constraints>
                                     <state key="normal" backgroundImage="selectLocation"/>
+                                    <connections>
+                                        <action selector="selectLocation:" destination="e1M-eb-ofB" eventType="touchUpInside" id="i2J-3s-Cp0"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <constraints>
@@ -1208,6 +1220,9 @@
                                         <constraint firstAttribute="width" constant="32" id="qjb-Ol-SUW"/>
                                     </constraints>
                                     <state key="normal" backgroundImage="send"/>
+                                    <connections>
+                                        <action selector="sendMessage:" destination="e1M-eb-ofB" eventType="touchUpInside" id="tuP-kj-Lwc"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a3e-Vw-fDk">
                                     <rect key="frame" x="12" y="13" width="32" height="25"/>
@@ -1216,6 +1231,9 @@
                                         <constraint firstAttribute="width" constant="32" id="n3R-L8-57H"/>
                                     </constraints>
                                     <state key="normal" backgroundImage="more"/>
+                                    <connections>
+                                        <action selector="showOptions:" destination="e1M-eb-ofB" eventType="touchUpInside" id="VDe-kz-w9J"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
