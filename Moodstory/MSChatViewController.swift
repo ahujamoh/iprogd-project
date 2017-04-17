@@ -6,22 +6,47 @@
 //  Copyright © 2017 MoodStory. All rights reserved.
 //
 
-import UIKit
 
-class MSChatViewController: UIViewController, UITableViewDataSource, UITableViewDelegate,
-UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+import UIKit
+import Photos
+import CoreLocation
+
+class MSChatViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate,
+UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate{
     
     @IBOutlet var inputBar: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var inputTextField: UITextField!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     let imagePicker = UIImagePickerController()
+    let locationManager = CLLocationManager()
     let barHeight: CGFloat = 50
+    var canSendLocation = true
     override var inputAccessoryView: UIView? {
         get {
             self.inputBar.frame.size.height = self.barHeight
             self.inputBar.clipsToBounds = true
             return self.inputBar
+        }
+    }
+    
+    override var canBecomeFirstResponder: Bool{
+        return true
+    }
+    
+    func animateExtraButtons(toHide: Bool)  {
+        switch toHide {
+        case true:
+            self.bottomConstraint.constant = 0
+            UIView.animate(withDuration: 0.3) {
+                self.inputBar.layoutIfNeeded()
+            }
+        default:
+            self.bottomConstraint.constant = -50
+            UIView.animate(withDuration: 0.3) {
+                self.inputBar.layoutIfNeeded()
+            }
         }
     }
     
@@ -54,6 +79,24 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate{
         }
     }
     
+    func composeMessage(type: MessageType, content: Any)  {
+        let message = Message.init(type: type, content: content, owner: .sender, timestamp: Int(Date().timeIntervalSince1970), isRead: false)
+        Message.send(message: message, toID: self.currentUser!.id, completion: {(_) in
+        })
+    }
+    
+    func checkLocationPermission() -> Bool {
+        var state = false
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedWhenInUse:
+            state = true
+        case .authorizedAlways:
+            state = true
+        default: break
+        }
+        return state
+    }
+    
     func customizeView(){
         self.imagePicker.delegate = self
         self.tableView.estimatedRowHeight = self.barHeight
@@ -65,7 +108,7 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate{
         let icon = UIImage.init(named: "back")?.withRenderingMode(.alwaysOriginal)
         let backButton = UIBarButtonItem.init(image: icon!, style: .plain, target: self, action: #selector(self.dismissSelf))
         self.navigationItem.leftBarButtonItem = backButton
-        //        self.locationManager.delegate = self
+        self.locationManager.delegate = self
     }
     
     //MARK: Viewcontroller Lifecycle
@@ -82,16 +125,6 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate{
         // Dispose of any resources that can be recreated.
     }
     
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -186,25 +219,76 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         NotificationCenter.default.removeObserver(self)
-        //        Message.markMessagesRead(forUserID: self.currentUser!.id)
+        Message.markMessagesRead(forUserID: self.currentUser!.id)
     }
     
-    //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    //        self.inputTextField.resignFirstResponder()
-    //        switch self.items[indexPath.row].type {
-    //        case .photo:
-    //            if let photo = self.items[indexPath.row].image {
-    //                let info = ["viewType" : ShowExtraView.preview, "pic": photo] as [String : Any]
-    //                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showExtraView"), object: nil, userInfo: info)
-    //                self.inputAccessoryView?.isHidden = true
-    //            }
-    //        case .location:
-    //            let coordinates = (self.items[indexPath.row].content as! String).components(separatedBy: ":")
-    ////            let location = nil //CLLocationCoordinate2D.init(latitude: CLLocationDegrees(coordinates[0])!, longitude: CLLocationDegrees(coordinates[1])!)
-    //            let info = ["viewType" : ShowExtraView.map, "location": nil] as [String : Any]
-    //            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showExtraView"), object: nil, userInfo: info)
-    //            self.inputAccessoryView?.isHidden = true
-    //        default: break
-    //        }
-    //    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.inputTextField.resignFirstResponder()
+        switch self.items[indexPath.row].type {
+        case .photo:
+            if let photo = self.items[indexPath.row].image {
+                let info = ["viewType" : ShowExtraView.preview, "pic": photo] as [String : Any]
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showExtraView"), object: nil, userInfo: info)
+                self.inputAccessoryView?.isHidden = true
+            }
+        case .location:
+            let coordinates = (self.items[indexPath.row].content as! String).components(separatedBy: ":")
+            let location = CLLocationCoordinate2D.init(latitude: CLLocationDegrees(coordinates[0])!, longitude: CLLocationDegrees(coordinates[1])!)
+            let info = ["viewType" : ShowExtraView.map, "location": nil] as [String : Any]
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showExtraView"), object: nil, userInfo: info)
+            self.inputAccessoryView?.isHidden = true
+        default: break
+        }
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    @IBAction func showMessage(_ sender: Any) {
+        self.animateExtraButtons(toHide: true)
+    }
+    
+    @IBAction func selectGallery(_ sender: Any) {
+        self.animateExtraButtons(toHide: true)
+        let status = PHPhotoLibrary.authorizationStatus()
+        if (status == .authorized || status == .notDetermined) {
+            self.imagePicker.sourceType = .savedPhotosAlbum;
+            self.present(self.imagePicker, animated: true, completion: nil)
+        }
+        
+    }
+    
+    @IBAction func selectCamera(_ sender: Any) {
+        self.animateExtraButtons(toHide: true)
+        let status = AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo)
+        if (status == .authorized || status == .notDetermined) {
+            self.imagePicker.sourceType = .camera
+            self.imagePicker.allowsEditing = false
+            self.present(self.imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func selectLocation(_ sender: Any) {
+        self.canSendLocation = true
+        self.animateExtraButtons(toHide: true)
+        if self.checkLocationPermission() {
+            self.locationManager.startUpdatingLocation()
+        } else {
+            self.locationManager.requestWhenInUseAuthorization()
+        }
+    }
+    
+    @IBAction func showOptions(_ sender: Any) {
+        self.animateExtraButtons(toHide: false)
+    }
+    
+    @IBAction func sendMessage(_ sender: Any) {
+        if let text = self.inputTextField.text {
+            if text.characters.count > 0 {
+                self.composeMessage(type: .text, content: self.inputTextField.text!)
+                self.inputTextField.text = ""
+            }
+        }
+    }
 }
