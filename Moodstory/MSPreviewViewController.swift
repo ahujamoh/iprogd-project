@@ -50,6 +50,7 @@ class MSPreviewViewController: UIViewController, UIPickerViewDataSource, UIPicke
     @IBOutlet weak var textY: NSLayoutConstraint!
     
     @IBOutlet weak var pinkFilter: UIView!
+    @IBOutlet weak var purpleFilter: UIView!
     
     @IBAction func selectDuration(_ sender: Any) {
         self.durationPick.isHidden = false
@@ -140,16 +141,8 @@ class MSPreviewViewController: UIViewController, UIPickerViewDataSource, UIPicke
         self.allEmoji.isHidden = true
         self.test.isHidden = true
         self.pinkFilter.isHidden = true
+        self.purpleFilter.isHidden = true
         self.initEmoji()
-        
-        
-        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(MSPreviewViewController.swiped))
-        swipeRight.direction = .right
-        self.view.addGestureRecognizer(swipeRight)
-        
-        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(MSPreviewViewController.swiped))
-        swipeLeft.direction = .left
-        self.view.addGestureRecognizer(swipeLeft)
         
     }
     
@@ -157,9 +150,21 @@ class MSPreviewViewController: UIViewController, UIPickerViewDataSource, UIPicke
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
             switch swipeGesture.direction{
             case UISwipeGestureRecognizerDirection.right:
-                self.pinkFilter.isHidden = false
+                print ("swipe right")
+                if self.purpleFilter.isHidden == false{
+                    self.purpleFilter.isHidden = true
+                }
+                else{
+                    self.pinkFilter.isHidden = false
+                }
             case UISwipeGestureRecognizerDirection.left:
-                print ("hello")
+                print ("swipe left")
+                if self.pinkFilter.isHidden == false{
+                    self.pinkFilter.isHidden = true
+                }
+                else{
+                    self.purpleFilter.isHidden = false
+                }
             default:
                 break
             }
@@ -259,6 +264,15 @@ class MSPreviewViewController: UIViewController, UIPickerViewDataSource, UIPicke
                 }
             }
         }
+        
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(MSPreviewViewController.swiped))
+        swipeRight.direction = .right
+        self.view.addGestureRecognizer(swipeRight)
+        
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(MSPreviewViewController.swiped))
+        swipeLeft.direction = .left
+        self.view.addGestureRecognizer(swipeLeft)
+        
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
