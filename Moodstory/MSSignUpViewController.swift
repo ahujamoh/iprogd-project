@@ -56,7 +56,8 @@ class MSSignUpViewController: UIViewController {
             else{
                 
                 print("User does not exist")
-                FIRAuth.auth()?.createUser(withEmail: email, password: pwd, completion: { (user, error) in
+                //TODO: fix name and profile pic
+                User.registerUser(withName: "test", email: email, password: pwd, profilePic: UIImage(named: "profile pic")! , completion: { (user, error) in
                     if error != nil
                     {
                         print("Unable to create user")
@@ -65,8 +66,8 @@ class MSSignUpViewController: UIViewController {
                     {
                         print("Successfully authenticate user")
                         if let user = user {
-                            //self.completeLogin(id: user.uid)
-                            print(user)
+//                            self.completeLogin(id: user.uid)
+                            print(user.uid)
                         }
                     }
                 })

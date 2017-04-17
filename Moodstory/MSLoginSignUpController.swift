@@ -52,13 +52,13 @@ class MSLoginSignUpController: UIViewController {
         let _: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
         
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
- //           if self.mainContainer.frame.origin.y == 125{
-                //self.maiContainer.frame.origin.y -= 100
-  //          }
+            //           if self.mainContainer.frame.origin.y == 125{
+            //self.maiContainer.frame.origin.y -= 100
+            //          }
         }
         
-        }
-
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -78,7 +78,7 @@ class MSLoginSignUpController: UIViewController {
             
             performSegue(withIdentifier: "goToCamera", sender: nil)
         }
-
+        
         
     }
     
@@ -94,12 +94,12 @@ class MSLoginSignUpController: UIViewController {
         loader.duration = 20
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     
     
     func sentResetEmailAlert() {
@@ -107,17 +107,17 @@ class MSLoginSignUpController: UIViewController {
         var btConfiguration = MalertButtonConfiguration()
         btConfiguration.tintColor = malertConfiguration.textColor
         btConfiguration.separetorColor = .white
-    
+        
         let showThirdExempleButton = MalertButtonStruct(title: "OK", buttonConfiguration: btConfiguration) { [weak self] in
             guard let strongSelf = self else { return }
-        Malert.shared.dismiss(with: { (finished) in
-        })
+            Malert.shared.dismiss(with: { (finished) in
+            })
         }
-    
-    var updatedDismissButton = dismissButton
-    updatedDismissButton.setButtonConfiguration(btConfiguration)
-    
-    Malert.shared.show(viewController: self, title: "Hello!", message: "New Password has been sent", buttons: [showThirdExempleButton, updatedDismissButton], animationType: .modalRight, malertConfiguration: malertConfiguration)
+        
+        var updatedDismissButton = dismissButton
+        updatedDismissButton.setButtonConfiguration(btConfiguration)
+        
+        Malert.shared.show(viewController: self, title: "Hello!", message: "New Password has been sent", buttons: [showThirdExempleButton, updatedDismissButton], animationType: .modalRight, malertConfiguration: malertConfiguration)
     }
     
     
@@ -186,7 +186,7 @@ class MSLoginSignUpController: UIViewController {
             self.sentResetEmailAlert()
             
         }
-
+        
     }
     @IBAction func signUpButtonPressed(_ sender: UIButton) {
         print ("hello")
@@ -205,14 +205,14 @@ class MSLoginSignUpController: UIViewController {
                 print("Successfully Authenticated with Firebase")
                 if let user = user {
                     
-                   self.completeLogin(id: user.uid)
+                    self.completeLogin(id: user.uid)
                     
                 }
                 
             }
         })
     }
-
+    
     @IBAction func loginTapped(_ sender: Any) {
         
         self.presentFillableLoader()
@@ -225,13 +225,14 @@ class MSLoginSignUpController: UIViewController {
                     
                     print("Email User Authenticated with Firebase")
                     if let user = user {
-                    self.completeLogin(id: user.uid)
+                        self.completeLogin(id: user.uid)
                     }
                 }
                 else{
                     
                     print("User doesnot exist")
-                    FIRAuth.auth()?.createUser(withEmail: email, password: pwd, completion: { (user, error) in
+                    //TODO: set the profile image and name correctly(currently random is provided)
+                    User.registerUser(withName: "test", email: email, password: pwd, profilePic: UIImage(named: "profile pic")! , completion: { (user, error) in
                         if error != nil
                         {
                             print("Unable to create user")
@@ -246,7 +247,7 @@ class MSLoginSignUpController: UIViewController {
                     })
                 }
             })
-        
+            
         }
         
     }
@@ -261,7 +262,7 @@ class MSLoginSignUpController: UIViewController {
     }
     
     
-   
+    
     
 }
 
