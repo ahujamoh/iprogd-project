@@ -8,6 +8,8 @@
 
 import UIKit
 
+private let reuseIdentifier = "CellForConversation"
+
 class MSConversationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var menuBarButton: UIBarButtonItem!
@@ -17,14 +19,17 @@ class MSConversationViewController: UIViewController, UITableViewDelegate, UITab
     var items = [Conversation]()
     var selectedUser: User?
     
+    //Function to call when you want to access all the contacs
     func showContacts(){
         let info = ["viewType" : ShowExtraView.contacts]
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showExtraView"), object: nil, userInfo: info)
     }
     
-    func setCreateConversation(){
+    
+    func setUpConversationScreen(){
         //Notification setup
         NotificationCenter.default.addObserver(self, selector: #selector(self.pushToUserMesssages(notification:)), name: NSNotification.Name(rawValue: "showUserMessages"), object: nil)
+        
         //right bar button
         let icon = UIImage.init(named: "send")?.withRenderingMode(.alwaysOriginal)
         let rightButton = UIBarButtonItem.init(image: icon!, style: .plain, target: self, action: #selector(MSConversationViewController.showContacts))
@@ -83,7 +88,8 @@ class MSConversationViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ConversationsTBCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! MSConversationTableCellTableViewCell
+//        cell.backgroundColor = UIColor.black
         cell.clearCellData()
         cell.profilePic.image = self.items[indexPath.row].user.profilePic
         cell.nameLabel.text = self.items[indexPath.row].user.name
@@ -124,8 +130,15 @@ class MSConversationViewController: UIViewController, UITableViewDelegate, UITab
             
             
         }
-        self.setCreateConversation()
+//        let nibName = UINib(nibName: "MSConversationTableCellTableViewCell",
+//                            bundle: nil)
+//        self.tableView.register(nibName, forCellReuseIdentifier: reuseIdentifier)
+        self.setUpConversationScreen()
         self.fetchData()
+        self.tableView.estimatedRowHeight = 80
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.setNeedsLayout()
+        self.tableView.layoutIfNeeded()
         // Do any additional setup after loading the view.
     }
     

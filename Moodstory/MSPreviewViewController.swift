@@ -45,7 +45,7 @@ class MSPreviewViewController: UIViewController, UIPickerViewDataSource, UIPicke
     @IBOutlet weak var test: UILabel!
     @IBOutlet weak var durationPick: UIPickerView!
     @IBOutlet weak var allEmoji: UICollectionView!
-
+    
     @IBOutlet weak var textX: NSLayoutConstraint!
     @IBOutlet weak var textY: NSLayoutConstraint!
     
@@ -57,18 +57,18 @@ class MSPreviewViewController: UIViewController, UIPickerViewDataSource, UIPicke
         
         dismiss(animated: true, completion: nil)
     }
-
+    
     @IBAction func sendToServer(_ sender: UIButton) {
-//        let image_original = self.captureScreen()
-//        let image_sending = self.ResizeImage(image: image_original, targetSize: CGSize.init(width:305.0,height:600.0))
-//        let sendtocontroller = SendToController()
-//        let sending_image = SendingPhoto()
-//        sending_image.image = image_sending
-//        sending_image.timer = self.pic_duaration
-//        sendtocontroller.photos.append(sending_image)
-//        
-//        let navController = UINavigationController(rootViewController: sendtocontroller)
-//        present(navController, animated: true, completion: nil)
+        //        let image_original = self.captureScreen()
+        //        let image_sending = self.ResizeImage(image: image_original, targetSize: CGSize.init(width:305.0,height:600.0))
+        //        let sendtocontroller = SendToController()
+        //        let sending_image = SendingPhoto()
+        //        sending_image.image = image_sending
+        //        sending_image.timer = self.pic_duaration
+        //        sendtocontroller.photos.append(sending_image)
+        //
+        //        let navController = UINavigationController(rootViewController: sendtocontroller)
+        //        present(navController, animated: true, completion: nil)
         
         print("sending logic to be implemented")
     }
@@ -128,7 +128,7 @@ class MSPreviewViewController: UIViewController, UIPickerViewDataSource, UIPicke
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
         durationPick.delegate = self
@@ -150,8 +150,8 @@ class MSPreviewViewController: UIViewController, UIPickerViewDataSource, UIPicke
     override func viewWillAppear(_ animated: Bool) {
         ImageEdit.image = capturedPhoto
     }
-
-
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -240,7 +240,7 @@ class MSPreviewViewController: UIViewController, UIPickerViewDataSource, UIPicke
         if let e = event?.touches(for: self.ImageEdit){
             if let touch = e.first{
                 if let d = self.ImageEdit {
-                   let currentCoordinate = touch.preciseLocation(in: d)
+                    let currentCoordinate = touch.preciseLocation(in: d)
                     
                     //UIGraphicsBeginImageContext(d.bounds.size)
                     UIGraphicsBeginImageContextWithOptions(d.bounds.size, false, 0.0)
@@ -288,25 +288,25 @@ class MSPreviewViewController: UIViewController, UIPickerViewDataSource, UIPicke
      The method to save image to core data.
      */
     func SaveImage(){
-//        let saveQueue = DispatchQueue(label: "saveQueue",attributes: .concurrent)
-//        saveQueue.async {
-//            let image_original = self.captureScreen()
-//            let image_sending = self.ResizeImage(image: image_original, targetSize: CGSize.init(width:375.0,height:604.0))
-//            let imageData = UIImageJPEGRepresentation(image_sending, 1)
-//            let contextManaged = self.getContext()
-//            let a = NSEntityDescription.insertNewObject(forEntityName: "Photo", into: contextManaged) as! Photo
-//            a.photo_data = imageData as NSData?
-//            a.timer = Int64(self.pic_duaration)
-//            a.user_id = FIRAuth.auth()?.currentUser?.uid
-//            print(a.user_id)
-//            do {
-//                try contextManaged.save()
-//            } catch{
-//                
-//            }
-//        }
-//        self.pictureid += 1
-//        self.save.isHidden = true
+        //        let saveQueue = DispatchQueue(label: "saveQueue",attributes: .concurrent)
+        //        saveQueue.async {
+        //            let image_original = self.captureScreen()
+        //            let image_sending = self.ResizeImage(image: image_original, targetSize: CGSize.init(width:375.0,height:604.0))
+        //            let imageData = UIImageJPEGRepresentation(image_sending, 1)
+        //            let contextManaged = self.getContext()
+        //            let a = NSEntityDescription.insertNewObject(forEntityName: "Photo", into: contextManaged) as! Photo
+        //            a.photo_data = imageData as NSData?
+        //            a.timer = Int64(self.pic_duaration)
+        //            a.user_id = FIRAuth.auth()?.currentUser?.uid
+        //            print(a.user_id)
+        //            do {
+        //                try contextManaged.save()
+        //            } catch{
+        //
+        //            }
+        //        }
+        //        self.pictureid += 1
+        //        self.save.isHidden = true
     }
     
     /**
@@ -384,17 +384,17 @@ class MSPreviewViewController: UIViewController, UIPickerViewDataSource, UIPicke
             self.emojiList.append(String(describing: UnicodeScalar(c)!))
         }
     }
-
     
-
+    
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

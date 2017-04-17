@@ -207,7 +207,6 @@ class MSLoginSignUpController: UIViewController {
             }
         }
     }
-        
     
     func firebaseAuth(_ credential: FIRAuthCredential){
         

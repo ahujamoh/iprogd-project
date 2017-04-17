@@ -8,9 +8,10 @@
 
 import UIKit
 import Firebase
+private let reuseIdentifier = "CellForCV"
 class MSConversationsNavigationViewController: UINavigationController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    @IBOutlet weak var collectionsView: UICollectionView!
+    @IBOutlet var collectionsView: UICollectionView!
     @IBOutlet var contactsView: UIView!
     let darkView = UIView.init()
     var items = [User]()
@@ -84,7 +85,7 @@ class MSConversationsNavigationViewController: UINavigationController, UICollect
             case .contacts:
                 self.contactsView.isHidden = false
                 if self.items.count == 0 {
-                    print("no item")
+                    print("no item, lol")
                 }
             default:
                 print("you messed up real bad, should not have come here")
@@ -105,11 +106,13 @@ class MSConversationsNavigationViewController: UINavigationController, UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ContactsCVCell
-        cell.profilePic.image = self.items[indexPath.row].profilePic
-        cell.nameLabel.text = self.items[indexPath.row].name
-        cell.profilePic.layer.borderWidth = 2
-        cell.profilePic.layer.borderColor = GlobalVariables.purple.cgColor
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! MSContactsCVCell
+        //TODO: Mustafa: fix this to put the profile pic and name please
+        cell.backgroundColor = UIColor.blue
+        cell.profilePic?.image = self.items[indexPath.row].profilePic
+        cell.nameLabel?.text = self.items[indexPath.row].name
+        cell.profilePic?.layer.borderWidth = 2
+        cell.profilePic?.layer.borderColor = GlobalVariables.purple.cgColor
         return cell
     }
     

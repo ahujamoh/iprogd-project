@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import SwiftKeychainWrapper
+import Malert
 
 
 
@@ -18,6 +19,24 @@ class MSSignUpViewController: UIViewController {
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
+    var dismissButton = MalertButtonStruct(title: "OK") {
+        Malert.shared.dismiss()
+    }
+    
+    // make an alert if the email address already has an associated user
+    func userAlreadyExistsAlert() {
+        let malertConfiguration = Helper.setUpSecondExampleCustomMalertViewConfig()
+        var btConfiguration = MalertButtonConfiguration()
+        btConfiguration.tintColor = malertConfiguration.textColor
+        btConfiguration.separetorColor = .white
+        
+        var updatedDismissButton = dismissButton
+        updatedDismissButton.setButtonConfiguration(btConfiguration)
+        
+        Malert.shared.show(viewController: self, title: "Hello!", message: "A user with this email already exists", buttons: [updatedDismissButton], animationType: .modalRight, malertConfiguration: malertConfiguration)
+    }
+    
+    
     @IBAction func signUpButtonClicked(_ sender: Any) {
         if let email = emailField.text, let pwd = passwordField.text{
             
@@ -25,7 +44,10 @@ class MSSignUpViewController: UIViewController {
             
             if error == nil{
                 
+                self.userAlreadyExistsAlert()
                 print("User Already Exists")
+                
+
                 if let user = user {
                     print (user)
                   //  self.completeLogin(id: user.uid)
@@ -33,7 +55,7 @@ class MSSignUpViewController: UIViewController {
             }
             else{
                 
-                print("User doesnot exist")
+                print("User does not exist")
                 FIRAuth.auth()?.createUser(withEmail: email, password: pwd, completion: { (user, error) in
                     if error != nil
                     {
@@ -48,6 +70,11 @@ class MSSignUpViewController: UIViewController {
                         }
                     }
                 })
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let viewController = storyboard.instantiateViewController(withIdentifier :"mapView") as! UIViewController
+                self.present(viewController, animated: true)
+                
+                
             }
         })
         
