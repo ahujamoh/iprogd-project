@@ -15,10 +15,10 @@ class MSMapViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var mapView: MKMapView!
 
     let manager = CLLocationManager()
-    func locationManager(_manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    func locationManager(_ _manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
     
         let location = locations[0]
-        let span:MKCoordinateSpan = MKCoordinateSpanMake(0.15, 0.15)
+        let span:MKCoordinateSpan = MKCoordinateSpanMake(0.1, 0.1)
         let myLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
         let region:MKCoordinateRegion = MKCoordinateRegionMake(myLocation, span)
         mapView.setRegion(region, animated: true)
