@@ -133,22 +133,33 @@ class MSChatViewController: UIViewController, UITableViewDataSource, UITableView
         }
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        self.inputTextField.resignFirstResponder()
-//        switch self.items[indexPath.row].type {
-//        case .photo:
-//            if let photo = self.items[indexPath.row].image {
-//                let info = ["viewType" : ShowExtraView.preview, "pic": photo] as [String : Any]
-//                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showExtraView"), object: nil, userInfo: info)
-//                self.inputAccessoryView?.isHidden = true
-//            }
-//        case .location:
-//            let coordinates = (self.items[indexPath.row].content as! String).components(separatedBy: ":")
-////            let location = nil //CLLocationCoordinate2D.init(latitude: CLLocationDegrees(coordinates[0])!, longitude: CLLocationDegrees(coordinates[1])!)
-//            let info = ["viewType" : ShowExtraView.map, "location": nil] as [String : Any]
-//            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showExtraView"), object: nil, userInfo: info)
-//            self.inputAccessoryView?.isHidden = true
-//        default: break
-//        }
-//    }
+    func showKeyboard(notification: Notification) {
+        if let frame = notification.userInfo![UIKeyboardFrameEndUserInfoKey] as? NSValue {
+            let height = frame.cgRectValue.height
+            self.tableView.contentInset.bottom = height
+            self.tableView.scrollIndicatorInsets.bottom = height
+            if self.items.count > 0 {
+                self.tableView.scrollToRow(at: IndexPath.init(row: self.items.count - 1, section: 0), at: .bottom, animated: true)
+            }
+        }
+    }
+    
+    //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    //        self.inputTextField.resignFirstResponder()
+    //        switch self.items[indexPath.row].type {
+    //        case .photo:
+    //            if let photo = self.items[indexPath.row].image {
+    //                let info = ["viewType" : ShowExtraView.preview, "pic": photo] as [String : Any]
+    //                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showExtraView"), object: nil, userInfo: info)
+    //                self.inputAccessoryView?.isHidden = true
+    //            }
+    //        case .location:
+    //            let coordinates = (self.items[indexPath.row].content as! String).components(separatedBy: ":")
+    ////            let location = nil //CLLocationCoordinate2D.init(latitude: CLLocationDegrees(coordinates[0])!, longitude: CLLocationDegrees(coordinates[1])!)
+    //            let info = ["viewType" : ShowExtraView.map, "location": nil] as [String : Any]
+    //            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showExtraView"), object: nil, userInfo: info)
+    //            self.inputAccessoryView?.isHidden = true
+    //        default: break
+    //        }
+    //    }
 }
