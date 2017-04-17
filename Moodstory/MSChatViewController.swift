@@ -8,12 +8,13 @@
 
 import UIKit
 
-class MSChatViewController: UIViewController, UITableViewDataSource, UITableViewDelegate,
+class MSChatViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate,
 UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
     @IBOutlet var inputBar: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var inputTextField: UITextField!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     let imagePicker = UIImagePickerController()
     let barHeight: CGFloat = 50
@@ -22,6 +23,25 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate{
             self.inputBar.frame.size.height = self.barHeight
             self.inputBar.clipsToBounds = true
             return self.inputBar
+        }
+    }
+    
+    override var canBecomeFirstResponder: Bool{
+        return true
+    }
+    
+    func animateExtraButtons(toHide: Bool)  {
+        switch toHide {
+        case true:
+            self.bottomConstraint.constant = 0
+            UIView.animate(withDuration: 0.3) {
+                self.inputBar.layoutIfNeeded()
+            }
+        default:
+            self.bottomConstraint.constant = -50
+            UIView.animate(withDuration: 0.3) {
+                self.inputBar.layoutIfNeeded()
+            }
         }
     }
     
@@ -189,22 +209,26 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate{
         //        Message.markMessagesRead(forUserID: self.currentUser!.id)
     }
     
-    //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    //        self.inputTextField.resignFirstResponder()
-    //        switch self.items[indexPath.row].type {
-    //        case .photo:
-    //            if let photo = self.items[indexPath.row].image {
-    //                let info = ["viewType" : ShowExtraView.preview, "pic": photo] as [String : Any]
-    //                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showExtraView"), object: nil, userInfo: info)
-    //                self.inputAccessoryView?.isHidden = true
-    //            }
-    //        case .location:
-    //            let coordinates = (self.items[indexPath.row].content as! String).components(separatedBy: ":")
-    ////            let location = nil //CLLocationCoordinate2D.init(latitude: CLLocationDegrees(coordinates[0])!, longitude: CLLocationDegrees(coordinates[1])!)
-    //            let info = ["viewType" : ShowExtraView.map, "location": nil] as [String : Any]
-    //            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showExtraView"), object: nil, userInfo: info)
-    //            self.inputAccessoryView?.isHidden = true
-    //        default: break
-    //        }
-    //    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.inputTextField.resignFirstResponder()
+        switch self.items[indexPath.row].type {
+        case .photo:
+            if let photo = self.items[indexPath.row].image {
+                let info = ["viewType" : ShowExtraView.preview, "pic": photo] as [String : Any]
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showExtraView"), object: nil, userInfo: info)
+                self.inputAccessoryView?.isHidden = true
+            }
+        case .location:
+            let coordinates = (self.items[indexPath.row].content as! String).components(separatedBy: ":")
+            //            let location = nil //CLLocationCoordinate2D.init(latitude: CLLocationDegrees(coordinates[0])!, longitude: CLLocationDegrees(coordinates[1])!)
+            let info = ["viewType" : ShowExtraView.map, "location": nil] as [String : Any]
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showExtraView"), object: nil, userInfo: info)
+            self.inputAccessoryView?.isHidden = true
+        default: break
+        }
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
