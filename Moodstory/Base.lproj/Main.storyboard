@@ -1048,6 +1048,16 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.2365503387840302" green="0.39561354909233593" blue="1" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i9f-ZC-4jF">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.10202759143524465" green="1" blue="0.16623111635974652" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IsA-xp-qaU">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.86182291770409569" blue="0.086610953401342505" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wia-2J-WXd">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <color key="backgroundColor" red="1" green="0.31042358376936385" blue="0.36001207807403779" alpha="0.39840999119718312" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1207,6 +1217,7 @@
                         <outlet property="allEmoji" destination="PT2-rx-Z20" id="M2X-Uj-Wrp"/>
                         <outlet property="drawButton" destination="7a1-Nt-EC2" id="rxY-0E-fRu"/>
                         <outlet property="durationPick" destination="ZKP-kA-nYM" id="g20-zz-ag3"/>
+                        <outlet property="greenFilter" destination="i9f-ZC-4jF" id="f7v-0p-wQc"/>
                         <outlet property="imageText" destination="mmo-aV-gpm" id="LYE-9M-ZqJ"/>
                         <outlet property="pinkFilter" destination="Wia-2J-WXd" id="t9D-wR-JxF"/>
                         <outlet property="purpleFilter" destination="TMT-rQ-f9l" id="PL6-RI-gGV"/>
@@ -1214,6 +1225,7 @@
                         <outlet property="textOnImage" destination="e9F-gU-xBS" id="kyq-0p-mRK"/>
                         <outlet property="textX" destination="7t4-bF-vVT" id="bwP-PQ-c0V"/>
                         <outlet property="textY" destination="XRI-w4-OpI" id="XhU-rI-FdN"/>
+                        <outlet property="yellowFilter" destination="IsA-xp-qaU" id="wDc-kD-8wQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rlu-Hy-Xen" userLabel="First Responder" sceneMemberID="firstResponder"/>
