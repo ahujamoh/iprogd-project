@@ -10,12 +10,12 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class MSMapViewController: UIViewController, CLLocationManagerDelegate {
+class MSMapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
 
     let manager = CLLocationManager()
-    
+
     func locationManager(_ _manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
     
         let location = locations[0]
@@ -27,25 +27,72 @@ class MSMapViewController: UIViewController, CLLocationManagerDelegate {
         self.mapView.showsUserLocation = true
     }
     
+  
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .restricted:
+            print("Location access was restricted.")
+        case .denied:
+            print("User denied access to location.")
+            // Display the map using the default location.
+            mapView.isHidden = false
+        case .notDetermined:
+            print("Location status not determined.")
+        case .authorizedAlways: fallthrough
+        case .authorizedWhenInUse:
+            print("Location status is OK.")
+        }
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.mapView.delegate = self
         
         //set location to Stockholm
         self.initialLocation()
         
         //get user location
-        self.getUserLocation()
+        //self.getUserLocation()
         
+        showAnnotation()
+        
+    }
+    
+    
+    func showAnnotation() {
+        print("sara: show Annotation")
         let annotation = MKPointAnnotation()
         let location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(59.334415, 18.110103)
         annotation.coordinate = location
         annotation.title = "Hej"
         mapView.addAnnotation(annotation)
+        print("visar annotation")
         
-
     }
+    
+    func mapView(_ mapView:MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        print("sara:  mapView 1")
+        if !(annotation is MKPointAnnotation) {
+            return nil
+        }
+        print("sara: mapView 2")
+        let reuseId = "CustomMarker"
+        
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as MKAnnotationView?
+        
+        if annotationView == nil {
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            annotationView!.image = UIImage(named: "anno")
+        }
+        else {
+            annotationView!.annotation = annotation
+        }
+        
+        return annotationView
+    }
+    
     
     //sets initial location to Stockholm
     func initialLocation() {
@@ -57,6 +104,7 @@ class MSMapViewController: UIViewController, CLLocationManagerDelegate {
         mapView.setRegion(region, animated: true)
     
     }
+    
     
     //user location
     
