@@ -87,7 +87,7 @@
 		E43A88621E9FF82600DA500E /* MSConversationTableCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSConversationTableCellTableViewCell.swift; sourceTree = "<group>"; };
 		E43A88631E9FF82600DA500E /* MSConversationTableCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSConversationTableCellTableViewCell.xib; sourceTree = "<group>"; };
 		E4A3CBA21E9AA7F2000B9428 /* MSChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSChatViewController.swift; sourceTree = "<group>"; };
-		E4A3CBA41E9BCFD6000B9428 /* MSConversationsNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSConversationsNavigationViewController.swift; sourceTree = "<group>"; };
+		E4A3CBA41E9BCFD6000B9428 /* MSConversationsNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MSConversationsNavigationViewController.swift; path = ../MSConversationsNavigationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,7 +140,6 @@
 		C40DD75C1E78211A0035B234 = {
 			isa = PBXGroup;
 			children = (
-				E4A3CBA41E9BCFD6000B9428 /* MSConversationsNavigationViewController.swift */,
 				C40DD7671E78211A0035B234 /* Moodstory */,
 				C40DD7661E78211A0035B234 /* Products */,
 				B65077B7ACFBE9CAC160D5BF /* Pods */,
@@ -271,6 +270,7 @@
 				E43A88621E9FF82600DA500E /* MSConversationTableCellTableViewCell.swift */,
 				E43A88631E9FF82600DA500E /* MSConversationTableCellTableViewCell.xib */,
 				E4A3CBA21E9AA7F2000B9428 /* MSChatViewController.swift */,
+				E4A3CBA41E9BCFD6000B9428 /* MSConversationsNavigationViewController.swift */,
 			);
 			name = Conversation;
 			sourceTree = "<group>";
