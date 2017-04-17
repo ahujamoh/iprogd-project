@@ -51,6 +51,8 @@ class MSPreviewViewController: UIViewController, UIPickerViewDataSource, UIPicke
     
     @IBOutlet weak var pinkFilter: UIView!
     @IBOutlet weak var purpleFilter: UIView!
+    @IBOutlet weak var greenFilter: UIView!
+    @IBOutlet weak var yellowFilter: UIView!
     
     @IBAction func selectDuration(_ sender: Any) {
         self.durationPick.isHidden = false
@@ -142,6 +144,8 @@ class MSPreviewViewController: UIViewController, UIPickerViewDataSource, UIPicke
         self.test.isHidden = true
         self.pinkFilter.isHidden = true
         self.purpleFilter.isHidden = true
+        self.greenFilter.isHidden = true
+        self.yellowFilter.isHidden = true
         self.initEmoji()
         
     }
@@ -165,6 +169,23 @@ class MSPreviewViewController: UIViewController, UIPickerViewDataSource, UIPicke
                 else{
                     self.purpleFilter.isHidden = false
                 }
+            case UISwipeGestureRecognizerDirection.up:
+                print ("swipe up")
+                if self.yellowFilter.isHidden == false{
+                    self.yellowFilter.isHidden = true
+                }
+                else{
+                    self.greenFilter.isHidden = false
+                }
+            case UISwipeGestureRecognizerDirection.down:
+                print ("swipe down")
+                if self.greenFilter.isHidden == false{
+                    self.greenFilter.isHidden = true
+                }
+                else{
+                    self.yellowFilter.isHidden = false
+                }
+    
             default:
                 break
             }
@@ -273,6 +294,13 @@ class MSPreviewViewController: UIViewController, UIPickerViewDataSource, UIPicke
         swipeLeft.direction = .left
         self.view.addGestureRecognizer(swipeLeft)
         
+        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(MSPreviewViewController.swiped))
+        swipeRight.direction = .up
+        self.view.addGestureRecognizer(swipeUp)
+        
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(MSPreviewViewController.swiped))
+        swipeDown.direction = .down
+        self.view.addGestureRecognizer(swipeDown)
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
