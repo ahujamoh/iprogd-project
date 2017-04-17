@@ -647,6 +647,7 @@
                     </view>
                     <connections>
                         <outlet property="inputBar" destination="8fx-ge-NL3" id="RNm-m3-CMN"/>
+                        <outlet property="inputTextField" destination="gy0-L3-ExH" id="ixn-yo-jTB"/>
                         <outlet property="tableView" destination="pew-W6-AvI" id="qLO-88-CDE"/>
                     </connections>
                 </viewController>
