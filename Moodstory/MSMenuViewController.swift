@@ -11,7 +11,7 @@ import Firebase
 import SwiftKeychainWrapper
 
 class MSMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
-
+    
     @IBOutlet weak var menuTableView: UITableView!
     @IBOutlet weak var ProfilePicture: UIImageView!
     @IBOutlet weak var nameOfUser: UILabel!
@@ -21,7 +21,7 @@ class MSMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let viewController = storyboard.instantiateViewController(withIdentifier :"profilePicView") as! UIViewController
         self.present(viewController, animated: true)
         
-
+        
     }
     
     override func viewDidLoad() {
@@ -35,23 +35,23 @@ class MSMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
         ProfilePicture.layer.borderColor = UIColor.white.cgColor
         ProfilePicture.layer.cornerRadius = ProfilePicture.frame.height/2
         ProfilePicture.clipsToBounds = true
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     
-     // MARK: - Table view data source
-     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    // MARK: - Table view data source
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-//        return 3
-            return 4
+        //        return 3
+        return 4
     }
-//cells in the menu corresponding to different parts of our app
+    //cells in the menu corresponding to different parts of our app
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
@@ -85,14 +85,14 @@ class MSMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         else if indexPath.row == 1
         {
-             performSegue(withIdentifier: "message", sender: nil)
+            performSegue(withIdentifier: "message", sender: nil)
         }
         else if indexPath.row == 2{
-        
-        let keychainResult = KeychainWrapper.standard.removeObject(forKey: GlobalVariables.KEY_UID)
-        print("ID removed from keyhain : \(keychainResult)")
-        try! FIRAuth.auth()?.signOut()
-        performSegue(withIdentifier: "goToLoginScreen", sender: nil)
+            
+            let keychainResult = KeychainWrapper.standard.removeObject(forKey: GlobalVariables.KEY_UID)
+            print("ID removed from keyhain : \(keychainResult)")
+            try! FIRAuth.auth()?.signOut()
+            performSegue(withIdentifier: "goToLoginScreen", sender: nil)
             
         }
         else if indexPath.row == 3
@@ -107,15 +107,4 @@ class MSMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return 80.0
     }
     
-
-   /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
