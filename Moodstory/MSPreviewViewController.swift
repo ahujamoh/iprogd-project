@@ -154,7 +154,8 @@ class MSPreviewViewController: UIViewController, UIPickerViewDataSource, UIPicke
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
             switch swipeGesture.direction{
             case UISwipeGestureRecognizerDirection.right:
-                print ("swipe right")
+                self.yellowFilter.isHidden = true
+                self.greenFilter.isHidden = true
                 if self.purpleFilter.isHidden == false{
                     self.purpleFilter.isHidden = true
                 }
@@ -162,7 +163,8 @@ class MSPreviewViewController: UIViewController, UIPickerViewDataSource, UIPicke
                     self.pinkFilter.isHidden = false
                 }
             case UISwipeGestureRecognizerDirection.left:
-                print ("swipe left")
+                self.yellowFilter.isHidden = true
+                self.greenFilter.isHidden = true
                 if self.pinkFilter.isHidden == false{
                     self.pinkFilter.isHidden = true
                 }
@@ -170,7 +172,8 @@ class MSPreviewViewController: UIViewController, UIPickerViewDataSource, UIPicke
                     self.purpleFilter.isHidden = false
                 }
             case UISwipeGestureRecognizerDirection.up:
-                print ("swipe up")
+                self.pinkFilter.isHidden = true
+                self.purpleFilter.isHidden = true
                 if self.yellowFilter.isHidden == false{
                     self.yellowFilter.isHidden = true
                 }
@@ -178,7 +181,8 @@ class MSPreviewViewController: UIViewController, UIPickerViewDataSource, UIPicke
                     self.greenFilter.isHidden = false
                 }
             case UISwipeGestureRecognizerDirection.down:
-                print ("swipe down")
+                self.pinkFilter.isHidden = true
+                self.purpleFilter.isHidden = true
                 if self.greenFilter.isHidden == false{
                     self.greenFilter.isHidden = true
                 }
