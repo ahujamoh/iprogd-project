@@ -13,7 +13,7 @@ import UIKit
 //Global variables
 struct GlobalVariables {
     static let blue = UIColor.rbg(r: 129, g: 144, b: 255)
-    static let purple = UIColor.rbg(r: 161, g: 114, b: 255)
+    static let green = UIColor.rbg(r: 63, g: 195, b: 128)
     static let KEY_UID = "uid"
     static let GOOGLE_MAPS_KEY = "AIzaSyCuOsyy--bz0Jo6F8OPhG45SJgBF45cOcM"
 }

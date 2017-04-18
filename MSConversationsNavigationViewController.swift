@@ -108,11 +108,11 @@ class MSConversationsNavigationViewController: UINavigationController, UICollect
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! MSContactsCVCell
         //TODO: Mustafa: fix this to put the profile pic and name please
-        cell.backgroundColor = UIColor.blue
+//        cell.backgroundColor = UIColor.blue
         cell.profilePic?.image = self.items[indexPath.row].profilePic
         cell.nameLabel?.text = self.items[indexPath.row].name
         cell.profilePic?.layer.borderWidth = 2
-        cell.profilePic?.layer.borderColor = GlobalVariables.purple.cgColor
+        cell.profilePic?.layer.borderColor = GlobalVariables.green.cgColor
         return cell
     }
     

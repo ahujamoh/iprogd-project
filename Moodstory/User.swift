@@ -94,22 +94,19 @@ class User: NSObject {
         FIRDatabase.database().reference().child("users").observe(.childAdded, with: { (snapshot) in
             let id = snapshot.key
             let data = snapshot.value as! [String: Any]
-            if data["email"] != nil {
-                //                let credentials = data["email"] as! [String: String]
+            if data["credentials"] != nil {
+                let credentials = data["credentials"] as! [String: String]
                 if id != exceptID {
-                    let name = data["name"]!
-                    let email = data["email"]!
-                    //                    let link = URL.init(string: data["profilePicLink"]?)
-                    let user = User.init(name: name as! String, email: email as! String, id: id, profilePic: UIImage(named: "profile pic")!)
-                    
-                    completion(user)
-                    //                    URLSession.shared.dataTask(with: link?, completionHandler: { (data, response, error) in
-                    //                        if error == nil {
-                    //                            let profilePic = UIImage.init(data: data!)
-                    //                            let user = User.init(name: name, email: email, id: id, profilePic: profilePic?)
-                    //                            completion(user)
-                    //                        }
-                    //                }).resume()
+                    let name = credentials["name"]!
+                    let email = credentials["email"]!
+                    let link = URL.init(string: credentials["profilePicLink"]!)
+                    URLSession.shared.dataTask(with: (link)!, completionHandler: { (data, response, error) in
+                        if error == nil {
+                            let profilePic = UIImage.init(data: data!)
+                            let user = User.init(name: name , email: email , id: id, profilePic: (profilePic)!)
+                            completion(user)
+                        }
+                    }).resume()
                 }
             }
             else{
@@ -117,13 +114,13 @@ class User: NSObject {
             }
         })
     }
-    
-    class func checkUserVerification(completion: @escaping (Bool) -> Swift.Void) {
-        FIRAuth.auth()?.currentUser?.reload(completion: { (_) in
-            let status = (FIRAuth.auth()?.currentUser?.isEmailVerified)!
-            completion(status)
-        })
-    }
+    //TODO: delete this
+//    class func checkUserVerification(completion: @escaping (Bool) -> Swift.Void) {
+//        FIRAuth.auth()?.currentUser?.reload(completion: { (_) in
+//            let status = (FIRAuth.auth()?.currentUser?.isEmailVerified)!
+//            completion(status)
+//        })
+//    }
     
     
     //MARK: Inits

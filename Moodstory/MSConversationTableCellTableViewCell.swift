@@ -24,16 +24,16 @@ class MSConversationTableCellTableViewCell: UITableViewCell {
         self.nameLabel.font = UIFont(name:"AvenirNext-Regular", size: 17.0)
         self.messageLabel.font = UIFont(name:"AvenirNext-Regular", size: 14.0)
         self.timeLabel.font = UIFont(name:"AvenirNext-Regular", size: 13.0)
-        self.profilePic.layer.borderColor = GlobalVariables.purple.cgColor
+        self.profilePic.layer.borderColor = GlobalVariables.green.cgColor
         self.messageLabel.textColor = UIColor.rbg(r: 111, g: 113, b: 121)
     }
     
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-//        // Initialization code
-//        self.profilePic.layer.borderWidth = 2
-//        self.profilePic.layer.borderColor = GlobalVariables.purple.cgColor
-//    }
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+        self.profilePic.layer.borderWidth = 2
+        self.profilePic.layer.borderColor = GlobalVariables.green.cgColor
+    }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
