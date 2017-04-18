@@ -185,7 +185,7 @@ class MSPreviewViewController: UIViewController, UIPickerViewDataSource, UIPicke
                 else{
                     self.yellowFilter.isHidden = false
                 }
-    
+                
             default:
                 break
             }
@@ -211,6 +211,9 @@ class MSPreviewViewController: UIViewController, UIPickerViewDataSource, UIPicke
     
     
     func saveToFirebase() {
+        //TODO: have to remove this access, as this is a controller,
+        //this should call a function from model which takes care
+        //of talking with the database
         let uid = FIRAuth.auth()?.currentUser?.uid
         var username = String()
         

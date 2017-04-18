@@ -18,7 +18,7 @@ class User: NSObject {
     var profilePic: UIImage
     
     //MARK: Methods
-    class func registerUser(withName: String, email: String, password: String, profilePic: UIImage, completion: @escaping (Bool) -> Swift.Void) {
+    class func registerUser(withName: String, email: String, password: String, profilePic: UIImage, completion: @escaping FIRAuthResultCallback) {
         FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
             if error == nil {
                 user?.sendEmailVerification(completion: nil)
@@ -32,26 +32,26 @@ class User: NSObject {
                             if errr == nil {
                                 let userInfo = ["email" : email, "password" : password]
                                 UserDefaults.standard.set(userInfo, forKey: "userInformation")
-                                completion(true)
+                                completion(user, error)
                             }
                         })
                     }
                 })
             }
             else {
-                completion(false)
+                completion(user, error)
             }
         })
     }
     
-    class func loginUser(withEmail: String, password: String, completion: @escaping (Bool) -> Swift.Void) {
+    class func loginUser(withEmail: String, password: String, completion: @escaping FIRAuthResultCallback) {
         FIRAuth.auth()?.signIn(withEmail: withEmail, password: password, completion: { (user, error) in
             if error == nil {
                 let userInfo = ["email": withEmail, "password": password]
                 UserDefaults.standard.set(userInfo, forKey: "userInformation")
-                completion(true)
+                completion(user, error)
             } else {
-                completion(false)
+                completion(user, error)
             }
         })
     }
