@@ -15,11 +15,11 @@ class MSMapViewController: UIViewController, MKMapViewDelegate, CLLocationManage
     @IBOutlet weak var mapView: MKMapView!
 
     let manager = CLLocationManager()
-
-    func locationManager(_ _manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
     
+    func locationManager(_ _manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
         let location = locations[0]
-        let span:MKCoordinateSpan = MKCoordinateSpanMake(0.1, 0.1)
+        let span:MKCoordinateSpan = MKCoordinateSpanMake(0.12, 0.12)
         let myLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
         let region:MKCoordinateRegion = MKCoordinateRegionMake(myLocation, span)
         mapView.setRegion(region, animated: true)
@@ -27,7 +27,6 @@ class MSMapViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         self.mapView.showsUserLocation = true
     }
     
-  
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
         case .restricted:
@@ -35,49 +34,63 @@ class MSMapViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         case .denied:
             print("User denied access to location.")
             // Display the map using the default location.
-            mapView.isHidden = false
+            self.initialLocation()
         case .notDetermined:
             print("Location status not determined.")
+            self.initialLocation()
         case .authorizedAlways: fallthrough
         case .authorizedWhenInUse:
             print("Location status is OK.")
+            self.getUserLocation()
         }
     }
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.mapView.delegate = self
         
-        //set location to Stockholm
-        self.initialLocation()
-        
         //get user location
-        //self.getUserLocation()
+        self.getUserLocation()
         
-        showAnnotation()
         
+        self.addMapTrackingButton()
+        
+        self.showAnnotation()
+        
+        self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Avenir Next", size: 30)!,NSForegroundColorAttributeName: UIColor.white]
+        self.navigationItem.title = "mood story"
     }
     
     
+    //user location
+    
+    func getUserLocation() {
+        
+        manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.requestWhenInUseAuthorization()
+        manager.startUpdatingLocation()
+        
+    }
+    
     func showAnnotation() {
-        print("sara: show Annotation")
+
         let annotation = MKPointAnnotation()
         let location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(59.334415, 18.110103)
         annotation.coordinate = location
-        annotation.title = "Hej"
+        annotation.title = "Happy"
+        annotation.subtitle = "At home"
         mapView.addAnnotation(annotation)
-        print("visar annotation")
         
     }
     
+    
     func mapView(_ mapView:MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        print("sara:  mapView 1")
         if !(annotation is MKPointAnnotation) {
             return nil
         }
-        print("sara: mapView 2")
+        
         let reuseId = "CustomMarker"
         
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as MKAnnotationView?
@@ -93,6 +106,20 @@ class MSMapViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         return annotationView
     }
     
+    func addMapTrackingButton(){
+        
+        let image = UIImage(named: "face") as UIImage?
+        let button = UIButton(type: UIButtonType.custom) as UIButton
+        button.frame = CGRect(x:5, y:5, width:35, height:35)
+        button.setImage(image, for: .normal)
+        button.addTarget(self, action: #selector(buttonAction), for:.touchUpInside)
+        mapView.addSubview(button)
+    }
+    
+    
+    func buttonAction(sender: UIButton!) {
+        print("Button tapped")
+    }
     
     //sets initial location to Stockholm
     func initialLocation() {
@@ -105,17 +132,6 @@ class MSMapViewController: UIViewController, MKMapViewDelegate, CLLocationManage
     
     }
     
-    
-    //user location
-    
-    func getUserLocation() {
-        
-        manager.delegate = self
-        manager.desiredAccuracy = kCLLocationAccuracyBest
-        manager.requestWhenInUseAuthorization()
-        manager.startUpdatingLocation()
-        
-    }
     
     //markers
 
