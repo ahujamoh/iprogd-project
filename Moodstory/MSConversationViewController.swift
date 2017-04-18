@@ -112,7 +112,7 @@ class MSConversationViewController: UIViewController, UITableViewDelegate, UITab
             cell.messageLabel.font = UIFont(name:"AvenirNext-DemiBold", size: 14.0)
             cell.timeLabel.font = UIFont(name:"AvenirNext-DemiBold", size: 13.0)
             cell.profilePic.layer.borderColor = GlobalVariables.blue.cgColor
-            cell.messageLabel.textColor = GlobalVariables.purple
+            cell.messageLabel.textColor = GlobalVariables.green
         }
         return cell
     }
