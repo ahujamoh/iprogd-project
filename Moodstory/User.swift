@@ -56,6 +56,13 @@ class User: NSObject {
         })
     }
     
+    class func loginWithCredential(withCredential: FIRAuthCredential, completion: @escaping FIRAuthResultCallback) {
+        FIRAuth.auth()?.signIn(with: withCredential, completion:
+            { (user, error) in
+                completion(user, error)
+        })
+    }
+    
     class func logOutUser(completion: @escaping (Bool) -> Swift.Void) {
         do {
             try FIRAuth.auth()?.signOut()

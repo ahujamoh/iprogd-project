@@ -193,9 +193,11 @@ class MSLoginSignUpController: UIViewController {
     }
     
     func firebaseAuth(_ credential: FIRAuthCredential){
+//        
+//        FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
         
-        FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
-            
+        User.loginWithCredential(withCredential: credential, completion: { (user, error) in
+
             if error != nil
             {
                 print("Unable to authenticate with Firebase - \(String(describing: error))")
@@ -218,9 +220,7 @@ class MSLoginSignUpController: UIViewController {
         self.presentFillableLoader()
         
         if let email = emailField.text, let pwd = passwordField.text{
-            
-            FIRAuth.auth()?.signIn(withEmail: email, password: pwd, completion: { (user, error) in
-                
+            User.loginUser(withEmail: email, password: pwd, completion: { (user, error) in
                 if error == nil{
                     
                     print("Email User Authenticated with Firebase")
