@@ -66,13 +66,13 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManag
         Message.markMessagesRead(forUserID: self.currentUser!.id)
     }
     
-    func setTemporaryData(){
-        let sendersMessage = Message.init(type: MessageType.text, content: "Sender's Message", owner: MessageOwner.sender, timestamp: 999999999, isRead: true)
-        let receiversMessage = Message.init(type: MessageType.text, content: "Receiver's Message", owner: MessageOwner.receiver, timestamp: 1000000200, isRead: true)
-        items.append(sendersMessage)
-        items.append(receiversMessage)
-    }
-    
+//    func setTemporaryData(){
+//        let sendersMessage = Message.init(type: MessageType.text, content: "Sender's Message", owner: MessageOwner.sender, timestamp: 999999999, isRead: true)
+//        let receiversMessage = Message.init(type: MessageType.text, content: "Receiver's Message", owner: MessageOwner.receiver, timestamp: 1000000200, isRead: true)
+//        items.append(sendersMessage)
+//        items.append(receiversMessage)
+//    }
+//    
     func dismissSelf() {
         if let navController = self.navigationController {
             navController.popViewController(animated: true)
@@ -115,8 +115,8 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManag
     override func viewDidLoad() {
         super.viewDidLoad()
         self.customizeView()
-        self.setTemporaryData()
-        //        fetchData()
+//        self.setTemporaryData()
+        self.fetchData()
         // Do any additional setup after loading the view.
     }
     

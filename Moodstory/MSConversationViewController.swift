@@ -153,6 +153,7 @@ class MSConversationViewController: UIViewController, UITableViewDelegate, UITab
         if editingStyle == .delete
         {
             self.items.remove(at: indexPath.row)
+            
             self.tableView.reloadData()
         }
         print("removing item at \(indexPath.row)")
