@@ -143,6 +143,7 @@ class MSConversationViewController: UIViewController, UITableViewDelegate, UITab
         super.didReceiveMemoryWarning()
     }
     
+    //MARK: tableView cells made slidable
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
     {
         return true
